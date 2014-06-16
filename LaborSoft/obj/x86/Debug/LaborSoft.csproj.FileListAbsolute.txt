@@ -1,0 +1,8 @@
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.exe
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form1.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form2.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Properties.Resources.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.csproj.GenerateResource.Cache
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.exe
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.pdb
