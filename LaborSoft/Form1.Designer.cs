@@ -50,11 +50,10 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(1, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(991, 768);
+            this.tabControl1.Size = new System.Drawing.Size(994, 693);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -62,7 +61,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(983, 742);
+            this.tabPage1.Size = new System.Drawing.Size(986, 667);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -140,7 +139,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LaborSoft";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
