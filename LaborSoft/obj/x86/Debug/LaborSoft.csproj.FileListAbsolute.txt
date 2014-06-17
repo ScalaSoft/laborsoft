@@ -6,3 +6,11 @@ C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Pr
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.csproj.GenerateResource.Cache
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.exe
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.csprojResolveAssemblyReference.cache
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form3.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form4.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form5.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form6.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form7.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form8.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form9.resources
