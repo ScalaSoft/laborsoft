@@ -1,0 +1,17 @@
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Release\LaborSoft.exe.config
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Release\LaborSoft.exe
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Release\LaborSoft.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form1.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form2.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form3.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form4.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form5.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form6.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form7.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form8.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Form9.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.Properties.Resources.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.UserControl1.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.csproj.GenerateResource.Cache
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.exe
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.pdb

@@ -14,3 +14,8 @@ C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Fo
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form7.resources
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form8.resources
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form9.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.exe.config
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.UserControl1.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.dll
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.xml
