@@ -37,6 +37,7 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.userControl11 = new LaborSoft.UserControl1();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(983, 742);
+            this.tabPage2.Size = new System.Drawing.Size(986, 667);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2 - Dados do responsável familiar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -81,7 +82,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(983, 742);
+            this.tabPage3.Size = new System.Drawing.Size(986, 667);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3 - Dados do Conjuge ou Companheiro(a)";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(983, 742);
+            this.tabPage4.Size = new System.Drawing.Size(986, 667);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "4 - Composição familiar";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -99,7 +100,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(983, 742);
+            this.tabPage5.Size = new System.Drawing.Size(986, 667);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "5 - uso e Ocupação do Domicílio";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -108,7 +109,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(983, 742);
+            this.tabPage6.Size = new System.Drawing.Size(986, 667);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "6 - Participação e Organização Social";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -117,7 +118,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(983, 742);
+            this.tabPage7.Size = new System.Drawing.Size(986, 667);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "7 - Dados de Contato";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -126,10 +127,17 @@
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(983, 742);
+            this.tabPage8.Size = new System.Drawing.Size(986, 667);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "8 - Dados da Entrevista";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(1, -2);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(742, 38);
+            this.userControl11.TabIndex = 1;
             // 
             // Form1
             // 
@@ -137,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.userControl11);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "LaborSoft";
@@ -157,6 +166,7 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
+        private UserControl1 userControl11;
     }
 }
 

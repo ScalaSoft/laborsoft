@@ -15,3 +15,4 @@ C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.csproj.GenerateResource.Cache
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.exe
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Release\LaborSoft.csprojResolveAssemblyReference.cache

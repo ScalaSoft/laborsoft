@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cod_area = new System.Windows.Forms.TextBox();
+            this.nome_subarea = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tipo_logradouro = new System.Windows.Forms.TextBox();
+            this.nome_logradouro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.compl_logradouro = new System.Windows.Forms.TextBox();
+            this.area = new System.Windows.Forms.ComboBox();
+            this.numero_logradouro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.complemento = new System.Windows.Forms.TextBox();
+            this.bairro = new System.Windows.Forms.TextBox();
+            this.cep = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.nome_entrevistado = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -57,27 +58,32 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.primeiro_no_domicilio = new System.Windows.Forms.ComboBox();
+            this.mulher_resp_fam = new System.Windows.Forms.ComboBox();
+            this.domicilio = new System.Windows.Forms.TextBox();
+            this.selo_lote = new System.Windows.Forms.TextBox();
+            this.setor_quadra = new System.Windows.Forms.TextBox();
+            this.num_fam_dom = new System.Windows.Forms.TextBox();
+            this.num_pess_fam = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.desficiente_fam = new System.Windows.Forms.CheckBox();
+            this.possui_cadeirante = new System.Windows.Forms.CheckBox();
+            this.deficiencia_mobilidade = new System.Windows.Forms.CheckBox();
+            this.cadunico = new System.Windows.Forms.CheckBox();
+            this.num_port_def = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.numero_nis = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.renda_familiar = new System.Windows.Forms.TextBox();
+            this.dbDataSet1 = new LaborSoft.dbDataSet1();
+            this.identificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.identificacaoTableAdapter = new LaborSoft.dbDataSet1TableAdapters.identificacaoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.identificacaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,19 +115,22 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Subarea:";
             // 
-            // textBox1
+            // cod_area
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 20);
-            this.textBox1.TabIndex = 3;
+            this.cod_area.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.identificacaoBindingSource, "cod_area", true));
+            this.cod_area.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.identificacaoBindingSource, "cod_area", true));
+            this.cod_area.Location = new System.Drawing.Point(100, 10);
+            this.cod_area.Name = "cod_area";
+            this.cod_area.Size = new System.Drawing.Size(239, 20);
+            this.cod_area.TabIndex = 3;
+            this.cod_area.TextChanged += new System.EventHandler(this.cod_area_TextChanged);
             // 
-            // textBox3
+            // nome_subarea
             // 
-            this.textBox3.Location = new System.Drawing.Point(734, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 20);
-            this.textBox3.TabIndex = 5;
+            this.nome_subarea.Location = new System.Drawing.Point(734, 8);
+            this.nome_subarea.Name = "nome_subarea";
+            this.nome_subarea.Size = new System.Drawing.Size(239, 20);
+            this.nome_subarea.TabIndex = 5;
             // 
             // label4
             // 
@@ -141,19 +150,19 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Logradouro:";
             // 
-            // textBox4
+            // tipo_logradouro
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 47);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 8;
+            this.tipo_logradouro.Location = new System.Drawing.Point(100, 47);
+            this.tipo_logradouro.Name = "tipo_logradouro";
+            this.tipo_logradouro.Size = new System.Drawing.Size(239, 20);
+            this.tipo_logradouro.TabIndex = 8;
             // 
-            // textBox5
+            // nome_logradouro
             // 
-            this.textBox5.Location = new System.Drawing.Point(426, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(547, 20);
-            this.textBox5.TabIndex = 9;
+            this.nome_logradouro.Location = new System.Drawing.Point(426, 44);
+            this.nome_logradouro.Name = "nome_logradouro";
+            this.nome_logradouro.Size = new System.Drawing.Size(547, 20);
+            this.nome_logradouro.TabIndex = 9;
             // 
             // label6
             // 
@@ -164,36 +173,36 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Logradouro (compl):";
             // 
-            // textBox6
+            // compl_logradouro
             // 
-            this.textBox6.Location = new System.Drawing.Point(100, 82);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(726, 20);
-            this.textBox6.TabIndex = 11;
+            this.compl_logradouro.Location = new System.Drawing.Point(100, 82);
+            this.compl_logradouro.Name = "compl_logradouro";
+            this.compl_logradouro.Size = new System.Drawing.Size(726, 20);
+            this.compl_logradouro.TabIndex = 11;
             // 
-            // comboBox1
+            // area
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.area.AutoCompleteCustomSource.AddRange(new string[] {
             "Livres",
             "Favelas",
             "Conjuntos Hab."});
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.area.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.area.FormattingEnabled = true;
+            this.area.Items.AddRange(new object[] {
             "Livres",
             "Favelas",
             "Conjuntos Hab."});
-            this.comboBox1.Location = new System.Drawing.Point(426, 7);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 21);
-            this.comboBox1.TabIndex = 12;
+            this.area.Location = new System.Drawing.Point(426, 7);
+            this.area.Name = "area";
+            this.area.Size = new System.Drawing.Size(249, 21);
+            this.area.TabIndex = 12;
             // 
-            // textBox2
+            // numero_logradouro
             // 
-            this.textBox2.Location = new System.Drawing.Point(887, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(86, 20);
-            this.textBox2.TabIndex = 13;
+            this.numero_logradouro.Location = new System.Drawing.Point(887, 81);
+            this.numero_logradouro.Name = "numero_logradouro";
+            this.numero_logradouro.Size = new System.Drawing.Size(86, 20);
+            this.numero_logradouro.TabIndex = 13;
             // 
             // label7
             // 
@@ -231,26 +240,26 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "CEP:";
             // 
-            // textBox7
+            // complemento
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 115);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(239, 20);
-            this.textBox7.TabIndex = 18;
+            this.complemento.Location = new System.Drawing.Point(100, 115);
+            this.complemento.Name = "complemento";
+            this.complemento.Size = new System.Drawing.Size(239, 20);
+            this.complemento.TabIndex = 18;
             // 
-            // textBox8
+            // bairro
             // 
-            this.textBox8.Location = new System.Drawing.Point(426, 112);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(239, 20);
-            this.textBox8.TabIndex = 19;
+            this.bairro.Location = new System.Drawing.Point(426, 112);
+            this.bairro.Name = "bairro";
+            this.bairro.Size = new System.Drawing.Size(239, 20);
+            this.bairro.TabIndex = 19;
             // 
-            // textBox9
+            // cep
             // 
-            this.textBox9.Location = new System.Drawing.Point(734, 108);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(239, 20);
-            this.textBox9.TabIndex = 20;
+            this.cep.Location = new System.Drawing.Point(734, 108);
+            this.cep.Name = "cep";
+            this.cep.Size = new System.Drawing.Size(239, 20);
+            this.cep.TabIndex = 20;
             // 
             // label11
             // 
@@ -261,12 +270,12 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Nome do Entrevistado:";
             // 
-            // textBox10
+            // nome_entrevistado
             // 
-            this.textBox10.Location = new System.Drawing.Point(121, 150);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(852, 20);
-            this.textBox10.TabIndex = 22;
+            this.nome_entrevistado.Location = new System.Drawing.Point(121, 150);
+            this.nome_entrevistado.Name = "nome_entrevistado";
+            this.nome_entrevistado.Size = new System.Drawing.Size(852, 20);
+            this.nome_entrevistado.TabIndex = 22;
             // 
             // label12
             // 
@@ -332,63 +341,63 @@
             this.label18.TabIndex = 29;
             this.label18.Text = "Mulher responsável\r\npela unidade familiar?";
             // 
-            // comboBox2
+            // primeiro_no_domicilio
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.primeiro_no_domicilio.FormattingEnabled = true;
+            this.primeiro_no_domicilio.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.comboBox2.Location = new System.Drawing.Point(472, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(45, 21);
-            this.comboBox2.TabIndex = 30;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.primeiro_no_domicilio.Location = new System.Drawing.Point(472, 188);
+            this.primeiro_no_domicilio.Name = "primeiro_no_domicilio";
+            this.primeiro_no_domicilio.Size = new System.Drawing.Size(45, 21);
+            this.primeiro_no_domicilio.TabIndex = 30;
+            this.primeiro_no_domicilio.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox3
+            // mulher_resp_fam
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.mulher_resp_fam.FormattingEnabled = true;
+            this.mulher_resp_fam.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.comboBox3.Location = new System.Drawing.Point(937, 191);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(45, 21);
-            this.comboBox3.TabIndex = 31;
+            this.mulher_resp_fam.Location = new System.Drawing.Point(937, 191);
+            this.mulher_resp_fam.Name = "mulher_resp_fam";
+            this.mulher_resp_fam.Size = new System.Drawing.Size(45, 21);
+            this.mulher_resp_fam.TabIndex = 31;
             // 
-            // textBox11
+            // domicilio
             // 
-            this.textBox11.Location = new System.Drawing.Point(337, 189);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(37, 20);
-            this.textBox11.TabIndex = 32;
+            this.domicilio.Location = new System.Drawing.Point(337, 189);
+            this.domicilio.Name = "domicilio";
+            this.domicilio.Size = new System.Drawing.Size(37, 20);
+            this.domicilio.TabIndex = 32;
             // 
-            // textBox12
+            // selo_lote
             // 
-            this.textBox12.Location = new System.Drawing.Point(186, 188);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(37, 20);
-            this.textBox12.TabIndex = 33;
+            this.selo_lote.Location = new System.Drawing.Point(186, 188);
+            this.selo_lote.Name = "selo_lote";
+            this.selo_lote.Size = new System.Drawing.Size(37, 20);
+            this.selo_lote.TabIndex = 33;
             // 
-            // textBox13
+            // setor_quadra
             // 
-            this.textBox13.Location = new System.Drawing.Point(86, 189);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(37, 20);
-            this.textBox13.TabIndex = 34;
+            this.setor_quadra.Location = new System.Drawing.Point(86, 189);
+            this.setor_quadra.Name = "setor_quadra";
+            this.setor_quadra.Size = new System.Drawing.Size(37, 20);
+            this.setor_quadra.TabIndex = 34;
             // 
-            // textBox14
+            // num_fam_dom
             // 
-            this.textBox14.Location = new System.Drawing.Point(627, 192);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(37, 20);
-            this.textBox14.TabIndex = 35;
+            this.num_fam_dom.Location = new System.Drawing.Point(627, 192);
+            this.num_fam_dom.Name = "num_fam_dom";
+            this.num_fam_dom.Size = new System.Drawing.Size(37, 20);
+            this.num_fam_dom.TabIndex = 35;
             // 
-            // textBox15
+            // num_pess_fam
             // 
-            this.textBox15.Location = new System.Drawing.Point(786, 197);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(37, 20);
-            this.textBox15.TabIndex = 36;
+            this.num_pess_fam.Location = new System.Drawing.Point(786, 197);
+            this.num_pess_fam.Name = "num_pess_fam";
+            this.num_pess_fam.Size = new System.Drawing.Size(37, 20);
+            this.num_pess_fam.TabIndex = 36;
             // 
             // label19
             // 
@@ -435,48 +444,48 @@
             this.label23.TabIndex = 41;
             this.label23.Text = "A família é cadastrada\r\nno Cadúnico?";
             // 
-            // checkBox1
+            // desficiente_fam
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(130, 234);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 42;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.desficiente_fam.AutoSize = true;
+            this.desficiente_fam.Location = new System.Drawing.Point(130, 234);
+            this.desficiente_fam.Name = "desficiente_fam";
+            this.desficiente_fam.Size = new System.Drawing.Size(15, 14);
+            this.desficiente_fam.TabIndex = 42;
+            this.desficiente_fam.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // possui_cadeirante
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(454, 234);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 43;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.possui_cadeirante.AutoSize = true;
+            this.possui_cadeirante.Location = new System.Drawing.Point(454, 234);
+            this.possui_cadeirante.Name = "possui_cadeirante";
+            this.possui_cadeirante.Size = new System.Drawing.Size(15, 14);
+            this.possui_cadeirante.TabIndex = 43;
+            this.possui_cadeirante.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // deficiencia_mobilidade
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(662, 234);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 45;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.deficiencia_mobilidade.AutoSize = true;
+            this.deficiencia_mobilidade.Location = new System.Drawing.Point(662, 234);
+            this.deficiencia_mobilidade.Name = "deficiencia_mobilidade";
+            this.deficiencia_mobilidade.Size = new System.Drawing.Size(15, 14);
+            this.deficiencia_mobilidade.TabIndex = 45;
+            this.deficiencia_mobilidade.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cadunico
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(856, 233);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 46;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cadunico.AutoSize = true;
+            this.cadunico.Location = new System.Drawing.Point(856, 233);
+            this.cadunico.Name = "cadunico";
+            this.cadunico.Size = new System.Drawing.Size(15, 14);
+            this.cadunico.TabIndex = 46;
+            this.cadunico.UseVisualStyleBackColor = true;
             // 
-            // textBox16
+            // num_port_def
             // 
-            this.textBox16.Location = new System.Drawing.Point(275, 234);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(37, 20);
-            this.textBox16.TabIndex = 47;
+            this.num_port_def.Location = new System.Drawing.Point(275, 234);
+            this.num_port_def.Name = "num_port_def";
+            this.num_port_def.Size = new System.Drawing.Size(37, 20);
+            this.num_port_def.TabIndex = 47;
             // 
             // label24
             // 
@@ -487,12 +496,12 @@
             this.label24.TabIndex = 48;
             this.label24.Text = "No do NIS do \r\nresp. familiar:";
             // 
-            // textBox17
+            // numero_nis
             // 
-            this.textBox17.Location = new System.Drawing.Point(121, 283);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(348, 20);
-            this.textBox17.TabIndex = 49;
+            this.numero_nis.Location = new System.Drawing.Point(121, 283);
+            this.numero_nis.Name = "numero_nis";
+            this.numero_nis.Size = new System.Drawing.Size(348, 20);
+            this.numero_nis.TabIndex = 49;
             // 
             // label25
             // 
@@ -503,39 +512,53 @@
             this.label25.TabIndex = 50;
             this.label25.Text = "Renda\r\nfamiliar (R$):";
             // 
-            // textBox18
+            // renda_familiar
             // 
-            this.textBox18.Location = new System.Drawing.Point(564, 283);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 20);
-            this.textBox18.TabIndex = 51;
+            this.renda_familiar.Location = new System.Drawing.Point(564, 283);
+            this.renda_familiar.Name = "renda_familiar";
+            this.renda_familiar.Size = new System.Drawing.Size(100, 20);
+            this.renda_familiar.TabIndex = 51;
+            // 
+            // dbDataSet1
+            // 
+            this.dbDataSet1.DataSetName = "dbDataSet1";
+            this.dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // identificacaoBindingSource
+            // 
+            this.identificacaoBindingSource.DataMember = "identificacao";
+            this.identificacaoBindingSource.DataSource = this.dbDataSet1;
+            // 
+            // identificacaoTableAdapter
+            // 
+            this.identificacaoTableAdapter.ClearBeforeFill = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 492);
-            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.renda_familiar);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.numero_nis);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.num_port_def);
+            this.Controls.Add(this.cadunico);
+            this.Controls.Add(this.deficiencia_mobilidade);
+            this.Controls.Add(this.possui_cadeirante);
+            this.Controls.Add(this.desficiente_fam);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.num_pess_fam);
+            this.Controls.Add(this.num_fam_dom);
+            this.Controls.Add(this.setor_quadra);
+            this.Controls.Add(this.selo_lote);
+            this.Controls.Add(this.domicilio);
+            this.Controls.Add(this.mulher_resp_fam);
+            this.Controls.Add(this.primeiro_no_domicilio);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -543,30 +566,33 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.nome_entrevistado);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.cep);
+            this.Controls.Add(this.bairro);
+            this.Controls.Add(this.complemento);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.numero_logradouro);
+            this.Controls.Add(this.area);
+            this.Controls.Add(this.compl_logradouro);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.nome_logradouro);
+            this.Controls.Add(this.tipo_logradouro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nome_subarea);
+            this.Controls.Add(this.cod_area);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "1 - Idêntificação";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.identificacaoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,25 +603,25 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox cod_area;
+        private System.Windows.Forms.TextBox nome_subarea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tipo_logradouro;
+        private System.Windows.Forms.TextBox nome_logradouro;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox compl_logradouro;
+        private System.Windows.Forms.ComboBox area;
+        private System.Windows.Forms.TextBox numero_logradouro;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox complemento;
+        private System.Windows.Forms.TextBox bairro;
+        private System.Windows.Forms.TextBox cep;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox nome_entrevistado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -603,26 +629,29 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.ComboBox primeiro_no_domicilio;
+        private System.Windows.Forms.ComboBox mulher_resp_fam;
+        private System.Windows.Forms.TextBox domicilio;
+        private System.Windows.Forms.TextBox selo_lote;
+        private System.Windows.Forms.TextBox setor_quadra;
+        private System.Windows.Forms.TextBox num_fam_dom;
+        private System.Windows.Forms.TextBox num_pess_fam;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.CheckBox desficiente_fam;
+        private System.Windows.Forms.CheckBox possui_cadeirante;
+        private System.Windows.Forms.CheckBox deficiencia_mobilidade;
+        private System.Windows.Forms.CheckBox cadunico;
+        private System.Windows.Forms.TextBox num_port_def;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox numero_nis;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox renda_familiar;
+        private dbDataSet1 dbDataSet1;
+        private System.Windows.Forms.BindingSource identificacaoBindingSource;
+        private dbDataSet1TableAdapters.identificacaoTableAdapter identificacaoTableAdapter;
     }
 }
