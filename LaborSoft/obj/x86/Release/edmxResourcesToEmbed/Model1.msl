@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="dados_responsavel_familiar">
+      <EntityTypeMapping TypeName="dbModel.dados_responsavel_familiar">
+        <MappingFragment StoreEntitySet="dados_responsavel_familiar">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="relacao_c_responsavel_fam" ColumnName="relacao_c_responsavel_fam" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="nascimento" ColumnName="nascimento" />
+          <ScalarProperty Name="estado_civil" ColumnName="estado_civil" />
+          <ScalarProperty Name="regime_casamento" ColumnName="regime_casamento" />
+          <ScalarProperty Name="uniao_consencual" ColumnName="uniao_consencual" />
+          <ScalarProperty Name="frequenta_escola" ColumnName="frequenta_escola" />
+          <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="programa_social" ColumnName="programa_social" />
+          <ScalarProperty Name="valor_beneficio" ColumnName="valor_beneficio" />
+          <ScalarProperty Name="profissao" ColumnName="profissao" />
+          <ScalarProperty Name="renda_cidadao" ColumnName="renda_cidadao" />
+          <ScalarProperty Name="particularidade_deficiencia" ColumnName="particularidade_deficiencia" />
+          <ScalarProperty Name="possui_laudo_med" ColumnName="possui_laudo_med" />
+          <ScalarProperty Name="possui_numero_cid" ColumnName="possui_numero_cid" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="rg_rne" ColumnName="rg_rne" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="identificacao">
+      <EntityTypeMapping TypeName="dbModel.identificacao">
+        <MappingFragment StoreEntitySet="identificacao">
+          <ScalarProperty Name="cod_area" ColumnName="cod_area" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="nome_subarea" ColumnName="nome_subarea" />
+          <ScalarProperty Name="tipo_logradouro" ColumnName="tipo_logradouro" />
+          <ScalarProperty Name="nome_logradouro" ColumnName="nome_logradouro" />
+          <ScalarProperty Name="numero_logradouro" ColumnName="numero_logradouro" />
+          <ScalarProperty Name="compl_logradouro" ColumnName="compl_logradouro" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="setor_quadra" ColumnName="setor_quadra" />
+          <ScalarProperty Name="selo_lote" ColumnName="selo_lote" />
+          <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+          <ScalarProperty Name="primeiro_no_domicilio" ColumnName="primeiro_no_domicilio" />
+          <ScalarProperty Name="num_fam_dom" ColumnName="num_fam_dom" />
+          <ScalarProperty Name="num_pess_fam" ColumnName="num_pess_fam" />
+          <ScalarProperty Name="mulher_resp_fam" ColumnName="mulher_resp_fam" />
+          <ScalarProperty Name="deficiente_fam" ColumnName="deficiente_fam" />
+          <ScalarProperty Name="num_port_def" ColumnName="num_port_def" />
+          <ScalarProperty Name="possui_cadeirante" ColumnName="possui_cadeirante" />
+          <ScalarProperty Name="deficiencia_mobilidade" ColumnName="deficiencia_mobilidade" />
+          <ScalarProperty Name="cadunico" ColumnName="cadunico" />
+          <ScalarProperty Name="numero_nis" ColumnName="numero_nis" />
+          <ScalarProperty Name="renda_familiar" ColumnName="renda_familiar" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="nome_entrevistado" ColumnName="nome_entrevistado" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

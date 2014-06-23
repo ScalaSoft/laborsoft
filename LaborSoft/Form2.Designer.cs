@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cod_area = new System.Windows.Forms.TextBox();
+            this.identificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nome_subarea = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,10 +80,6 @@
             this.numero_nis = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.renda_familiar = new System.Windows.Forms.TextBox();
-            this.dbDataSet1 = new LaborSoft.dbDataSet1();
-            this.identificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.identificacaoTableAdapter = new LaborSoft.dbDataSet1TableAdapters.identificacaoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.identificacaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,13 +114,15 @@
             // 
             // cod_area
             // 
-            this.cod_area.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.identificacaoBindingSource, "cod_area", true));
-            this.cod_area.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.identificacaoBindingSource, "cod_area", true));
             this.cod_area.Location = new System.Drawing.Point(100, 10);
             this.cod_area.Name = "cod_area";
             this.cod_area.Size = new System.Drawing.Size(239, 20);
             this.cod_area.TabIndex = 3;
             this.cod_area.TextChanged += new System.EventHandler(this.cod_area_TextChanged);
+            // 
+            // identificacaoBindingSource
+            // 
+            this.identificacaoBindingSource.DataMember = "identificacao";
             // 
             // nome_subarea
             // 
@@ -519,20 +518,6 @@
             this.renda_familiar.Size = new System.Drawing.Size(100, 20);
             this.renda_familiar.TabIndex = 51;
             // 
-            // dbDataSet1
-            // 
-            this.dbDataSet1.DataSetName = "dbDataSet1";
-            this.dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // identificacaoBindingSource
-            // 
-            this.identificacaoBindingSource.DataMember = "identificacao";
-            this.identificacaoBindingSource.DataSource = this.dbDataSet1;
-            // 
-            // identificacaoTableAdapter
-            // 
-            this.identificacaoTableAdapter.ClearBeforeFill = true;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,7 +576,6 @@
             this.Name = "Form2";
             this.Text = "1 - Idêntificação";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.identificacaoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -650,8 +634,6 @@
         private System.Windows.Forms.TextBox numero_nis;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox renda_familiar;
-        private dbDataSet1 dbDataSet1;
         private System.Windows.Forms.BindingSource identificacaoBindingSource;
-        private dbDataSet1TableAdapters.identificacaoTableAdapter identificacaoTableAdapter;
     }
 }

@@ -37,7 +37,13 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.userControl11 = new LaborSoft.UserControl1();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.nome_rg_cpf = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.quadra_selo = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,12 +138,66 @@
             this.tabPage8.Text = "8 - Dados da Entrevista";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // userControl11
+            // btn_search
             // 
-            this.userControl11.Location = new System.Drawing.Point(1, -2);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(742, 38);
-            this.userControl11.TabIndex = 1;
+            this.btn_search.Image = global::LaborSoft.Properties.Resources.search;
+            this.btn_search.Location = new System.Drawing.Point(442, 6);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(24, 24);
+            this.btn_search.TabIndex = 9;
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(553, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Deletar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(472, 6);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 24);
+            this.btn_save.TabIndex = 7;
+            this.btn_save.Text = "Salvar";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // nome_rg_cpf
+            // 
+            this.nome_rg_cpf.Location = new System.Drawing.Point(106, 8);
+            this.nome_rg_cpf.Name = "nome_rg_cpf";
+            this.nome_rg_cpf.Size = new System.Drawing.Size(137, 20);
+            this.nome_rg_cpf.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nome, RG ou CPF:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(249, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Quadra/Selo:";
+            // 
+            // quadra_selo
+            // 
+            this.quadra_selo.Location = new System.Drawing.Point(327, 8);
+            this.quadra_selo.Name = "quadra_selo";
+            this.quadra_selo.Size = new System.Drawing.Size(100, 20);
+            this.quadra_selo.TabIndex = 11;
             // 
             // Form1
             // 
@@ -145,13 +205,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.userControl11);
+            this.Controls.Add(this.quadra_selo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.nome_rg_cpf);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "LaborSoft";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,7 +233,13 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
-        private UserControl1 userControl11;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.TextBox nome_rg_cpf;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox quadra_selo;
     }
 }
 

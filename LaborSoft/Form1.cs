@@ -37,59 +37,6 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
 
-        public bool insertIdentificacao() {
-            try
-            {
-                myConn.Open();
-            
-                string myInsertQuery = "INSERT INTO identificacao" + 
-                    "(cod_area, area, nome_subarea, renda_familiar, cadunico, numero_nis, deficiencia_mobilidade, possui_cadeirante, num_port_def, deficiente_fam, mulher_resp_fam, num_pess_fam, num_fam_dom, " +
-                    "primeiro_no_domicilio, domicilio, selo_lote, setor_quadra, cep, bairro, compl_logradouro, numero_logradouro, nome_logradouro, tipo_logradouro)" +
-                    "VALUES (@cod_area, @area, @nome_subarea, @renda_familiar, @cadunico," +
-                    "@numero_nis, @deficiencia_mobilidade, @possui_cadeirante, @num_port_def," + 
-                    "@deficiente_fam, @mulher_resp_fam, @num_pess_fam, @num_fam_dom," + 
-                    " @primeiro_no_domicilio, @domicilio, @selo_lote, @setor_quadra," + 
-                    " @cep, @bairro, @compl_logradouro, @numero_logradouro, @nome_logradouro," + 
-                    " @tipo_logradouro)";
-            
-                SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
-
-                cmd.Parameters.Add(new SQLiteParameter("cod_area", frm2.Cod_area.Text));
-                cmd.Parameters.AddWithValue("area", frm2.Area.Text);
-                cmd.Parameters.AddWithValue("nome_subarea", frm2.NomeSubarea.Text);
-                cmd.Parameters.AddWithValue("renda_familiar", frm2.RendaFamiliar.Text);
-                cmd.Parameters.AddWithValue("cadunico", frm2.Cadunico.Text);
-                cmd.Parameters.AddWithValue("numero_nis", frm2.NumeroNIS.Text);
-                cmd.Parameters.AddWithValue("deficiencia_mobilidade", frm2.DeficienteMobilidade.Text);
-                cmd.Parameters.AddWithValue("possui_cadeirante", frm2.PossuiCadeirante.Text);
-                cmd.Parameters.AddWithValue("num_port_def", frm2.NumeroDePortadoresDeDeficiencia.Text);
-                cmd.Parameters.AddWithValue("deficiente_fam", frm2.DeficienteNaFamilia.Text);
-                cmd.Parameters.AddWithValue("mulher_resp_fam", frm2.MulherResponsavel.Text);
-                cmd.Parameters.AddWithValue("num_pess_fam", frm2.NumeroDePessoasNaFamilia.Text);
-                cmd.Parameters.AddWithValue("num_fam_dom", frm2.NumeroDeFamiliasNoDomicilio.Text);
-                cmd.Parameters.AddWithValue("primeiro_no_domicilio", frm2.PrimeiroNoDomicilio.Text);
-                cmd.Parameters.AddWithValue("domicilio", frm2.Domicilio.Text);
-                cmd.Parameters.AddWithValue("selo_lote", frm2.SeloLote.Text);
-                cmd.Parameters.AddWithValue("setor_quadra", frm2.SetorQuadra.Text);
-                cmd.Parameters.AddWithValue("cep", frm2.Cep.Text);
-                cmd.Parameters.AddWithValue("bairro", frm2.Bairro.Text);
-                cmd.Parameters.AddWithValue("compl_logradouro", frm2.ComplLogradouro.Text);
-                cmd.Parameters.AddWithValue("numero_logradouro", frm2.NumeroLogradouro.Text);
-                cmd.Parameters.AddWithValue("nome_logradouro", frm2.NomeLogradouro);
-                cmd.Parameters.AddWithValue("tipo_logradouro", frm2.TipoLogradouro.Text);
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-            myConn.Close();
-
-            return true;
-        }
-
         private void setFormsIntoTabs()
         {
 
@@ -158,6 +105,65 @@ namespace LaborSoft
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (this.frm2.insertIdentificacao())
+            {
+                MessageBox.Show("Inserido com sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro!!!");
+            }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string word = this.nome_rg_cpf.Text;
+            
+            myConn.Open();
+
+
+            string myInsertQuery = "SELECT i.id as code FROM identificacao i " +
+                "LEFT JOIN dados_responsavel_familiar drf on (drf.id = i.id) " +
+                "WHERE i.nome_entrevistado LIKE '%" + Nome_rg_cpf.Text + "%' " +
+                "OR drf.cpf = '" + Nome_rg_cpf.Text + "'" +
+                "OR drf.rg_rne = '" + Nome_rg_cpf.Text + "' ";
+
+            if (Quadra_selo.Text != null)
+            {
+                myInsertQuery = myInsertQuery + "AND i.setor_quadra = '" + Quadra_selo.Text + "' " +
+                    "AND i.selo_lote = '" + Quadra_selo.Text + "'";
+            }
+
+            myInsertQuery = myInsertQuery + ";";
+            //myInsertQuery = "select id from identificacao where nome_entrevistado like '%" + Nome_rg_cpf.Text + "%'";
+
+            SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
+
+            MessageBox.Show(myInsertQuery);
+
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                MessageBox.Show("id: " + dr["code"]);
+            }
+            dr.Close();
+            myConn.Close();
+        }
+
+        public TextBox Nome_rg_cpf
+        {
+            get { return nome_rg_cpf; }
+            set { nome_rg_cpf = value; }
+        }
+
+        public TextBox Quadra_selo
+        {
+            get { return quadra_selo; }
+            set { quadra_selo = value; }
         }
     }
 }

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbModel1StoreContainer" CdmEntityContainer="dbEntities1">
+    <EntitySetMapping Name="dados_conjuge">
+      <EntityTypeMapping TypeName="dbModel1.dados_conjuge">
+        <MappingFragment StoreEntitySet="dados_conjuge">
+          <ScalarProperty Name="naturalidade" ColumnName="naturalidade" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="alfabetizado_rg" ColumnName="alfabetizado_rg" />
+          <ScalarProperty Name="assina_nome" ColumnName="assina_nome" />
+          <ScalarProperty Name="rg_rne" ColumnName="rg_rne" />
+          <ScalarProperty Name="rg_rne_compl" ColumnName="rg_rne_compl" />
+          <ScalarProperty Name="org_emissor" ColumnName="org_emissor" />
+          <ScalarProperty Name="org_emiss_uf" ColumnName="org_emiss_uf" />
+          <ScalarProperty Name="data_exp" ColumnName="data_exp" />
+          <ScalarProperty Name="nome_mae" ColumnName="nome_mae" />
+          <ScalarProperty Name="nome_pai" ColumnName="nome_pai" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dados_de_contato">
+      <EntityTypeMapping TypeName="dbModel1.dados_de_contato">
+        <MappingFragment StoreEntitySet="dados_de_contato">
+          <ScalarProperty Name="tel_residencial" ColumnName="tel_residencial" />
+          <ScalarProperty Name="tel_celular" ColumnName="tel_celular" />
+          <ScalarProperty Name="tel_comercial" ColumnName="tel_comercial" />
+          <ScalarProperty Name="tel_recado" ColumnName="tel_recado" />
+          <ScalarProperty Name="nome_recado" ColumnName="nome_recado" />
+          <ScalarProperty Name="tipo_logradouro" ColumnName="tipo_logradouro" />
+          <ScalarProperty Name="nome_logradouro" ColumnName="nome_logradouro" />
+          <ScalarProperty Name="numero_logradouro" ColumnName="numero_logradouro" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dados_entrevista">
+      <EntityTypeMapping TypeName="dbModel1.dados_entrevista">
+        <MappingFragment StoreEntitySet="dados_entrevista">
+          <ScalarProperty Name="entrevistador" ColumnName="entrevistador" />
+          <ScalarProperty Name="data_entrevista" ColumnName="data_entrevista" />
+          <ScalarProperty Name="supervisor" ColumnName="supervisor" />
+          <ScalarProperty Name="data_supervisao" ColumnName="data_supervisao" />
+          <ScalarProperty Name="condicao_entrevista" ColumnName="condicao_entrevista" />
+          <ScalarProperty Name="outra_condicao" ColumnName="outra_condicao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dados_responsavel_familiar">
+      <EntityTypeMapping TypeName="dbModel1.dados_responsavel_familiar">
+        <MappingFragment StoreEntitySet="dados_responsavel_familiar">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="relacao_c_responsavel_fam" ColumnName="relacao_c_responsavel_fam" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="nascimento" ColumnName="nascimento" />
+          <ScalarProperty Name="estado_civil" ColumnName="estado_civil" />
+          <ScalarProperty Name="regime_casamento" ColumnName="regime_casamento" />
+          <ScalarProperty Name="uniao_consencual" ColumnName="uniao_consencual" />
+          <ScalarProperty Name="frequenta_escola" ColumnName="frequenta_escola" />
+          <ScalarProperty Name="escolaridade" ColumnName="escolaridade" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="programa_social" ColumnName="programa_social" />
+          <ScalarProperty Name="valor_beneficio" ColumnName="valor_beneficio" />
+          <ScalarProperty Name="profissao" ColumnName="profissao" />
+          <ScalarProperty Name="renda_cidadao" ColumnName="renda_cidadao" />
+          <ScalarProperty Name="particularidade_deficiencia" ColumnName="particularidade_deficiencia" />
+          <ScalarProperty Name="possui_laudo_med" ColumnName="possui_laudo_med" />
+          <ScalarProperty Name="possui_numero_cid" ColumnName="possui_numero_cid" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="rg_rne" ColumnName="rg_rne" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="identificacao">
+      <EntityTypeMapping TypeName="dbModel1.identificacao">
+        <MappingFragment StoreEntitySet="identificacao">
+          <ScalarProperty Name="cod_area" ColumnName="cod_area" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="nome_subarea" ColumnName="nome_subarea" />
+          <ScalarProperty Name="tipo_logradouro" ColumnName="tipo_logradouro" />
+          <ScalarProperty Name="nome_logradouro" ColumnName="nome_logradouro" />
+          <ScalarProperty Name="numero_logradouro" ColumnName="numero_logradouro" />
+          <ScalarProperty Name="compl_logradouro" ColumnName="compl_logradouro" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="setor_quadra" ColumnName="setor_quadra" />
+          <ScalarProperty Name="selo_lote" ColumnName="selo_lote" />
+          <ScalarProperty Name="domicilio" ColumnName="domicilio" />
+          <ScalarProperty Name="primeiro_no_domicilio" ColumnName="primeiro_no_domicilio" />
+          <ScalarProperty Name="num_fam_dom" ColumnName="num_fam_dom" />
+          <ScalarProperty Name="num_pess_fam" ColumnName="num_pess_fam" />
+          <ScalarProperty Name="mulher_resp_fam" ColumnName="mulher_resp_fam" />
+          <ScalarProperty Name="deficiente_fam" ColumnName="deficiente_fam" />
+          <ScalarProperty Name="num_port_def" ColumnName="num_port_def" />
+          <ScalarProperty Name="possui_cadeirante" ColumnName="possui_cadeirante" />
+          <ScalarProperty Name="deficiencia_mobilidade" ColumnName="deficiencia_mobilidade" />
+          <ScalarProperty Name="cadunico" ColumnName="cadunico" />
+          <ScalarProperty Name="numero_nis" ColumnName="numero_nis" />
+          <ScalarProperty Name="renda_familiar" ColumnName="renda_familiar" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="nome_entrevistado" ColumnName="nome_entrevistado" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="participacao_organizacao">
+      <EntityTypeMapping TypeName="dbModel1.participacao_organizacao">
+        <MappingFragment StoreEntitySet="participacao_organizacao">
+          <ScalarProperty Name="assoc_conhece" ColumnName="assoc_conhece" />
+          <ScalarProperty Name="qual_assoc" ColumnName="qual_assoc" />
+          <ScalarProperty Name="participa_assoc" ColumnName="participa_assoc" />
+          <ScalarProperty Name="em_qual_participa" ColumnName="em_qual_participa" />
+          <ScalarProperty Name="razao_de_nao_participar" ColumnName="razao_de_nao_participar" />
+          <ScalarProperty Name="liderancas_area" ColumnName="liderancas_area" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uso_ocupacao_domicilio">
+      <EntityTypeMapping TypeName="dbModel1.uso_ocupacao_domicilio">
+        <MappingFragment StoreEntitySet="uso_ocupacao_domicilio">
+          <ScalarProperty Name="situacao" ColumnName="situacao" />
+          <ScalarProperty Name="situacao_de_risco" ColumnName="situacao_de_risco" />
+          <ScalarProperty Name="padrao_edificao" ColumnName="padrao_edificao" />
+          <ScalarProperty Name="tipo_ocupacao" ColumnName="tipo_ocupacao" />
+          <ScalarProperty Name="valor_do_imovel" ColumnName="valor_do_imovel" />
+          <ScalarProperty Name="tipo_uso_imovel" ColumnName="tipo_uso_imovel" />
+          <ScalarProperty Name="qual_atividade" ColumnName="qual_atividade" />
+          <ScalarProperty Name="banheiro" ColumnName="banheiro" />
+          <ScalarProperty Name="area_terreno" ColumnName="area_terreno" />
+          <ScalarProperty Name="possui_outro_imovel" ColumnName="possui_outro_imovel" />
+          <ScalarProperty Name="outro_imovel_onde" ColumnName="outro_imovel_onde" />
+          <ScalarProperty Name="tempo_no_domicilio" ColumnName="tempo_no_domicilio" />
+          <ScalarProperty Name="doc_prefeirtura" ColumnName="doc_prefeirtura" />
+          <ScalarProperty Name="doc_temp_moradia" ColumnName="doc_temp_moradia" />
+          <ScalarProperty Name="quais_docs" ColumnName="quais_docs" />
+          <ScalarProperty Name="tempo_mora_area" ColumnName="tempo_mora_area" />
+          <ScalarProperty Name="morava_onde_antes" ColumnName="morava_onde_antes" />
+          <ScalarProperty Name="tempo_mora_municipio" ColumnName="tempo_mora_municipio" />
+          <ScalarProperty Name="municipio_anterior" ColumnName="municipio_anterior" />
+          <ScalarProperty Name="psh" ColumnName="psh" />
+          <ScalarProperty Name="ano_psh" ColumnName="ano_psh" />
+          <ScalarProperty Name="tem_iptu" ColumnName="tem_iptu" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

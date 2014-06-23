@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel1.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="dbModel1StoreContainer">
+    <EntitySet Name="dados_conjuge" EntityType="dbModel1.Store.dados_conjuge" store:Type="Tables" />
+    <EntitySet Name="dados_de_contato" EntityType="dbModel1.Store.dados_de_contato" store:Type="Tables" />
+    <EntitySet Name="dados_entrevista" EntityType="dbModel1.Store.dados_entrevista" store:Type="Tables" />
+    <EntitySet Name="dados_responsavel_familiar" EntityType="dbModel1.Store.dados_responsavel_familiar" store:Type="Tables" />
+    <EntitySet Name="identificacao" EntityType="dbModel1.Store.identificacao" store:Type="Tables" />
+    <EntitySet Name="participacao_organizacao" EntityType="dbModel1.Store.participacao_organizacao" store:Type="Tables" />
+    <EntitySet Name="uso_ocupacao_domicilio" EntityType="dbModel1.Store.uso_ocupacao_domicilio" store:Type="Tables" />
+    <AssociationSet Name="FK_dados_conjuge_0_0" Association="dbModel1.Store.FK_dados_conjuge_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_conjuge" EntitySet="dados_conjuge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_de_contato_0_0" Association="dbModel1.Store.FK_dados_de_contato_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_de_contato" EntitySet="dados_de_contato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_entrevista_0_0" Association="dbModel1.Store.FK_dados_entrevista_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_entrevista" EntitySet="dados_entrevista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_responsavel_familiar_0_0" Association="dbModel1.Store.FK_dados_responsavel_familiar_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_responsavel_familiar" EntitySet="dados_responsavel_familiar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_participacao_organizacao_0_0" Association="dbModel1.Store.FK_participacao_organizacao_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="participacao_organizacao" EntitySet="participacao_organizacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uso_ocupacao_domicilio_0_0" Association="dbModel1.Store.FK_uso_ocupacao_domicilio_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="uso_ocupacao_domicilio" EntitySet="uso_ocupacao_domicilio" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dados_conjuge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="naturalidade" Type="varchar" MaxLength="255" />
+    <Property Name="UF" Type="varchar" />
+    <Property Name="cpf" Type="varchar" />
+    <Property Name="alfabetizado_rg" Type="bit" />
+    <Property Name="assina_nome" Type="bit" />
+    <Property Name="rg_rne" Type="varchar" />
+    <Property Name="rg_rne_compl" Type="varchar" />
+    <Property Name="org_emissor" Type="varchar" />
+    <Property Name="org_emiss_uf" Type="varchar" />
+    <Property Name="data_exp" Type="varchar" />
+    <Property Name="nome_mae" Type="varchar" />
+    <Property Name="nome_pai" Type="varchar" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="dados_de_contato">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="tel_residencial" Type="varchar" />
+    <Property Name="tel_celular" Type="varchar" />
+    <Property Name="tel_comercial" Type="varchar" />
+    <Property Name="tel_recado" Type="varchar" />
+    <Property Name="nome_recado" Type="varchar" />
+    <Property Name="tipo_logradouro" Type="varchar" />
+    <Property Name="nome_logradouro" Type="varchar" />
+    <Property Name="numero_logradouro" Type="decimal" Precision="53" />
+    <Property Name="complemento" Type="varchar" />
+    <Property Name="bairro" Type="varchar" />
+    <Property Name="cep" Type="varchar" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="dados_entrevista">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="entrevistador" Type="varchar" />
+    <Property Name="data_entrevista" Type="varchar" />
+    <Property Name="supervisor" Type="varchar" />
+    <Property Name="data_supervisao" Type="varchar" />
+    <Property Name="condicao_entrevista" Type="varchar" />
+    <Property Name="outra_condicao" Type="varchar" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="dados_responsavel_familiar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="relacao_c_responsavel_fam" Type="varchar" MaxLength="255" />
+    <Property Name="sexo" Type="varchar" MaxLength="255" />
+    <Property Name="nascimento" Type="varchar" MaxLength="255" />
+    <Property Name="estado_civil" Type="varchar" MaxLength="255" />
+    <Property Name="regime_casamento" Type="varchar" MaxLength="255" />
+    <Property Name="uniao_consencual" Type="bit" />
+    <Property Name="frequenta_escola" Type="bit" />
+    <Property Name="escolaridade" Type="varchar" MaxLength="255" />
+    <Property Name="beneficiario" Type="bit" />
+    <Property Name="programa_social" Type="varchar" MaxLength="255" />
+    <Property Name="valor_beneficio" Type="varchar" MaxLength="255" />
+    <Property Name="profissao" Type="varchar" />
+    <Property Name="renda_cidadao" Type="varchar" MaxLength="255" />
+    <Property Name="particularidade_deficiencia" Type="varchar" MaxLength="255" />
+    <Property Name="possui_laudo_med" Type="bit" />
+    <Property Name="possui_numero_cid" Type="bit" />
+    <Property Name="cpf" Type="varchar" MaxLength="255" />
+    <Property Name="rg_rne" Type="varchar" MaxLength="255" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="identificacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="cod_area" Type="varchar" MaxLength="255" />
+    <Property Name="area" Type="varchar" MaxLength="255" />
+    <Property Name="nome_subarea" Type="varchar" MaxLength="255" />
+    <Property Name="tipo_logradouro" Type="varchar" MaxLength="255" />
+    <Property Name="nome_logradouro" Type="varchar" MaxLength="255" />
+    <Property Name="numero_logradouro" Type="integer" />
+    <Property Name="compl_logradouro" Type="varchar" MaxLength="255" />
+    <Property Name="bairro" Type="varchar" MaxLength="255" />
+    <Property Name="cep" Type="varchar" MaxLength="40" />
+    <Property Name="setor_quadra" Type="varchar" MaxLength="255" />
+    <Property Name="selo_lote" Type="varchar" MaxLength="255" />
+    <Property Name="domicilio" Type="varchar" MaxLength="255" />
+    <Property Name="primeiro_no_domicilio" Type="bit" />
+    <Property Name="num_fam_dom" Type="decimal" Precision="10" />
+    <Property Name="num_pess_fam" Type="decimal" Precision="10" />
+    <Property Name="mulher_resp_fam" Type="bit" />
+    <Property Name="deficiente_fam" Type="bit" />
+    <Property Name="num_port_def" Type="decimal" Precision="53" />
+    <Property Name="possui_cadeirante" Type="bit" />
+    <Property Name="deficiencia_mobilidade" Type="bit" />
+    <Property Name="cadunico" Type="bit" />
+    <Property Name="numero_nis" Type="decimal" Precision="53" />
+    <Property Name="renda_familiar" Type="varchar" />
+    <Property Name="complemento" Type="varchar" MaxLength="255" />
+    <Property Name="nome_entrevistado" Type="varchar" MaxLength="255" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="participacao_organizacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="assoc_conhece" Type="bit" />
+    <Property Name="qual_assoc" Type="varchar" />
+    <Property Name="participa_assoc" Type="bit" />
+    <Property Name="em_qual_participa" Type="varchar" />
+    <Property Name="razao_de_nao_participar" Type="varchar" />
+    <Property Name="liderancas_area" Type="varchar" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="uso_ocupacao_domicilio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="situacao" Type="varchar" />
+    <Property Name="situacao_de_risco" Type="bit" />
+    <Property Name="padrao_edificao" Type="varchar" />
+    <Property Name="tipo_ocupacao" Type="varchar" />
+    <Property Name="valor_do_imovel" Type="varchar" />
+    <Property Name="tipo_uso_imovel" Type="varchar" />
+    <Property Name="qual_atividade" Type="varchar" />
+    <Property Name="banheiro" Type="bit" />
+    <Property Name="area_terreno" Type="varchar" />
+    <Property Name="possui_outro_imovel" Type="bit" />
+    <Property Name="outro_imovel_onde" Type="varchar" />
+    <Property Name="tempo_no_domicilio" Type="varchar" />
+    <Property Name="doc_prefeirtura" Type="bit" />
+    <Property Name="doc_temp_moradia" Type="bit" />
+    <Property Name="quais_docs" Type="varchar" />
+    <Property Name="tempo_mora_area" Type="varchar" />
+    <Property Name="morava_onde_antes" Type="varchar" />
+    <Property Name="tempo_mora_municipio" Type="varchar" />
+    <Property Name="municipio_anterior" Type="varchar" />
+    <Property Name="psh" Type="bit" />
+    <Property Name="ano_psh" Type="decimal" Precision="53" />
+    <Property Name="tem_iptu" Type="bit" />
+    <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK_dados_conjuge_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="dados_conjuge" Type="dbModel1.Store.dados_conjuge" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_conjuge">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_de_contato_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="dados_de_contato" Type="dbModel1.Store.dados_de_contato" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_de_contato">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_entrevista_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="dados_entrevista" Type="dbModel1.Store.dados_entrevista" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_entrevista">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_responsavel_familiar_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="dados_responsavel_familiar" Type="dbModel1.Store.dados_responsavel_familiar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_responsavel_familiar">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_participacao_organizacao_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="participacao_organizacao" Type="dbModel1.Store.participacao_organizacao" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="participacao_organizacao">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uso_ocupacao_domicilio_0_0">
+    <End Role="identificacao" Type="dbModel1.Store.identificacao" Multiplicity="1" />
+    <End Role="uso_ocupacao_domicilio" Type="dbModel1.Store.uso_ocupacao_domicilio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="uso_ocupacao_domicilio">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

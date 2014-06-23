@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="dbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dados_conjuge" EntityType="dbModel1.dados_conjuge" />
+    <EntitySet Name="dados_de_contato" EntityType="dbModel1.dados_de_contato" />
+    <EntitySet Name="dados_entrevista" EntityType="dbModel1.dados_entrevista" />
+    <EntitySet Name="dados_responsavel_familiar" EntityType="dbModel1.dados_responsavel_familiar" />
+    <EntitySet Name="identificacao" EntityType="dbModel1.identificacao" />
+    <EntitySet Name="participacao_organizacao" EntityType="dbModel1.participacao_organizacao" />
+    <EntitySet Name="uso_ocupacao_domicilio" EntityType="dbModel1.uso_ocupacao_domicilio" />
+    <AssociationSet Name="FK_dados_conjuge_0_0" Association="dbModel1.FK_dados_conjuge_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_conjuge" EntitySet="dados_conjuge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_de_contato_0_0" Association="dbModel1.FK_dados_de_contato_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_de_contato" EntitySet="dados_de_contato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_entrevista_0_0" Association="dbModel1.FK_dados_entrevista_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_entrevista" EntitySet="dados_entrevista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dados_responsavel_familiar_0_0" Association="dbModel1.FK_dados_responsavel_familiar_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="dados_responsavel_familiar" EntitySet="dados_responsavel_familiar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_participacao_organizacao_0_0" Association="dbModel1.FK_participacao_organizacao_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="participacao_organizacao" EntitySet="participacao_organizacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uso_ocupacao_domicilio_0_0" Association="dbModel1.FK_uso_ocupacao_domicilio_0_0">
+      <End Role="identificacao" EntitySet="identificacao" />
+      <End Role="uso_ocupacao_domicilio" EntitySet="uso_ocupacao_domicilio" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dados_conjuge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="naturalidade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="UF" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="cpf" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="alfabetizado_rg" Type="Boolean" />
+    <Property Name="assina_nome" Type="Boolean" />
+    <Property Name="rg_rne" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="rg_rne_compl" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="org_emissor" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="org_emiss_uf" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="data_exp" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="nome_mae" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="nome_pai" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_dados_conjuge_0_0" FromRole="dados_conjuge" ToRole="identificacao" />
+  </EntityType>
+  <EntityType Name="dados_de_contato">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="tel_residencial" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tel_celular" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tel_comercial" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tel_recado" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="nome_recado" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tipo_logradouro" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="nome_logradouro" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="numero_logradouro" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="complemento" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="bairro" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="cep" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_dados_de_contato_0_0" FromRole="dados_de_contato" ToRole="identificacao" />
+  </EntityType>
+  <EntityType Name="dados_entrevista">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="entrevistador" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="data_entrevista" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="supervisor" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="data_supervisao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="condicao_entrevista" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="outra_condicao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_dados_entrevista_0_0" FromRole="dados_entrevista" ToRole="identificacao" />
+  </EntityType>
+  <EntityType Name="dados_responsavel_familiar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="relacao_c_responsavel_fam" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sexo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nascimento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="estado_civil" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="regime_casamento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="uniao_consencual" Type="Boolean" />
+    <Property Name="frequenta_escola" Type="Boolean" />
+    <Property Name="escolaridade" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="beneficiario" Type="Boolean" />
+    <Property Name="programa_social" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="valor_beneficio" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="profissao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="renda_cidadao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="particularidade_deficiencia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="possui_laudo_med" Type="Boolean" />
+    <Property Name="possui_numero_cid" Type="Boolean" />
+    <Property Name="cpf" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rg_rne" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_dados_responsavel_familiar_0_0" FromRole="dados_responsavel_familiar" ToRole="identificacao" />
+  </EntityType>
+  <EntityType Name="identificacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="cod_area" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="area" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nome_subarea" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="tipo_logradouro" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nome_logradouro" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="numero_logradouro" Type="Int64" />
+    <Property Name="compl_logradouro" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="bairro" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="cep" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="setor_quadra" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="selo_lote" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="domicilio" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="primeiro_no_domicilio" Type="Boolean" />
+    <Property Name="num_fam_dom" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="num_pess_fam" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="mulher_resp_fam" Type="Boolean" />
+    <Property Name="deficiente_fam" Type="Boolean" />
+    <Property Name="num_port_def" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="possui_cadeirante" Type="Boolean" />
+    <Property Name="deficiencia_mobilidade" Type="Boolean" />
+    <Property Name="cadunico" Type="Boolean" />
+    <Property Name="numero_nis" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="renda_familiar" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="complemento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nome_entrevistado" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="dados_conjuge" Relationship="dbModel1.FK_dados_conjuge_0_0" FromRole="identificacao" ToRole="dados_conjuge" />
+    <NavigationProperty Name="dados_de_contato" Relationship="dbModel1.FK_dados_de_contato_0_0" FromRole="identificacao" ToRole="dados_de_contato" />
+    <NavigationProperty Name="dados_entrevista" Relationship="dbModel1.FK_dados_entrevista_0_0" FromRole="identificacao" ToRole="dados_entrevista" />
+    <NavigationProperty Name="dados_responsavel_familiar" Relationship="dbModel1.FK_dados_responsavel_familiar_0_0" FromRole="identificacao" ToRole="dados_responsavel_familiar" />
+    <NavigationProperty Name="participacao_organizacao" Relationship="dbModel1.FK_participacao_organizacao_0_0" FromRole="identificacao" ToRole="participacao_organizacao" />
+    <NavigationProperty Name="uso_ocupacao_domicilio" Relationship="dbModel1.FK_uso_ocupacao_domicilio_0_0" FromRole="identificacao" ToRole="uso_ocupacao_domicilio" />
+  </EntityType>
+  <EntityType Name="participacao_organizacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="assoc_conhece" Type="Boolean" />
+    <Property Name="qual_assoc" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="participa_assoc" Type="Boolean" />
+    <Property Name="em_qual_participa" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="razao_de_nao_participar" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="liderancas_area" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_participacao_organizacao_0_0" FromRole="participacao_organizacao" ToRole="identificacao" />
+  </EntityType>
+  <EntityType Name="uso_ocupacao_domicilio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="situacao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="situacao_de_risco" Type="Boolean" />
+    <Property Name="padrao_edificao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tipo_ocupacao" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="valor_do_imovel" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tipo_uso_imovel" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="qual_atividade" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="banheiro" Type="Boolean" />
+    <Property Name="area_terreno" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="possui_outro_imovel" Type="Boolean" />
+    <Property Name="outro_imovel_onde" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tempo_no_domicilio" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="doc_prefeirtura" Type="Boolean" />
+    <Property Name="doc_temp_moradia" Type="Boolean" />
+    <Property Name="quais_docs" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tempo_mora_area" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="morava_onde_antes" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="tempo_mora_municipio" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="municipio_anterior" Type="String" MaxLength="2147483647" Unicode="false" FixedLength="false" />
+    <Property Name="psh" Type="Boolean" />
+    <Property Name="ano_psh" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="tem_iptu" Type="Boolean" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="identificacao" Relationship="dbModel1.FK_uso_ocupacao_domicilio_0_0" FromRole="uso_ocupacao_domicilio" ToRole="identificacao" />
+  </EntityType>
+  <Association Name="FK_dados_conjuge_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="dados_conjuge" Type="dbModel1.dados_conjuge" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_conjuge">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_de_contato_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="dados_de_contato" Type="dbModel1.dados_de_contato" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_de_contato">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_entrevista_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="dados_entrevista" Type="dbModel1.dados_entrevista" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_entrevista">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dados_responsavel_familiar_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="dados_responsavel_familiar" Type="dbModel1.dados_responsavel_familiar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dados_responsavel_familiar">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_participacao_organizacao_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="participacao_organizacao" Type="dbModel1.participacao_organizacao" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="participacao_organizacao">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uso_ocupacao_domicilio_0_0">
+    <End Role="identificacao" Type="dbModel1.identificacao" Multiplicity="1" />
+    <End Role="uso_ocupacao_domicilio" Type="dbModel1.uso_ocupacao_domicilio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="identificacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="uso_ocupacao_domicilio">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
