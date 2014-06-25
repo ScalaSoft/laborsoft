@@ -71,7 +71,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.desficiente_fam = new System.Windows.Forms.CheckBox();
+            this.deficiente_fam = new System.Windows.Forms.CheckBox();
             this.possui_cadeirante = new System.Windows.Forms.CheckBox();
             this.deficiencia_mobilidade = new System.Windows.Forms.CheckBox();
             this.cadunico = new System.Windows.Forms.CheckBox();
@@ -443,14 +443,14 @@
             this.label23.TabIndex = 41;
             this.label23.Text = "A família é cadastrada\r\nno Cadúnico?";
             // 
-            // desficiente_fam
+            // deficiente_fam
             // 
-            this.desficiente_fam.AutoSize = true;
-            this.desficiente_fam.Location = new System.Drawing.Point(130, 234);
-            this.desficiente_fam.Name = "desficiente_fam";
-            this.desficiente_fam.Size = new System.Drawing.Size(15, 14);
-            this.desficiente_fam.TabIndex = 42;
-            this.desficiente_fam.UseVisualStyleBackColor = true;
+            this.deficiente_fam.AutoSize = true;
+            this.deficiente_fam.Location = new System.Drawing.Point(130, 234);
+            this.deficiente_fam.Name = "deficiente_fam";
+            this.deficiente_fam.Size = new System.Drawing.Size(15, 14);
+            this.deficiente_fam.TabIndex = 42;
+            this.deficiente_fam.UseVisualStyleBackColor = true;
             // 
             // possui_cadeirante
             // 
@@ -531,7 +531,7 @@
             this.Controls.Add(this.cadunico);
             this.Controls.Add(this.deficiencia_mobilidade);
             this.Controls.Add(this.possui_cadeirante);
-            this.Controls.Add(this.desficiente_fam);
+            this.Controls.Add(this.deficiente_fam);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -625,7 +625,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox desficiente_fam;
+        private System.Windows.Forms.CheckBox deficiente_fam;
         private System.Windows.Forms.CheckBox possui_cadeirante;
         private System.Windows.Forms.CheckBox deficiencia_mobilidade;
         private System.Windows.Forms.CheckBox cadunico;

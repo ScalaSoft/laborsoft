@@ -12,6 +12,7 @@ namespace LaborSoft
 {
     public partial class Form1 : Form
     {
+        int code;
         Form2 frm2;
         Form3 frm3;
         Form4 frm4;
@@ -109,13 +110,28 @@ namespace LaborSoft
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (this.frm2.insertIdentificacao())
+            if (this.code != 0)
             {
-                MessageBox.Show("Inserido com sucesso");
+                if (this.frm2.updateIdentificacao(this.code) &&
+                    this.frm3.updateDadosResponsavelFamiliar(this.code))
+                {
+                    MessageBox.Show("Atualizado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao tentar atualizar.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Erro!!!");
+            else {
+                if (this.frm2.insertIdentificacao() &&
+                    this.frm3.insertDadosResponsavelFamiliar())
+                {
+                    MessageBox.Show("Inserido com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro!!!");
+                }
             }
         }
 
@@ -124,7 +140,6 @@ namespace LaborSoft
             string word = this.nome_rg_cpf.Text;
             
             myConn.Open();
-
 
             string myInsertQuery = "SELECT i.id as code FROM identificacao i " +
                 "LEFT JOIN dados_responsavel_familiar drf on (drf.id = i.id) " +
@@ -143,12 +158,12 @@ namespace LaborSoft
 
             SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
-            MessageBox.Show(myInsertQuery);
-
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                MessageBox.Show("id: " + dr["code"]);
+                this.code =  Convert.ToInt32(dr["code"]);
+                this.frm2.populateForm(this.code);
+                this.frm3.populateForm(this.code);
             }
             dr.Close();
             myConn.Close();
@@ -164,6 +179,25 @@ namespace LaborSoft
         {
             get { return quadra_selo; }
             set { quadra_selo = value; }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            this.code = 0;
+            Utilities.ResetAllControls(this);
+            Utilities.ResetAllControls(this.frm2);
+            Utilities.ResetAllControls(this.frm3);
+            Utilities.ResetAllControls(this.frm4);
+            Utilities.ResetAllControls(this.frm5);
+            Utilities.ResetAllControls(this.frm6);
+            Utilities.ResetAllControls(this.frm7);
+            Utilities.ResetAllControls(this.frm8);
+            Utilities.ResetAllControls(this.frm9);
         }
     }
 }

@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.quadra_selo = new System.Windows.Forms.TextBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,7 +142,7 @@
             // btn_search
             // 
             this.btn_search.Image = global::LaborSoft.Properties.Resources.search;
-            this.btn_search.Location = new System.Drawing.Point(442, 6);
+            this.btn_search.Location = new System.Drawing.Point(433, 5);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(24, 24);
             this.btn_search.TabIndex = 9;
@@ -150,16 +151,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(553, 6);
+            this.button1.Location = new System.Drawing.Point(676, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 24);
             this.button1.TabIndex = 8;
             this.button1.Text = "Deletar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(472, 6);
+            this.btn_save.Location = new System.Drawing.Point(495, 6);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 24);
             this.btn_save.TabIndex = 7;
@@ -199,12 +201,23 @@
             this.quadra_selo.Size = new System.Drawing.Size(100, 20);
             this.quadra_selo.TabIndex = 11;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(576, 6);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(94, 23);
+            this.btn_clear.TabIndex = 12;
+            this.btn_clear.Text = "Limpar Pesquisa";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.quadra_selo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_search);
@@ -240,6 +253,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox quadra_selo;
+        private System.Windows.Forms.Button btn_clear;
     }
 }
 

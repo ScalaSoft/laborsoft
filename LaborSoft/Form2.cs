@@ -67,7 +67,7 @@ namespace LaborSoft
                 cmd.Parameters.AddWithValue("bairro", this.Bairro.Text);
                 cmd.Parameters.AddWithValue("compl_logradouro", this.ComplLogradouro.Text);
                 cmd.Parameters.AddWithValue("numero_logradouro", this.NumeroLogradouro.Text);
-                cmd.Parameters.AddWithValue("nome_logradouro", this.NomeLogradouro.Text.ToString());
+                cmd.Parameters.AddWithValue("nome_logradouro", this.NomeLogradouro.Text);
                 cmd.Parameters.AddWithValue("tipo_logradouro", this.TipoLogradouro.Text);
                 cmd.Parameters.AddWithValue("complemento", this.Complemento.Text);
                 cmd.Parameters.AddWithValue("nome_entrevistado", this.NomeDoEntrevistado.Text);
@@ -82,6 +82,108 @@ namespace LaborSoft
             myConn.Close();
 
             return true;
+        }
+
+        public bool updateIdentificacao(int code)
+        {
+            try
+            {
+                myConn.Open();
+
+                string myInsertQuery = "UPDATE identificacao SET " +
+                    "cod_area = '"+this.cod_area.Text+"', " +
+                    "area  = '"+this.area.Text+"', " +
+                    "nome_subarea= '"+this.nome_subarea.Text+"', " +
+                    "renda_familiar= '"+this.renda_familiar.Text+"', " +
+                    "cadunico= '"+this.cadunico.Text+"', " +
+                    "numero_nis= '"+this.numero_nis.Text+"', " +
+                    "deficiencia_mobilidade= '"+this.deficiencia_mobilidade.Text+"', " +
+                    "possui_cadeirante= '"+this.possui_cadeirante.Text+"', " +
+                    "num_port_def= '"+this.num_port_def.Text+"', " +
+                    "deficiente_fam= '"+this.deficiente_fam.Text+"', " +
+                    "mulher_resp_fam= '"+this.mulher_resp_fam.Text+"', " +
+                    "num_pess_fam= '"+this.num_pess_fam.Text+"', " +
+                    "num_fam_dom= '"+this.num_fam_dom.Text+"', " +
+                    "primeiro_no_domicilio= '"+this.primeiro_no_domicilio.Text+"', " +
+                    "domicilio= '"+this.domicilio.Text+"', " +
+                    "selo_lote= '"+this.selo_lote.Text+"', " +
+                    "setor_quadra= '"+this.setor_quadra.Text+"', " +
+                    "cep= '"+this.cep.Text+"', " +
+                    "bairro= '"+this.bairro.Text+"', " +
+                    "compl_logradouro= '"+this.compl_logradouro.Text+"', " +
+                    "numero_logradouro= '"+this.numero_logradouro.Text+"', " +
+                    "nome_logradouro= '"+this.nome_logradouro.Text+"', " +
+                    "tipo_logradouro= '"+this.tipo_logradouro.Text+"', " +
+                    "complemento= '"+this.complemento.Text+"', " +
+                    "nome_entrevistado = '"+this.nome_entrevistado.Text+"' "+
+                    "WHERE id = '"+code+"';";
+
+                SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            myConn.Close();
+
+            return true;
+        }
+
+        public void populateForm(int Cod) {
+            
+            myConn.Open();
+
+            string mySelectQuery = "SELECT * FROM identificacao WHERE id = '"+Cod+"';";
+
+            SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+            MessageBox.Show(mySelectQuery);
+
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                this.cod_area.Text = dr["cod_area"].ToString();
+                this.Area.Text = dr["area"].ToString();
+                this.NomeSubarea.Text = dr["nome_subarea"].ToString(); 
+                this.RendaFamiliar.Text = dr["renda_familiar"].ToString();
+                this.Cadunico.Checked = Convert.ToBoolean(dr["cadunico"]);
+                this.NumeroNIS.Text = dr["numero_nis"].ToString();
+                this.DeficienteMobilidade.Checked = Convert.ToBoolean(dr["deficiencia_mobilidade"]);
+                this.PossuiCadeirante.Checked = Convert.ToBoolean(dr["possui_cadeirante"]);
+                this.NumeroDePortadoresDeDeficiencia.Text = dr["num_port_def"].ToString(); 
+                this.DeficienteNaFamilia.Checked = Convert.ToBoolean(dr["deficiente_fam"]);
+                this.MulherResponsavel.Text = selectCheckBoxValue(Convert.ToBoolean(dr["mulher_resp_fam"]));
+                this.NumeroDePessoasNaFamilia.Text = dr["num_pess_fam"].ToString();
+                this.NumeroDeFamiliasNoDomicilio.Text = dr["num_fam_dom"].ToString();
+                this.PrimeiroNoDomicilio.Text = dr["primeiro_no_domicilio"].ToString();
+                this.Domicilio.Text = dr["domicilio"].ToString();
+                this.SeloLote.Text = dr["selo_lote"].ToString();
+                this.SetorQuadra.Text = dr["setor_quadra"].ToString();
+                this.Cep.Text = dr["cep"].ToString();
+                this.Bairro.Text = dr["bairro"].ToString();
+                this.ComplLogradouro.Text = dr["compl_logradouro"].ToString(); 
+                this.NumeroLogradouro.Text = dr["numero_logradouro"].ToString();
+                this.NomeLogradouro.Text = dr["nome_logradouro"].ToString();
+                this.TipoLogradouro.Text = dr["tipo_logradouro"].ToString();
+                this.Complemento.Text = dr["complemento"].ToString();
+                this.NomeDoEntrevistado.Text = dr["nome_entrevistado"].ToString();
+            }
+
+            dr.Close();
+            myConn.Close();
+            
+        }
+
+        private string selectCheckBoxValue(bool val) {
+            if (val)
+            {
+                return Convert.ToString("Sim");
+            }
+            else {
+                return Convert.ToString("Não");
+            }
         }
         
         private void label2_Click(object sender, EventArgs e)
@@ -212,8 +314,8 @@ namespace LaborSoft
 
         public CheckBox DeficienteNaFamilia
         {
-            get { return desficiente_fam; }
-            set { desficiente_fam = value; }
+            get { return deficiente_fam; }
+            set { deficiente_fam = value; }
         }
 
         public TextBox NumeroDePortadoresDeDeficiencia
