@@ -13,6 +13,7 @@ namespace LaborSoft
     public partial class Form3 : Form
     {
         SQLiteConnection myConn;
+        Utilities util = new Utilities();
 
         public Form3()
         {
@@ -40,49 +41,57 @@ namespace LaborSoft
 
         public bool insertDadosResponsavelFamiliar()
         {
-            try
+            int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
+            if (check_cpf == 0)
             {
-                myConn.Open();
+                try
+                {
+                    myConn.Open();
 
-                string myInsertQuery = "INSERT INTO dados_responsavel_familiar" +
-                         "(nome, sexo, nascimento, estado_civil, regime_casamento," +
-                         "uniao_consencual, frequenta_escola, escolaridade, beneficiario," +
-                         "programa_social, valor_beneficio, profissao, renda_cidadao, " +
-                         "particularidade_deficiencia, possui_laudo_med, possui_numero_cid, " +
-                         "cpf, rg_rne, naturalidade, org_expedidor_cpf, data_expedicao_cpf," +
-                         "nome_mae, nome_pai) " +
-                         "VALUES(" +
-                        "'"+this.nome.Text + "', " +
-                        "'" + this.sexo.Text + "', " +
-                        "'" + this.nascimento.Text + "', " +
-                        "'" + this.estado_civil.Text + "', " +
-                        "'" + this.regime_casamento.Text + "', " +
-                        "'" + this.uniao_consensual.Checked + "', " +
-                        "'" + this.frequentou_escola.Checked + "', " +
-                        "'" + this.escolaridade.Text + "', " +
-                        "'" + this.beneficiario_prog_soc.Checked + "', " +
-                        "'" + this.prog_soc_qual.Text + "', " +
-                        "'" + this.valor_beneficio.Text + "', " +
-                        "'" + this.profissão.Text + "', " +
-                        "'" + this.renda.Text + "', " +
-                        "'" + this.particularidade_deficiencia.Text + "', " +
-                        "'" + this.possui_laudo_medico.Checked + "', " +
-                        "'" + this.possui_cid.Checked + "', " +
-                        "'" + this.cpf.Text + "', " +
-                        "'" + this.rg_rne.Text + "', " +
-                        "'" + this.naturalidade.Text + "', " +
-                        "'" + this.org_exp_cpf.Text + "', " +
-                        "'" + this.data_exp_cpf.Text + "', " +
-                        "'" + this.nome_mae.Text + "', " +
-                        "'" + this.nome_pai + "')";
+                    string myInsertQuery = "INSERT INTO dados_responsavel_familiar" +
+                             "(nome, sexo, nascimento, estado_civil, regime_casamento," +
+                             "uniao_consencual, frequenta_escola, escolaridade, beneficiario," +
+                             "programa_social, valor_beneficio, profissao, renda_cidadao, " +
+                             "particularidade_deficiencia, possui_laudo_med, possui_numero_cid, " +
+                             "cpf, rg_rne, naturalidade, org_expedidor_cpf, data_expedicao_cpf," +
+                             "nome_mae, nome_pai) " +
+                             "VALUES(" +
+                            "'" + this.nome.Text + "', " +
+                            "'" + this.sexo.Text + "', " +
+                            "'" + this.nascimento.Text + "', " +
+                            "'" + this.estado_civil.Text + "', " +
+                            "'" + this.regime_casamento.Text + "', " +
+                            "'" + this.uniao_consensual.Checked + "', " +
+                            "'" + this.frequentou_escola.Checked + "', " +
+                            "'" + this.escolaridade.Text + "', " +
+                            "'" + this.beneficiario_prog_soc.Checked + "', " +
+                            "'" + this.prog_soc_qual.Text + "', " +
+                            "'" + this.valor_beneficio.Text + "', " +
+                            "'" + this.profissão.Text + "', " +
+                            "'" + this.renda.Text + "', " +
+                            "'" + this.particularidade_deficiencia.Text + "', " +
+                            "'" + this.possui_laudo_medico.Checked + "', " +
+                            "'" + this.possui_cid.Checked + "', " +
+                            "'" + this.cpf.Text + "', " +
+                            "'" + this.rg_rne.Text + "', " +
+                            "'" + this.naturalidade.Text + "', " +
+                            "'" + this.org_exp_cpf.Text + "', " +
+                            "'" + this.data_exp_cpf.Text + "', " +
+                            "'" + this.nome_mae.Text + "', " +
+                            "'" + this.nome_pai.Text + "')";
 
-                SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
+                    SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception(ex.Message);
+                updateDadosResponsavelFamiliar(check_cpf);
             }
 
             myConn.Close();
@@ -92,44 +101,52 @@ namespace LaborSoft
 
         public bool updateDadosResponsavelFamiliar(int code)
         {
-            try
+            int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
+            if (check_cpf == 0)
             {
-                myConn.Open();
-
-                string myInsertQuery = "UPDATE dados_responsavel_familiar SET " +
-                                        "nome = '" + this.nome.Text + "', " +
-                                        "sexo = '" + this.sexo.Text + "', " +
-                                        "nascimento = '" + this.nascimento.Text + "', " +
-                                        "estado_civil = '" + this.estado_civil.Text + "', " +
-                                        "regime_casamento = '" + this.regime_casamento.Text + "'," +
-                                        "uniao_consencual = '" + this.uniao_consensual.Checked + "', " +
-                                        "frequenta_escola = '" + this.frequentou_escola.Checked + "', " +
-                                        "escolaridade = '" + this.escolaridade.Text + "', " +
-                                        "beneficiario = '" + this.beneficiario_prog_soc.Checked + "', " +
-                                        "programa_social  = '" + this.prog_soc_qual.Text + "', " +
-                                        "valor_beneficio = '" + this.valor_beneficio.Text + "', " +
-                                        "profissao = '" + this.profissão.Text + "', " +
-                                        "renda_cidadao = '" + this.renda.Text + "', " +
-                                        "particularidade_deficiencia = '" + this.particularidade_deficiencia.Text + "', " +
-                                        "possui_laudo_med = '" + this.possui_laudo_medico.Checked + "', " +
-                                        "possui_numero_cid = '" + this.possui_cid.Checked + "', " +
-                                        "cpf = '" + this.cpf.Text + "', " +
-                                        "rg_rne = '" + this.rg_rne.Text + "', " +
-                                        "naturalidade = '" + this.naturalidade.Text + "', " +
-                                        "org_expedidor_cpf = '" + this.org_exp_cpf.Text + "', " +
-                                        "data_expedicao_cpf = '" + this.data_exp_cpf.Text + "'," +
-                                        "nome_mae = '" + this.nome_mae.Text + "', " +
-                                        "nome_pai = '" + this.nome_pai.Text + "' " +
-                                        "WHERE id = '"+code+"'";
-
-                MessageBox.Show(myInsertQuery);
-                SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
-
-                cmd.ExecuteNonQuery();
+                insertDadosResponsavelFamiliar();
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception(ex.Message);
+                try
+                {
+                    myConn.Open();
+
+                    string myInsertQuery = "UPDATE dados_responsavel_familiar SET " +
+                                            "nome = '" + this.nome.Text + "', " +
+                                            "sexo = '" + this.sexo.Text + "', " +
+                                            "nascimento = '" + this.nascimento.Text + "', " +
+                                            "estado_civil = '" + this.estado_civil.Text + "', " +
+                                            "regime_casamento = '" + this.regime_casamento.Text + "'," +
+                                            "uniao_consencual = '" + this.uniao_consensual.Checked + "', " +
+                                            "frequenta_escola = '" + this.frequentou_escola.Checked + "', " +
+                                            "escolaridade = '" + this.escolaridade.Text + "', " +
+                                            "beneficiario = '" + this.beneficiario_prog_soc.Checked + "', " +
+                                            "programa_social  = '" + this.prog_soc_qual.Text + "', " +
+                                            "valor_beneficio = '" + this.valor_beneficio.Text + "', " +
+                                            "profissao = '" + this.profissão.Text + "', " +
+                                            "renda_cidadao = '" + this.renda.Text + "', " +
+                                            "particularidade_deficiencia = '" + this.particularidade_deficiencia.Text + "', " +
+                                            "possui_laudo_med = '" + this.possui_laudo_medico.Checked + "', " +
+                                            "possui_numero_cid = '" + this.possui_cid.Checked + "', " +
+                                            "cpf = '" + this.cpf.Text + "', " +
+                                            "rg_rne = '" + this.rg_rne.Text + "', " +
+                                            "naturalidade = '" + this.naturalidade.Text + "', " +
+                                            "org_expedidor_cpf = '" + this.org_exp_cpf.Text + "', " +
+                                            "data_expedicao_cpf = '" + this.data_exp_cpf.Text + "'," +
+                                            "nome_mae = '" + this.nome_mae.Text + "', " +
+                                            "nome_pai = '" + this.nome_pai.Text + "' " +
+                                            "WHERE id = '" + code + "'";
+
+                    MessageBox.Show(myInsertQuery);
+                    SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
             }
 
             myConn.Close();
@@ -175,10 +192,9 @@ namespace LaborSoft
 
             dr.Close();
             myConn.Close();
-
         }
 
-        public void formClear() {
+        public void clear() {
             Utilities.ResetAllControls(this);
         }
     }

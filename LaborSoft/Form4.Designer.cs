@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.renda = new System.Windows.Forms.TextBox();
+            this.profissao = new System.Windows.Forms.TextBox();
+            this.assina_nome = new System.Windows.Forms.CheckBox();
+            this.alfabetizado_rg = new System.Windows.Forms.CheckBox();
+            this.escolaridade = new System.Windows.Forms.ComboBox();
+            this.frequentou_escola = new System.Windows.Forms.CheckBox();
+            this.uniao_consensual = new System.Windows.Forms.CheckBox();
+            this.regime_casamento = new System.Windows.Forms.TextBox();
+            this.estado_civil = new System.Windows.Forms.ComboBox();
+            this.data_exp_cpf = new System.Windows.Forms.MaskedTextBox();
+            this.org_exp_cpf = new System.Windows.Forms.TextBox();
+            this.rg_rne = new System.Windows.Forms.TextBox();
+            this.cpf = new System.Windows.Forms.MaskedTextBox();
+            this.uf = new System.Windows.Forms.TextBox();
+            this.naturalidade = new System.Windows.Forms.TextBox();
+            this.nascimento = new System.Windows.Forms.MaskedTextBox();
+            this.sexo = new System.Windows.Forms.TextBox();
+            this.nome = new System.Windows.Forms.TextBox();
+            this.particularidade_deficiencia = new System.Windows.Forms.TextBox();
+            this.valor_beneficio = new System.Windows.Forms.TextBox();
+            this.prog_soc_qual = new System.Windows.Forms.TextBox();
+            this.beneficiario_prog_soc = new System.Windows.Forms.CheckBox();
+            this.possui_cid = new System.Windows.Forms.CheckBox();
+            this.possui_laudo_medico = new System.Windows.Forms.CheckBox();
+            this.nome_pai = new System.Windows.Forms.TextBox();
+            this.nome_mae = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -81,226 +81,226 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.relacao_resp_fam = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox14
+            // renda
             // 
-            this.textBox14.Location = new System.Drawing.Point(883, 161);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 106;
+            this.renda.Location = new System.Drawing.Point(883, 161);
+            this.renda.Name = "renda";
+            this.renda.Size = new System.Drawing.Size(100, 20);
+            this.renda.TabIndex = 106;
             // 
-            // textBox13
+            // profissao
             // 
-            this.textBox13.Location = new System.Drawing.Point(520, 163);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(267, 20);
-            this.textBox13.TabIndex = 105;
+            this.profissao.Location = new System.Drawing.Point(520, 163);
+            this.profissao.Name = "profissao";
+            this.profissao.Size = new System.Drawing.Size(267, 20);
+            this.profissao.TabIndex = 105;
             // 
-            // checkBox7
+            // assina_nome
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(380, 167);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 104;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.assina_nome.AutoSize = true;
+            this.assina_nome.Location = new System.Drawing.Point(380, 167);
+            this.assina_nome.Name = "assina_nome";
+            this.assina_nome.Size = new System.Drawing.Size(15, 14);
+            this.assina_nome.TabIndex = 104;
+            this.assina_nome.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // alfabetizado_rg
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(297, 166);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 103;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.alfabetizado_rg.AutoSize = true;
+            this.alfabetizado_rg.Location = new System.Drawing.Point(297, 166);
+            this.alfabetizado_rg.Name = "alfabetizado_rg";
+            this.alfabetizado_rg.Size = new System.Drawing.Size(15, 14);
+            this.alfabetizado_rg.TabIndex = 103;
+            this.alfabetizado_rg.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // escolaridade
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.escolaridade.FormattingEnabled = true;
+            this.escolaridade.Items.AddRange(new object[] {
             "Nenhuma",
             "Pré-escola",
             "Fund. incomp",
             "Fund. comp",
             "Sup. incomp",
             "Sup comp"});
-            this.comboBox2.Location = new System.Drawing.Point(88, 164);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 102;
+            this.escolaridade.Location = new System.Drawing.Point(88, 164);
+            this.escolaridade.Name = "escolaridade";
+            this.escolaridade.Size = new System.Drawing.Size(121, 21);
+            this.escolaridade.TabIndex = 102;
             // 
-            // checkBox5
+            // frequentou_escola
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(635, 116);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 101;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.frequentou_escola.AutoSize = true;
+            this.frequentou_escola.Location = new System.Drawing.Point(635, 116);
+            this.frequentou_escola.Name = "frequentou_escola";
+            this.frequentou_escola.Size = new System.Drawing.Size(15, 14);
+            this.frequentou_escola.TabIndex = 101;
+            this.frequentou_escola.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // uniao_consensual
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(533, 116);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 100;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.uniao_consensual.AutoSize = true;
+            this.uniao_consensual.Location = new System.Drawing.Point(533, 116);
+            this.uniao_consensual.Name = "uniao_consensual";
+            this.uniao_consensual.Size = new System.Drawing.Size(15, 14);
+            this.uniao_consensual.TabIndex = 100;
+            this.uniao_consensual.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // regime_casamento
             // 
-            this.textBox12.Location = new System.Drawing.Point(291, 112);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(163, 20);
-            this.textBox12.TabIndex = 99;
+            this.regime_casamento.Location = new System.Drawing.Point(291, 112);
+            this.regime_casamento.Name = "regime_casamento";
+            this.regime_casamento.Size = new System.Drawing.Size(163, 20);
+            this.regime_casamento.TabIndex = 99;
             // 
-            // comboBox1
+            // estado_civil
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.estado_civil.FormattingEnabled = true;
+            this.estado_civil.Items.AddRange(new object[] {
             "Solteiro(a)",
             "Casado(a)",
             "Divorciado(a)",
             "Viúvo(a)"});
-            this.comboBox1.Location = new System.Drawing.Point(88, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 98;
+            this.estado_civil.Location = new System.Drawing.Point(88, 109);
+            this.estado_civil.Name = "estado_civil";
+            this.estado_civil.Size = new System.Drawing.Size(121, 21);
+            this.estado_civil.TabIndex = 98;
             // 
-            // maskedTextBox3
+            // data_exp_cpf
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(391, 74);
-            this.maskedTextBox3.Mask = "00/00/0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 97;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.data_exp_cpf.Location = new System.Drawing.Point(391, 74);
+            this.data_exp_cpf.Mask = "00/00/0000";
+            this.data_exp_cpf.Name = "data_exp_cpf";
+            this.data_exp_cpf.Size = new System.Drawing.Size(100, 20);
+            this.data_exp_cpf.TabIndex = 97;
+            this.data_exp_cpf.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox11
+            // org_exp_cpf
             // 
-            this.textBox11.Location = new System.Drawing.Point(237, 74);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(48, 20);
-            this.textBox11.TabIndex = 96;
+            this.org_exp_cpf.Location = new System.Drawing.Point(237, 74);
+            this.org_exp_cpf.Name = "org_exp_cpf";
+            this.org_exp_cpf.Size = new System.Drawing.Size(48, 20);
+            this.org_exp_cpf.TabIndex = 96;
             // 
-            // textBox10
+            // rg_rne
             // 
-            this.textBox10.Location = new System.Drawing.Point(65, 74);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 95;
+            this.rg_rne.Location = new System.Drawing.Point(65, 74);
+            this.rg_rne.Name = "rg_rne";
+            this.rg_rne.Size = new System.Drawing.Size(100, 20);
+            this.rg_rne.TabIndex = 95;
             // 
-            // maskedTextBox2
+            // cpf
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(712, 40);
-            this.maskedTextBox2.Mask = "999.999.999-99";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.SkipLiterals = false;
-            this.maskedTextBox2.TabIndex = 94;
+            this.cpf.Location = new System.Drawing.Point(712, 40);
+            this.cpf.Mask = "999.999.999-99";
+            this.cpf.Name = "cpf";
+            this.cpf.Size = new System.Drawing.Size(100, 20);
+            this.cpf.SkipLiterals = false;
+            this.cpf.TabIndex = 94;
             // 
-            // textBox9
+            // uf
             // 
-            this.textBox9.Location = new System.Drawing.Point(624, 40);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(32, 20);
-            this.textBox9.TabIndex = 93;
+            this.uf.Location = new System.Drawing.Point(624, 40);
+            this.uf.Name = "uf";
+            this.uf.Size = new System.Drawing.Size(32, 20);
+            this.uf.TabIndex = 93;
             // 
-            // textBox8
+            // naturalidade
             // 
-            this.textBox8.Location = new System.Drawing.Point(464, 39);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 92;
+            this.naturalidade.Location = new System.Drawing.Point(464, 39);
+            this.naturalidade.Name = "naturalidade";
+            this.naturalidade.Size = new System.Drawing.Size(100, 20);
+            this.naturalidade.TabIndex = 92;
             // 
-            // maskedTextBox1
+            // nascimento
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(252, 39);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 91;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.nascimento.Location = new System.Drawing.Point(252, 39);
+            this.nascimento.Mask = "00/00/0000";
+            this.nascimento.Name = "nascimento";
+            this.nascimento.Size = new System.Drawing.Size(100, 20);
+            this.nascimento.TabIndex = 91;
+            this.nascimento.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox7
+            // sexo
             // 
-            this.textBox7.Location = new System.Drawing.Point(65, 36);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 90;
+            this.sexo.Location = new System.Drawing.Point(65, 36);
+            this.sexo.Name = "sexo";
+            this.sexo.Size = new System.Drawing.Size(100, 20);
+            this.sexo.TabIndex = 90;
             // 
-            // textBox6
+            // nome
             // 
-            this.textBox6.Location = new System.Drawing.Point(67, 6);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(497, 20);
-            this.textBox6.TabIndex = 89;
+            this.nome.Location = new System.Drawing.Point(67, 6);
+            this.nome.Name = "nome";
+            this.nome.Size = new System.Drawing.Size(497, 20);
+            this.nome.TabIndex = 89;
             // 
-            // textBox5
+            // particularidade_deficiencia
             // 
-            this.textBox5.Location = new System.Drawing.Point(108, 238);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(204, 20);
-            this.textBox5.TabIndex = 87;
+            this.particularidade_deficiencia.Location = new System.Drawing.Point(108, 238);
+            this.particularidade_deficiencia.Name = "particularidade_deficiencia";
+            this.particularidade_deficiencia.Size = new System.Drawing.Size(204, 20);
+            this.particularidade_deficiencia.TabIndex = 87;
             // 
-            // textBox4
+            // valor_beneficio
             // 
-            this.textBox4.Location = new System.Drawing.Point(883, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 86;
+            this.valor_beneficio.Location = new System.Drawing.Point(883, 225);
+            this.valor_beneficio.Name = "valor_beneficio";
+            this.valor_beneficio.Size = new System.Drawing.Size(100, 20);
+            this.valor_beneficio.TabIndex = 86;
             // 
-            // textBox3
+            // prog_soc_qual
             // 
-            this.textBox3.Location = new System.Drawing.Point(633, 225);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(154, 20);
-            this.textBox3.TabIndex = 85;
+            this.prog_soc_qual.Location = new System.Drawing.Point(633, 225);
+            this.prog_soc_qual.Name = "prog_soc_qual";
+            this.prog_soc_qual.Size = new System.Drawing.Size(154, 20);
+            this.prog_soc_qual.TabIndex = 85;
             // 
-            // checkBox4
+            // beneficiario_prog_soc
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(556, 245);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 84;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.beneficiario_prog_soc.AutoSize = true;
+            this.beneficiario_prog_soc.Location = new System.Drawing.Point(556, 245);
+            this.beneficiario_prog_soc.Name = "beneficiario_prog_soc";
+            this.beneficiario_prog_soc.Size = new System.Drawing.Size(15, 14);
+            this.beneficiario_prog_soc.TabIndex = 84;
+            this.beneficiario_prog_soc.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // possui_cid
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(463, 245);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 83;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.possui_cid.AutoSize = true;
+            this.possui_cid.Location = new System.Drawing.Point(463, 245);
+            this.possui_cid.Name = "possui_cid";
+            this.possui_cid.Size = new System.Drawing.Size(15, 14);
+            this.possui_cid.TabIndex = 83;
+            this.possui_cid.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // possui_laudo_medico
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(391, 245);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 82;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.possui_laudo_medico.AutoSize = true;
+            this.possui_laudo_medico.Location = new System.Drawing.Point(391, 245);
+            this.possui_laudo_medico.Name = "possui_laudo_medico";
+            this.possui_laudo_medico.Size = new System.Drawing.Size(15, 14);
+            this.possui_laudo_medico.TabIndex = 82;
+            this.possui_laudo_medico.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // nome_pai
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 333);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(904, 20);
-            this.textBox2.TabIndex = 81;
+            this.nome_pai.Location = new System.Drawing.Point(91, 333);
+            this.nome_pai.Name = "nome_pai";
+            this.nome_pai.Size = new System.Drawing.Size(904, 20);
+            this.nome_pai.TabIndex = 81;
             // 
-            // textBox1
+            // nome_mae
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 289);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(904, 20);
-            this.textBox1.TabIndex = 80;
+            this.nome_mae.Location = new System.Drawing.Point(91, 289);
+            this.nome_mae.Name = "nome_mae";
+            this.nome_mae.Size = new System.Drawing.Size(904, 20);
+            this.nome_mae.TabIndex = 80;
             // 
             // label26
             // 
@@ -545,43 +545,43 @@
             this.label27.TabIndex = 107;
             this.label27.Text = "Relação com o\r\nresponsável familiar:";
             // 
-            // textBox15
+            // relacao_resp_fam
             // 
-            this.textBox15.Location = new System.Drawing.Point(679, 9);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(133, 20);
-            this.textBox15.TabIndex = 108;
+            this.relacao_resp_fam.Location = new System.Drawing.Point(679, 9);
+            this.relacao_resp_fam.Name = "relacao_resp_fam";
+            this.relacao_resp_fam.Size = new System.Drawing.Size(133, 20);
+            this.relacao_resp_fam.TabIndex = 108;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.relacao_resp_fam);
             this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.checkBox7);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.renda);
+            this.groupBox1.Controls.Add(this.profissao);
+            this.groupBox1.Controls.Add(this.assina_nome);
+            this.groupBox1.Controls.Add(this.alfabetizado_rg);
+            this.groupBox1.Controls.Add(this.escolaridade);
+            this.groupBox1.Controls.Add(this.frequentou_escola);
+            this.groupBox1.Controls.Add(this.uniao_consensual);
+            this.groupBox1.Controls.Add(this.regime_casamento);
+            this.groupBox1.Controls.Add(this.estado_civil);
+            this.groupBox1.Controls.Add(this.data_exp_cpf);
+            this.groupBox1.Controls.Add(this.org_exp_cpf);
+            this.groupBox1.Controls.Add(this.rg_rne);
+            this.groupBox1.Controls.Add(this.cpf);
+            this.groupBox1.Controls.Add(this.uf);
+            this.groupBox1.Controls.Add(this.naturalidade);
+            this.groupBox1.Controls.Add(this.nascimento);
+            this.groupBox1.Controls.Add(this.sexo);
+            this.groupBox1.Controls.Add(this.nome);
+            this.groupBox1.Controls.Add(this.particularidade_deficiencia);
+            this.groupBox1.Controls.Add(this.valor_beneficio);
+            this.groupBox1.Controls.Add(this.prog_soc_qual);
+            this.groupBox1.Controls.Add(this.beneficiario_prog_soc);
+            this.groupBox1.Controls.Add(this.possui_cid);
+            this.groupBox1.Controls.Add(this.possui_laudo_medico);
+            this.groupBox1.Controls.Add(this.nome_pai);
+            this.groupBox1.Controls.Add(this.nome_mae);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label24);
@@ -631,32 +631,32 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox renda;
+        private System.Windows.Forms.TextBox profissao;
+        private System.Windows.Forms.CheckBox assina_nome;
+        private System.Windows.Forms.CheckBox alfabetizado_rg;
+        private System.Windows.Forms.ComboBox escolaridade;
+        private System.Windows.Forms.CheckBox frequentou_escola;
+        private System.Windows.Forms.CheckBox uniao_consensual;
+        private System.Windows.Forms.TextBox regime_casamento;
+        private System.Windows.Forms.ComboBox estado_civil;
+        private System.Windows.Forms.MaskedTextBox data_exp_cpf;
+        private System.Windows.Forms.TextBox org_exp_cpf;
+        private System.Windows.Forms.TextBox rg_rne;
+        private System.Windows.Forms.MaskedTextBox cpf;
+        private System.Windows.Forms.TextBox uf;
+        private System.Windows.Forms.TextBox naturalidade;
+        private System.Windows.Forms.MaskedTextBox nascimento;
+        private System.Windows.Forms.TextBox sexo;
+        private System.Windows.Forms.TextBox nome;
+        private System.Windows.Forms.TextBox particularidade_deficiencia;
+        private System.Windows.Forms.TextBox valor_beneficio;
+        private System.Windows.Forms.TextBox prog_soc_qual;
+        private System.Windows.Forms.CheckBox beneficiario_prog_soc;
+        private System.Windows.Forms.CheckBox possui_cid;
+        private System.Windows.Forms.CheckBox possui_laudo_medico;
+        private System.Windows.Forms.TextBox nome_pai;
+        private System.Windows.Forms.TextBox nome_mae;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -684,7 +684,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox relacao_resp_fam;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -113,7 +113,8 @@ namespace LaborSoft
             if (this.code != 0)
             {
                 if (this.frm2.updateIdentificacao(this.code) &&
-                    this.frm3.updateDadosResponsavelFamiliar(this.code))
+                    this.frm3.updateDadosResponsavelFamiliar(this.code) &&
+                    this.frm4.updateDadosConjuge(this.code))
                 {
                     MessageBox.Show("Atualizado com sucesso");
                 }
@@ -124,7 +125,8 @@ namespace LaborSoft
             }
             else {
                 if (this.frm2.insertIdentificacao() &&
-                    this.frm3.insertDadosResponsavelFamiliar())
+                    this.frm3.insertDadosResponsavelFamiliar() &&
+                    this.frm4.insertDadosConjuge())
                 {
                     MessageBox.Show("Inserido com sucesso");
                 }
@@ -164,6 +166,7 @@ namespace LaborSoft
                 this.code =  Convert.ToInt32(dr["code"]);
                 this.frm2.populateForm(this.code);
                 this.frm3.populateForm(this.code);
+                this.frm4.populateForm(this.code);
             }
             dr.Close();
             myConn.Close();
