@@ -59,6 +59,9 @@ namespace LaborSoft
                 {
                     return (int)dr["id"];
                 }
+
+                dr.Close();
+                cmd.Dispose();
             }
             return 0;
         }
@@ -80,6 +83,9 @@ namespace LaborSoft
                 {
                     return dr["cpf"].ToString();
                 }
+
+                cmd.Dispose();
+                dr.Close();
             }
             return null;
         }

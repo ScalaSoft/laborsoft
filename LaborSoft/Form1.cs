@@ -12,7 +12,7 @@ namespace LaborSoft
 {
     public partial class Form1 : Form
     {
-        int code;
+        int? code;
         Form2 frm2;
         Form3 frm3;
         Form4 frm4;
@@ -114,7 +114,8 @@ namespace LaborSoft
             {
                 if (this.frm2.updateIdentificacao(this.code) &&
                     this.frm3.updateDadosResponsavelFamiliar(this.code) &&
-                    this.frm4.updateDadosConjuge(this.code))
+                    this.frm4.updateDadosConjuge(this.code) &&
+                    this.frm5.updateComposicaoFamiliar(this.code))
                 {
                     MessageBox.Show("Atualizado com sucesso");
                 }
@@ -126,7 +127,8 @@ namespace LaborSoft
             else {
                 if (this.frm2.insertIdentificacao() &&
                     this.frm3.insertDadosResponsavelFamiliar() &&
-                    this.frm4.insertDadosConjuge())
+                    this.frm4.insertDadosConjuge() &&
+                    this.frm5.insertComposicaoFamiliar(null))
                 {
                     MessageBox.Show("Inserido com sucesso");
                 }
@@ -156,7 +158,6 @@ namespace LaborSoft
             }
 
             myInsertQuery = myInsertQuery + ";";
-            //myInsertQuery = "select id from identificacao where nome_entrevistado like '%" + Nome_rg_cpf.Text + "%'";
 
             SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
@@ -167,6 +168,7 @@ namespace LaborSoft
                 this.frm2.populateForm(this.code);
                 this.frm3.populateForm(this.code);
                 this.frm4.populateForm(this.code);
+                this.frm5.populateForm(this.code);
             }
             dr.Close();
             myConn.Close();
@@ -191,7 +193,7 @@ namespace LaborSoft
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            this.code = 0;
+            this.code = null;
             Utilities.ResetAllControls(this);
             Utilities.ResetAllControls(this.frm2);
             Utilities.ResetAllControls(this.frm3);

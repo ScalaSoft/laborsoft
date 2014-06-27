@@ -93,7 +93,7 @@ namespace LaborSoft
             return true;
         }
 
-        public bool updateDadosConjuge(int code)
+        public bool updateDadosConjuge(int? code)
         {
             int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
             if (check_cpf == 0)
@@ -130,14 +130,12 @@ namespace LaborSoft
                                             "possui_cid = '" + this.possui_cid.Checked + "', " +
                                             "cpf = '" + this.cpf.Text + "', " +
                                             "rg_rne = '" + this.rg_rne.Text + "', " +
-                                            "naturalidade = '" + this.naturalidade.Text + "', " +
                                             "org_expedidor_cpf = '" + this.org_exp_cpf.Text + "', " +
                                             "data_expedicao_cpf = '" + this.data_exp_cpf.Text + "'," +
                                             "nome_mae = '" + this.nome_mae.Text + "', " +
                                             "nome_pai = '" + this.nome_pai.Text + "' " +
                                             "WHERE id = '" + code + "'";
 
-                    MessageBox.Show(myInsertQuery);
                     SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
                     cmd.ExecuteNonQuery();
@@ -153,7 +151,7 @@ namespace LaborSoft
             return true;
         }
 
-        public void populateForm(int Cod)
+        public void populateForm(int? Cod)
         {
             myConn.Open();
 
@@ -187,7 +185,6 @@ namespace LaborSoft
                 this.possui_cid.Checked = Convert.ToBoolean(dr["possui_cid"]);
                 this.cpf.Text = dr["cpf"].ToString();
                 this.rg_rne.Text = dr["rg_rne"].ToString();
-                this.naturalidade.Text = dr["naturalidade"].ToString();
                 this.org_exp_cpf.Text = dr["org_exp_cpf"].ToString();
                 this.data_exp_cpf.Text = dr["data_exp_cpf"].ToString();
                 this.nome_mae.Text = dr["nome_mae"].ToString();
@@ -195,6 +192,7 @@ namespace LaborSoft
             }
 
             dr.Close();
+            cmd.Dispose();
             myConn.Close();
 
         }

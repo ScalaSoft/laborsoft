@@ -94,13 +94,16 @@ namespace LaborSoft
             return true;
         }
 
-        public bool updateIdentificacao(int code)
+        public bool updateIdentificacao(int? code)
         {
             try
             {
-                myConn.Open();
+                if (myConn.State.ToString() == "Closed")
+                {
+                    myConn.Open();
+                }
 
-                string myInsertQuery = "UPDATE identificacao SET " +
+                string myUpdateQuery = "UPDATE identificacao SET " +
                     "cod_area = '"+this.cod_area.Text+"', " +
                     "area  = '"+this.area.Text+"', " +
                     "nome_subarea= '"+this.nome_subarea.Text+"', " +
@@ -128,9 +131,10 @@ namespace LaborSoft
                     "nome_entrevistado = '"+this.nome_entrevistado.Text+"' "+
                     "WHERE id = '"+code+"';";
 
-                SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
-
+                SQLiteCommand cmd = new SQLiteCommand(myUpdateQuery, myConn);
+               
                 cmd.ExecuteNonQuery();
+                cmd.Dispose();
             }
             catch (Exception ex)
             {
@@ -142,16 +146,17 @@ namespace LaborSoft
             return true;
         }
 
-        public void populateForm(int Cod) {
+        public void populateForm(int? Cod) {
             
             myConn.Open();
 
             string mySelectQuery = "SELECT * FROM identificacao WHERE id = '"+Cod+"';";
 
             SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
-            MessageBox.Show(mySelectQuery);
 
             SQLiteDataReader dr = cmd.ExecuteReader();
+            cmd.Dispose();
+
             while (dr.Read())
             {
                 this.cod_area.Text = dr["cod_area"].ToString();

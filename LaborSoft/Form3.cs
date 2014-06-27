@@ -99,7 +99,7 @@ namespace LaborSoft
             return true;
         }
 
-        public bool updateDadosResponsavelFamiliar(int code)
+        public bool updateDadosResponsavelFamiliar(int? code)
         {
             int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
             if (check_cpf == 0)
@@ -154,7 +154,7 @@ namespace LaborSoft
             return true;
         }
 
-        public void populateForm(int Cod)
+        public void populateForm(int? Cod)
         {
             myConn.Open();
 
@@ -191,6 +191,7 @@ namespace LaborSoft
             }
 
             dr.Close();
+            cmd.Dispose();
             myConn.Close();
         }
 
