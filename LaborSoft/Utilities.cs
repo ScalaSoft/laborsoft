@@ -30,6 +30,8 @@ namespace LaborSoft
             {
                 var textBox = control as TextBox;
                 var comboBox = control as ComboBox;
+                var checkBox = control as CheckBox;
+                var richBox = control as RichTextBox;
 
                 if (textBox != null)
                     (textBox).Clear();
@@ -37,6 +39,12 @@ namespace LaborSoft
                 if (comboBox != null)
                     comboBox.SelectedIndex = -1;
 
+                if (checkBox != null)
+                    (checkBox).Checked = false;
+
+                if (richBox != null)
+                    (richBox).Clear();
+                
                 if (control.HasChildren)
                     ResetAllControls(control);
             }

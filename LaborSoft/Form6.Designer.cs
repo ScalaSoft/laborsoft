@@ -40,41 +40,41 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.tempo_no_domicilio = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.quais_docs = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.tempo_mora_area = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.morava_onde_antes = new System.Windows.Forms.RichTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tempo_mora_municipio = new System.Windows.Forms.MaskedTextBox();
+            this.municipio_anterior = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.ano_psh = new System.Windows.Forms.MaskedTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.situacao_de_risco = new System.Windows.Forms.CheckBox();
+            this.banheiro = new System.Windows.Forms.CheckBox();
+            this.possui_outro_imovel = new System.Windows.Forms.CheckBox();
+            this.doc_prefeitura = new System.Windows.Forms.CheckBox();
+            this.doc_temp_moradia = new System.Windows.Forms.CheckBox();
+            this.possui_iptu = new System.Windows.Forms.CheckBox();
+            this.psh = new System.Windows.Forms.CheckBox();
+            this.qual_atividade = new System.Windows.Forms.TextBox();
+            this.area_terreno = new System.Windows.Forms.TextBox();
+            this.padrao_edificao = new System.Windows.Forms.TextBox();
+            this.tipo_ocupacao = new System.Windows.Forms.TextBox();
+            this.valor_do_aluguel = new System.Windows.Forms.TextBox();
+            this.situacao = new System.Windows.Forms.TextBox();
+            this.tipo_uso_imovel = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.outro_imovel_onde = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.outro_imovel_onde.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +131,6 @@
             this.label6.Size = new System.Drawing.Size(63, 26);
             this.label6.TabIndex = 5;
             this.label6.Text = "Tipo de uso\r\ndo imóvel:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -187,13 +186,13 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Há quanto tempo\r\nmora neste domicílio?";
             // 
-            // maskedTextBox1
+            // tempo_no_domicilio
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(460, 159);
-            this.maskedTextBox1.Mask = "\\Anos: 99 \\Meses: 99";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 12;
+            this.tempo_no_domicilio.Location = new System.Drawing.Point(460, 159);
+            this.tempo_no_domicilio.Mask = "\\Anos: 99 \\Meses: 99";
+            this.tempo_no_domicilio.Name = "tempo_no_domicilio";
+            this.tempo_no_domicilio.Size = new System.Drawing.Size(100, 20);
+            this.tempo_no_domicilio.TabIndex = 12;
             // 
             // label13
             // 
@@ -222,12 +221,12 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Quais docs?";
             // 
-            // textBox1
+            // quais_docs
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 227);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 16;
+            this.quais_docs.Location = new System.Drawing.Point(88, 227);
+            this.quais_docs.Name = "quais_docs";
+            this.quais_docs.Size = new System.Drawing.Size(222, 20);
+            this.quais_docs.TabIndex = 16;
             // 
             // label16
             // 
@@ -247,13 +246,13 @@
             this.label17.TabIndex = 18;
             this.label17.Text = "Há quanto tempo\r\nmora nesta área?";
             // 
-            // maskedTextBox2
+            // tempo_mora_area
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(513, 224);
-            this.maskedTextBox2.Mask = "\\Anos: 99 \\Meses: 99";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 19;
+            this.tempo_mora_area.Location = new System.Drawing.Point(513, 224);
+            this.tempo_mora_area.Mask = "\\Anos: 99 \\Meses: 99";
+            this.tempo_mora_area.Name = "tempo_mora_area";
+            this.tempo_mora_area.Size = new System.Drawing.Size(100, 20);
+            this.tempo_mora_area.TabIndex = 19;
             // 
             // label18
             // 
@@ -264,13 +263,13 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "Morava onde\r\nantes de morar\r\nnesta área?";
             // 
-            // richTextBox1
+            // morava_onde_antes
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(723, 224);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(247, 36);
-            this.richTextBox1.TabIndex = 21;
-            this.richTextBox1.Text = "";
+            this.morava_onde_antes.Location = new System.Drawing.Point(723, 224);
+            this.morava_onde_antes.Name = "morava_onde_antes";
+            this.morava_onde_antes.Size = new System.Drawing.Size(247, 36);
+            this.morava_onde_antes.TabIndex = 21;
+            this.morava_onde_antes.Text = "";
             // 
             // label19
             // 
@@ -290,20 +289,20 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Morava onde\r\nantes desta\r\ncidade?";
             // 
-            // maskedTextBox3
+            // tempo_mora_municipio
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(109, 285);
-            this.maskedTextBox3.Mask = "\\Anos: 99 \\Meses: 99";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 24;
+            this.tempo_mora_municipio.Location = new System.Drawing.Point(109, 285);
+            this.tempo_mora_municipio.Mask = "\\Anos: 99 \\Meses: 99";
+            this.tempo_mora_municipio.Name = "tempo_mora_municipio";
+            this.tempo_mora_municipio.Size = new System.Drawing.Size(100, 20);
+            this.tempo_mora_municipio.TabIndex = 24;
             // 
-            // textBox2
+            // municipio_anterior
             // 
-            this.textBox2.Location = new System.Drawing.Point(327, 282);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 20);
-            this.textBox2.TabIndex = 25;
+            this.municipio_anterior.Location = new System.Drawing.Point(327, 282);
+            this.municipio_anterior.Name = "municipio_anterior";
+            this.municipio_anterior.Size = new System.Drawing.Size(222, 20);
+            this.municipio_anterior.TabIndex = 25;
             // 
             // label21
             // 
@@ -314,13 +313,13 @@
             this.label21.TabIndex = 26;
             this.label21.Text = "Participou*\r\ndo PSH?";
             // 
-            // maskedTextBox4
+            // ano_psh
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(786, 275);
-            this.maskedTextBox4.Mask = "0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(30, 20);
-            this.maskedTextBox4.TabIndex = 27;
+            this.ano_psh.Location = new System.Drawing.Point(786, 275);
+            this.ano_psh.Mask = "0000";
+            this.ano_psh.Name = "ano_psh";
+            this.ano_psh.Size = new System.Drawing.Size(30, 20);
+            this.ano_psh.TabIndex = 27;
             // 
             // label22
             // 
@@ -331,117 +330,117 @@
             this.label22.TabIndex = 28;
             this.label22.Text = "Ano:";
             // 
-            // checkBox1
+            // situacao_de_risco
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(373, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.situacao_de_risco.AutoSize = true;
+            this.situacao_de_risco.Location = new System.Drawing.Point(373, 20);
+            this.situacao_de_risco.Name = "situacao_de_risco";
+            this.situacao_de_risco.Size = new System.Drawing.Size(15, 14);
+            this.situacao_de_risco.TabIndex = 29;
+            this.situacao_de_risco.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // banheiro
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(524, 97);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 30;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.banheiro.AutoSize = true;
+            this.banheiro.Location = new System.Drawing.Point(524, 97);
+            this.banheiro.Name = "banheiro";
+            this.banheiro.Size = new System.Drawing.Size(15, 14);
+            this.banheiro.TabIndex = 30;
+            this.banheiro.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // possui_outro_imovel
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(892, 103);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 31;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.possui_outro_imovel.AutoSize = true;
+            this.possui_outro_imovel.Location = new System.Drawing.Point(892, 103);
+            this.possui_outro_imovel.Name = "possui_outro_imovel";
+            this.possui_outro_imovel.Size = new System.Drawing.Size(15, 14);
+            this.possui_outro_imovel.TabIndex = 31;
+            this.possui_outro_imovel.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // doc_prefeitura
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(702, 157);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 32;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.doc_prefeitura.AutoSize = true;
+            this.doc_prefeitura.Location = new System.Drawing.Point(702, 157);
+            this.doc_prefeitura.Name = "doc_prefeitura";
+            this.doc_prefeitura.Size = new System.Drawing.Size(15, 14);
+            this.doc_prefeitura.TabIndex = 32;
+            this.doc_prefeitura.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // doc_temp_moradia
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(892, 159);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 33;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.doc_temp_moradia.AutoSize = true;
+            this.doc_temp_moradia.Location = new System.Drawing.Point(892, 159);
+            this.doc_temp_moradia.Name = "doc_temp_moradia";
+            this.doc_temp_moradia.Size = new System.Drawing.Size(15, 14);
+            this.doc_temp_moradia.TabIndex = 33;
+            this.doc_temp_moradia.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // possui_iptu
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(373, 230);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 34;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.possui_iptu.AutoSize = true;
+            this.possui_iptu.Location = new System.Drawing.Point(373, 230);
+            this.possui_iptu.Name = "possui_iptu";
+            this.possui_iptu.Size = new System.Drawing.Size(15, 14);
+            this.possui_iptu.TabIndex = 34;
+            this.possui_iptu.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // psh
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(704, 282);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 35;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.psh.AutoSize = true;
+            this.psh.Location = new System.Drawing.Point(704, 282);
+            this.psh.Name = "psh";
+            this.psh.Size = new System.Drawing.Size(15, 14);
+            this.psh.TabIndex = 35;
+            this.psh.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // qual_atividade
             // 
-            this.textBox3.Location = new System.Drawing.Point(299, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 36;
+            this.qual_atividade.Location = new System.Drawing.Point(299, 97);
+            this.qual_atividade.Name = "qual_atividade";
+            this.qual_atividade.Size = new System.Drawing.Size(140, 20);
+            this.qual_atividade.TabIndex = 36;
             // 
-            // textBox4
+            // area_terreno
             // 
-            this.textBox4.Location = new System.Drawing.Point(656, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 37;
+            this.area_terreno.Location = new System.Drawing.Point(656, 97);
+            this.area_terreno.Name = "area_terreno";
+            this.area_terreno.Size = new System.Drawing.Size(100, 20);
+            this.area_terreno.TabIndex = 37;
             // 
-            // textBox5
+            // padrao_edificao
             // 
-            this.textBox5.Location = new System.Drawing.Point(460, 20);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 38;
+            this.padrao_edificao.Location = new System.Drawing.Point(460, 20);
+            this.padrao_edificao.Name = "padrao_edificao";
+            this.padrao_edificao.Size = new System.Drawing.Size(100, 20);
+            this.padrao_edificao.TabIndex = 38;
             // 
-            // textBox6
+            // tipo_ocupacao
             // 
-            this.textBox6.Location = new System.Drawing.Point(656, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 39;
+            this.tipo_ocupacao.Location = new System.Drawing.Point(656, 20);
+            this.tipo_ocupacao.Name = "tipo_ocupacao";
+            this.tipo_ocupacao.Size = new System.Drawing.Size(100, 20);
+            this.tipo_ocupacao.TabIndex = 39;
             // 
-            // textBox7
+            // valor_do_aluguel
             // 
-            this.textBox7.Location = new System.Drawing.Point(843, 20);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 20);
-            this.textBox7.TabIndex = 40;
+            this.valor_do_aluguel.Location = new System.Drawing.Point(843, 20);
+            this.valor_do_aluguel.Name = "valor_do_aluguel";
+            this.valor_do_aluguel.Size = new System.Drawing.Size(64, 20);
+            this.valor_do_aluguel.TabIndex = 40;
             // 
-            // textBox8
+            // situacao
             // 
-            this.textBox8.Location = new System.Drawing.Point(127, 20);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(166, 20);
-            this.textBox8.TabIndex = 41;
+            this.situacao.Location = new System.Drawing.Point(127, 20);
+            this.situacao.Name = "situacao";
+            this.situacao.Size = new System.Drawing.Size(166, 20);
+            this.situacao.TabIndex = 41;
             // 
-            // textBox9
+            // tipo_uso_imovel
             // 
-            this.textBox9.Location = new System.Drawing.Point(75, 100);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 42;
+            this.tipo_uso_imovel.Location = new System.Drawing.Point(75, 100);
+            this.tipo_uso_imovel.Name = "tipo_uso_imovel";
+            this.tipo_uso_imovel.Size = new System.Drawing.Size(100, 20);
+            this.tipo_uso_imovel.TabIndex = 42;
             // 
             // richTextBox2
             // 
@@ -451,58 +450,58 @@
             this.richTextBox2.TabIndex = 43;
             this.richTextBox2.Text = "";
             // 
-            // groupBox1
+            // outro_imovel_onde
             // 
-            this.groupBox1.Controls.Add(this.richTextBox2);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.checkBox7);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.maskedTextBox4);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 347);
-            this.groupBox1.TabIndex = 44;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "5";
+            this.outro_imovel_onde.Controls.Add(this.richTextBox2);
+            this.outro_imovel_onde.Controls.Add(this.tipo_uso_imovel);
+            this.outro_imovel_onde.Controls.Add(this.situacao);
+            this.outro_imovel_onde.Controls.Add(this.valor_do_aluguel);
+            this.outro_imovel_onde.Controls.Add(this.tipo_ocupacao);
+            this.outro_imovel_onde.Controls.Add(this.padrao_edificao);
+            this.outro_imovel_onde.Controls.Add(this.area_terreno);
+            this.outro_imovel_onde.Controls.Add(this.qual_atividade);
+            this.outro_imovel_onde.Controls.Add(this.psh);
+            this.outro_imovel_onde.Controls.Add(this.possui_iptu);
+            this.outro_imovel_onde.Controls.Add(this.doc_temp_moradia);
+            this.outro_imovel_onde.Controls.Add(this.doc_prefeitura);
+            this.outro_imovel_onde.Controls.Add(this.possui_outro_imovel);
+            this.outro_imovel_onde.Controls.Add(this.banheiro);
+            this.outro_imovel_onde.Controls.Add(this.situacao_de_risco);
+            this.outro_imovel_onde.Controls.Add(this.label22);
+            this.outro_imovel_onde.Controls.Add(this.ano_psh);
+            this.outro_imovel_onde.Controls.Add(this.label21);
+            this.outro_imovel_onde.Controls.Add(this.municipio_anterior);
+            this.outro_imovel_onde.Controls.Add(this.tempo_mora_municipio);
+            this.outro_imovel_onde.Controls.Add(this.label20);
+            this.outro_imovel_onde.Controls.Add(this.label19);
+            this.outro_imovel_onde.Controls.Add(this.morava_onde_antes);
+            this.outro_imovel_onde.Controls.Add(this.label18);
+            this.outro_imovel_onde.Controls.Add(this.tempo_mora_area);
+            this.outro_imovel_onde.Controls.Add(this.label17);
+            this.outro_imovel_onde.Controls.Add(this.label16);
+            this.outro_imovel_onde.Controls.Add(this.quais_docs);
+            this.outro_imovel_onde.Controls.Add(this.label15);
+            this.outro_imovel_onde.Controls.Add(this.label14);
+            this.outro_imovel_onde.Controls.Add(this.label13);
+            this.outro_imovel_onde.Controls.Add(this.tempo_no_domicilio);
+            this.outro_imovel_onde.Controls.Add(this.label12);
+            this.outro_imovel_onde.Controls.Add(this.label11);
+            this.outro_imovel_onde.Controls.Add(this.label10);
+            this.outro_imovel_onde.Controls.Add(this.label9);
+            this.outro_imovel_onde.Controls.Add(this.label8);
+            this.outro_imovel_onde.Controls.Add(this.label7);
+            this.outro_imovel_onde.Controls.Add(this.label6);
+            this.outro_imovel_onde.Controls.Add(this.label5);
+            this.outro_imovel_onde.Controls.Add(this.label4);
+            this.outro_imovel_onde.Controls.Add(this.label3);
+            this.outro_imovel_onde.Controls.Add(this.label2);
+            this.outro_imovel_onde.Controls.Add(this.label1);
+            this.outro_imovel_onde.Location = new System.Drawing.Point(4, 7);
+            this.outro_imovel_onde.Name = "outro_imovel_onde";
+            this.outro_imovel_onde.Size = new System.Drawing.Size(975, 347);
+            this.outro_imovel_onde.TabIndex = 44;
+            this.outro_imovel_onde.TabStop = false;
+            this.outro_imovel_onde.Text = "5";
             // 
             // pictureBox1
             // 
@@ -520,11 +519,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 741);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.outro_imovel_onde);
             this.Name = "Form6";
             this.Text = "5 - Uso e ocupação do domicílio";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.outro_imovel_onde.ResumeLayout(false);
+            this.outro_imovel_onde.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -545,39 +544,39 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox tempo_no_domicilio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox quais_docs;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox tempo_mora_area;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox morava_onde_antes;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.MaskedTextBox tempo_mora_municipio;
+        private System.Windows.Forms.TextBox municipio_anterior;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox ano_psh;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.CheckBox situacao_de_risco;
+        private System.Windows.Forms.CheckBox banheiro;
+        private System.Windows.Forms.CheckBox possui_outro_imovel;
+        private System.Windows.Forms.CheckBox doc_prefeitura;
+        private System.Windows.Forms.CheckBox doc_temp_moradia;
+        private System.Windows.Forms.CheckBox possui_iptu;
+        private System.Windows.Forms.CheckBox psh;
+        private System.Windows.Forms.TextBox qual_atividade;
+        private System.Windows.Forms.TextBox area_terreno;
+        private System.Windows.Forms.TextBox padrao_edificao;
+        private System.Windows.Forms.TextBox tipo_ocupacao;
+        private System.Windows.Forms.TextBox valor_do_aluguel;
+        private System.Windows.Forms.TextBox situacao;
+        private System.Windows.Forms.TextBox tipo_uso_imovel;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox outro_imovel_onde;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

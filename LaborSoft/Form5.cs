@@ -309,7 +309,7 @@ namespace LaborSoft
                 myConn.Open();
             }
 
-            string mySelectQuery = "SELECT id FROM composicao_familiar WHERE id = '1';";
+            string mySelectQuery = "SELECT id FROM composicao_familiar WHERE id = '" + id + "';";
 
             System.Diagnostics.Trace.WriteLine(mySelectQuery);
             
