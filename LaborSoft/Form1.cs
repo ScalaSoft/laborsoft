@@ -233,13 +233,17 @@ namespace LaborSoft
         public void Source()
         {
             string search = this.nome_rg_cpf.Text;
-            AutoCompleteStringCollection dadosLista = new AutoCompleteStringCollection();
+            List<String> dadosLista = new List<String>();
+            AutoCompleteStringCollection stack = new AutoCompleteStringCollection();
 
             if ((search.Length%2) == 0)
             {
                 try
                 {
-                    this.myConn.Open();
+                    if (this.myConn.State.ToString() == "Closed")
+                    {
+                        this.myConn.Open();
+                    }
 
                     string mySelectQuery = "SELECT nome_entrevistado FROM identificacao WHERE nome_entrevistado LIKE '" + search + "%' order by id desc;";
 
@@ -272,7 +276,10 @@ namespace LaborSoft
 
                 this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
                 this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                this.nome_rg_cpf.AutoCompleteCustomSource = dadosLista;
+                stack.AddRange(dadosLista.ToArray());
+                dadosLista.Clear();
+                this.nome_rg_cpf.AutoCompleteCustomSource = stack;
+                System.Threading.Thread.Sleep(900);
             }
         }
     }

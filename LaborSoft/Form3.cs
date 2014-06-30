@@ -104,7 +104,7 @@ namespace LaborSoft
             int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
             if (check_cpf == 0)
             {
-                insertDadosResponsavelFamiliar(code);
+                return insertDadosResponsavelFamiliar(code);
             }
             else
             {

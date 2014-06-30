@@ -9,6 +9,7 @@ namespace LaborSoft
 {
     public class Utilities
     {
+        Dictionary<string, int> cpfList = new Dictionary<string, int>();
         SQLiteConnection myConn;
 
         public Utilities()
@@ -32,6 +33,7 @@ namespace LaborSoft
                 var comboBox = control as ComboBox;
                 var checkBox = control as CheckBox;
                 var richBox = control as RichTextBox;
+                var maskBox = control as MaskedTextBox;
 
                 if (textBox != null)
                     (textBox).Clear();
@@ -44,7 +46,10 @@ namespace LaborSoft
 
                 if (richBox != null)
                     (richBox).Clear();
-                
+
+                if (maskBox != null)
+                    (maskBox).Clear();
+
                 if (control.HasChildren)
                     ResetAllControls(control);
             }
@@ -60,28 +65,36 @@ namespace LaborSoft
                 this.myConn.Open();
             }
 
-            string mySelectQuery = "select id from dados_responsavel_familiar where cpf = '"+cpf.Normalize()+"';";
-            
-
-            SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
-            cmd.CommandText = mySelectQuery;
-            int RowCount = Convert.ToInt32(cmd.ExecuteScalar());
-
-            cmd.CommandText = mySelectQuery;
-            SQLiteDataReader dr = cmd.ExecuteReader();
-
-            if (RowCount > 0)
+            if (!cpfList.ContainsKey(cpf.ToString()))
             {
+                string mySelectQuery = "select id from dados_responsavel_familiar where cpf = '" + cpf.Normalize() + "';";
+
+
+                SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+
+                cmd.CommandText = mySelectQuery;
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                SQLiteDataReader dr = cmd.ExecuteReader();
+
                 while (dr.Read())
                 {
                     id = Convert.ToInt32(dr["id"]);
+                }
+
+                if (id != null)
+                {
+                    cpfList.Add(cpf.ToString(), Convert.ToInt32(id));
                 }
 
                 dr.Close();
                 dr.Dispose();
                 cmd.Dispose();
             }
-
+            else {
+                id = cpfList[cpf.ToString()];
+            }
+            
             if (id > 0) return (int)id;
             return 0;
         }

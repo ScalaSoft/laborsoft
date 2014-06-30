@@ -141,9 +141,9 @@ namespace LaborSoft
         public bool updateComposicaoFamiliar(int? code)
         {
             bool check_id = idNumRows(code);
-            if (!check_id)
+            if (check_id != false)
             {
-                insertComposicaoFamiliar(code);
+                return insertComposicaoFamiliar(code);
             }
             else
             {
@@ -227,10 +227,8 @@ namespace LaborSoft
 
         public void populateForm(int? Cod)
         {
-            MessageBox.Show(idNumRows(Cod).ToString());
             if (idNumRows(Cod) == true)
             {
-                MessageBox.Show("entra");
                 if (myConn.State.ToString() == "Closed")
                 {
                     myConn.Open();

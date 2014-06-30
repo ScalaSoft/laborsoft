@@ -32,9 +32,9 @@ namespace LaborSoft
         public bool insertParticipacaoOrganizacaoSocial(int? id)
         {
 
-            string myInsertQuery = "INSERT INTO participacao_organizacao";
+            string myInsertQuery = "INSERT INTO participacao_organizacao ";
 
-            if (id == null && id == 0)
+            if (id != null && id != 0)
             {
                 myInsertQuery = myInsertQuery + " (id, ";
             }
@@ -53,7 +53,7 @@ namespace LaborSoft
                 myInsertQuery = myInsertQuery + "assoc_conhece, qual_assoc, em_qual_participa, participa_assoc, "+
                     "razao_de_nao_participar, liderancas_area)";
 
-                if (id == null && id == 0)
+                if (id != null && id != 0)
                 {
                     myInsertQuery = myInsertQuery + " VALUES(" + id + ", ";
                 }
@@ -72,25 +72,24 @@ namespace LaborSoft
                             ")";
                 SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
                 int result = cmd.ExecuteNonQuery();
+                
                 cmd.Dispose();
+                this.myConn.Close();
+
                 return Convert.ToBoolean(result);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-            myConn.Close();
-
-            return false;
         }
 
         public bool updateParticipacaoOrganizacaoSocial(int? code)
         {
             bool check_id = idNumRows(code);
-            if (!check_id)
+            if (check_id == false)
             {
-                insertParticipacaoOrganizacaoSocial(code);
+                return insertParticipacaoOrganizacaoSocial(code);
             }
             else
             {
@@ -115,6 +114,8 @@ namespace LaborSoft
 
                     int result = cmd.ExecuteNonQuery();
                     cmd.Dispose();
+                    this.myConn.Close();
+
                     return Convert.ToBoolean(result);
                 }
                 catch (Exception ex)
@@ -122,15 +123,10 @@ namespace LaborSoft
                     throw new Exception(ex.Message);
                 }
             }
-
-            myConn.Close();
-
-            return false;
         }
 
         public void populateForm(int? Cod)
         {
-            MessageBox.Show(idNumRows(Cod).ToString());
             if (idNumRows(Cod) == true)
             {
                 if (myConn.State.ToString() == "Closed")
@@ -167,7 +163,7 @@ namespace LaborSoft
                 myConn.Open();
             }
 
-            string mySelectQuery = "SELECT id FROM uso_ocupacao_domicilio WHERE id = '" + id + "';";
+            string mySelectQuery = "SELECT id FROM participacao_organizacao WHERE id = '" + id + "';";
 
             System.Diagnostics.Trace.WriteLine(mySelectQuery);
 
@@ -175,12 +171,15 @@ namespace LaborSoft
             {
                 SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
 
-                SQLiteDataReader dr = cmd.ExecuteReader();
-                bool res = dr.Read();
+                cmd.CommandText = mySelectQuery;
+                cmd.CommandType = CommandType.Text;
+                bool RowCount = false;
 
-                dr.Close();
+                int rows = Convert.ToInt32(cmd.ExecuteScalar());
+                RowCount = Convert.ToBoolean(rows);
+
                 cmd.Dispose();
-                return res;
+                return RowCount;
             }
             catch (SQLiteException e)
             {

@@ -42,7 +42,6 @@ namespace LaborSoft
                 try
                 {
                     myConn.Open();
-
                     string myInsertQuery = "INSERT INTO dados_conjuge" +
                              " (id, nome, sexo, relacao_resp_fam, nascimento, naturalidade," +
                              " uf, cpf, rg_rne, org_exp_cpf, data_exp_cpf, estado_civil, " +
@@ -100,10 +99,13 @@ namespace LaborSoft
 
         public bool updateDadosConjuge(int? code)
         {
-            int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
-            if (check_cpf == 0)
+            if (code == null)
             {
-                insertDadosConjuge(code);
+                int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_conjuge");
+                if (check_cpf == 0)
+                {
+                    return insertDadosConjuge(code);
+                }
             }
             else
             {

@@ -91,16 +91,14 @@ namespace LaborSoft
                 SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
                 int result = cmd.ExecuteNonQuery();
                 cmd.Dispose();
+                myConn.Close();
+
                 return Convert.ToBoolean(result);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-            myConn.Close();
-
-            return false;
         }
 
         public bool updateUsoOcupacaoDomicilio(int? code)
@@ -108,7 +106,7 @@ namespace LaborSoft
             bool check_id = idNumRows(code);
             if (!check_id)
             {
-                insertUsoOcupacaoDomicilio(code);
+                return insertUsoOcupacaoDomicilio(code);
             }
             else
             {
@@ -149,6 +147,8 @@ namespace LaborSoft
 
                     int result = cmd.ExecuteNonQuery();
                     cmd.Dispose();
+                    this.myConn.Close();
+
                     return Convert.ToBoolean(result);
                 }
                 catch (Exception ex)
@@ -156,15 +156,10 @@ namespace LaborSoft
                     throw new Exception(ex.Message);
                 }
             }
-
-            myConn.Close();
-
-            return false;
         }
 
         public void populateForm(int? Cod)
         {
-            MessageBox.Show(idNumRows(Cod).ToString());
             if (idNumRows(Cod) == true)
             {
                 if (myConn.State.ToString() == "Closed")

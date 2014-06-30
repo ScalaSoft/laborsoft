@@ -73,16 +73,14 @@ namespace LaborSoft
                 SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
                 int result = cmd.ExecuteNonQuery();
                 cmd.Dispose();
+                this.myConn.Close();
+
                 return Convert.ToBoolean(result);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-            myConn.Close();
-
-            return false;
         }
 
         public bool updateDadosDaEntrevista(int? code)
@@ -130,7 +128,6 @@ namespace LaborSoft
 
         public void populateForm(int? Cod)
         {
-            MessageBox.Show(idNumRows(Cod).ToString());
             if (idNumRows(Cod) == true)
             {
                 if (myConn.State.ToString() == "Closed")
@@ -175,12 +172,15 @@ namespace LaborSoft
             {
                 SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
 
-                SQLiteDataReader dr = cmd.ExecuteReader();
-                bool res = dr.Read();
+                cmd.CommandText = mySelectQuery;
+                cmd.CommandType = CommandType.Text;
+                bool RowCount = false;
 
-                dr.Close();
+                int rows = Convert.ToInt32(cmd.ExecuteScalar());
+                RowCount = Convert.ToBoolean(rows);
+
                 cmd.Dispose();
-                return res;
+                return RowCount;
             }
             catch (SQLiteException e)
             {
