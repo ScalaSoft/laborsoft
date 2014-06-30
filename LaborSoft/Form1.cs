@@ -22,6 +22,7 @@ namespace LaborSoft
         Form8 frm8;
         Form9 frm9;
         SQLiteConnection myConn;
+        AutoCompleteStringCollection source_arr = new AutoCompleteStringCollection();
 
 
         public Form1()
@@ -29,6 +30,11 @@ namespace LaborSoft
             InitializeComponent();
             setFormsIntoTabs();
             conn();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.nome_rg_cpf.AutoCompleteCustomSource = this.source_arr;
         }
 
         private void conn() {
@@ -103,20 +109,21 @@ namespace LaborSoft
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
+            int next_id = 0;
+            Utilities util = new Utilities();
+
             if (this.code != 0)
             {
                 if (this.frm2.updateIdentificacao(this.code) &&
                     this.frm3.updateDadosResponsavelFamiliar(this.code) &&
                     this.frm4.updateDadosConjuge(this.code) &&
                     this.frm5.updateComposicaoFamiliar(this.code) &&
-                    this.frm6.updateUsoOcupacaoDomicilio(this.code))
+                    this.frm6.updateUsoOcupacaoDomicilio(this.code) &&
+                    this.frm7.updateParticipacaoOrganizacaoSocial(this.code) &&
+                    this.frm8.updateDadosDeContato(this.code) &&
+                    this.frm9.updateDadosDaEntrevista(this.code))
                 {
                     MessageBox.Show("Atualizado com sucesso");
                 }
@@ -126,11 +133,15 @@ namespace LaborSoft
                 }
             }
             else {
-                if (this.frm2.insertIdentificacao() &&
-                    this.frm3.insertDadosResponsavelFamiliar() &&
-                    this.frm4.insertDadosConjuge() &&
-                    this.frm5.insertComposicaoFamiliar(null) &&
-                    this.frm6.insertUsoOcupacaoDomicilio(null))
+                next_id = util.getNextCode();
+                if (this.frm2.insertIdentificacao(next_id) &&
+                    this.frm3.insertDadosResponsavelFamiliar(next_id) &&
+                    this.frm4.insertDadosConjuge(next_id) &&
+                    this.frm5.insertComposicaoFamiliar(next_id) &&
+                    this.frm6.insertUsoOcupacaoDomicilio(next_id) &&
+                    this.frm7.insertParticipacaoOrganizacaoSocial(next_id) &&
+                    this.frm8.insertDadosDeContato(next_id) &&
+                    this.frm9.insertDadosDaEntrevista(next_id))
                 {
                     MessageBox.Show("Inserido com sucesso");
                 }
@@ -172,6 +183,9 @@ namespace LaborSoft
                 this.frm4.populateForm(this.code);
                 this.frm5.populateForm(this.code);
                 this.frm6.populateForm(this.code);
+                this.frm7.populateForm(this.code);
+                this.frm8.populateForm(this.code);
+                this.frm9.populateForm(this.code);
             }
             dr.Close();
             myConn.Close();
@@ -206,6 +220,60 @@ namespace LaborSoft
             Utilities.ResetAllControls(this.frm7);
             Utilities.ResetAllControls(this.frm8);
             Utilities.ResetAllControls(this.frm9);
+        }
+
+        private void nome_rg_cpf_TextChanged(object sender, EventArgs e)
+        {
+            if (this.nome_rg_cpf.TextLength > 3)
+            {
+                Source();
+            }
+        }
+
+        public void Source()
+        {
+            string search = this.nome_rg_cpf.Text;
+            AutoCompleteStringCollection dadosLista = new AutoCompleteStringCollection();
+
+            if ((search.Length%2) == 0)
+            {
+                try
+                {
+                    this.myConn.Open();
+
+                    string mySelectQuery = "SELECT nome_entrevistado FROM identificacao WHERE nome_entrevistado LIKE '" + search + "%' order by id desc;";
+
+                    SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+                    cmd.CommandText = mySelectQuery;
+                    
+                    var RowCount = cmd.ExecuteScalar();
+                    if (RowCount != null)
+                    {
+                        SQLiteCommand cmd2 = new SQLiteCommand(mySelectQuery, myConn);
+                        SQLiteDataReader dr = cmd2.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            dadosLista.Add(dr.GetString(0));
+                        }
+
+                        dr.Close();
+                        dr.Dispose();
+
+                        cmd2.Dispose();
+                    }
+                        
+                    cmd.Dispose();
+                    this.myConn.Close();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+
+                this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
+                this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.nome_rg_cpf.AutoCompleteCustomSource = dadosLista;
+            }
         }
     }
 }

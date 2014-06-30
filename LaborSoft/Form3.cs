@@ -39,10 +39,9 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
 
-        public bool insertDadosResponsavelFamiliar()
+        public bool insertDadosResponsavelFamiliar(int? Cod)
         {
-            int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
-            if (check_cpf == 0)
+            if (Cod != null)
             {
                 try
                 {
@@ -83,6 +82,9 @@ namespace LaborSoft
                     SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
                     cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+
+                    myConn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -91,10 +93,8 @@ namespace LaborSoft
             }
             else
             {
-                updateDadosResponsavelFamiliar(check_cpf);
+                updateDadosResponsavelFamiliar(Cod);
             }
-
-            myConn.Close();
 
             return true;
         }
@@ -104,7 +104,7 @@ namespace LaborSoft
             int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
             if (check_cpf == 0)
             {
-                insertDadosResponsavelFamiliar();
+                insertDadosResponsavelFamiliar(code);
             }
             else
             {
@@ -138,18 +138,18 @@ namespace LaborSoft
                                             "nome_pai = '" + this.nome_pai.Text + "' " +
                                             "WHERE id = '" + code + "'";
 
-                    MessageBox.Show(myInsertQuery);
                     SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
                     cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+
+                    myConn.Close();
                 }
                 catch (Exception ex)
                 {
                     throw new Exception(ex.Message);
                 }
             }
-
-            myConn.Close();
 
             return true;
         }

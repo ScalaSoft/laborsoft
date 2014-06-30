@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.outra_condicao = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.condicao_entrevista = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.supervisor = new System.Windows.Forms.TextBox();
+            this.data_supervisao = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.entrevistador = new System.Windows.Forms.TextBox();
+            this.data_entrevista = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.outra_condicao);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.condicao_entrevista);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
+            this.groupBox1.Controls.Add(this.supervisor);
+            this.groupBox1.Controls.Add(this.data_supervisao);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.entrevistador);
+            this.groupBox1.Controls.Add(this.data_entrevista);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -65,55 +65,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "8";
             // 
-            // label1
+            // outra_condicao
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Entrevistador:";
+            this.outra_condicao.Location = new System.Drawing.Point(383, 103);
+            this.outra_condicao.Name = "outra_condicao";
+            this.outra_condicao.Size = new System.Drawing.Size(530, 20);
+            this.outra_condicao.TabIndex = 131;
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(740, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data da Entrevista:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(294, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 130;
+            this.label6.Text = "Qual? (p/ outra)";
             // 
-            // maskedTextBox1
+            // condicao_entrevista
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(844, 17);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(69, 20);
-            this.maskedTextBox1.TabIndex = 122;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.condicao_entrevista.Location = new System.Drawing.Point(86, 104);
+            this.condicao_entrevista.Name = "condicao_entrevista";
+            this.condicao_entrevista.Size = new System.Drawing.Size(187, 20);
+            this.condicao_entrevista.TabIndex = 129;
             // 
-            // textBox1
+            // label5
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(648, 20);
-            this.textBox1.TabIndex = 123;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 26);
+            this.label5.TabIndex = 128;
+            this.label5.Text = "Codições da\r\n Entrevista:";
             // 
-            // textBox2
+            // supervisor
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(648, 20);
-            this.textBox2.TabIndex = 127;
+            this.supervisor.Location = new System.Drawing.Point(86, 58);
+            this.supervisor.Name = "supervisor";
+            this.supervisor.Size = new System.Drawing.Size(648, 20);
+            this.supervisor.TabIndex = 127;
             // 
-            // maskedTextBox2
+            // data_supervisao
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(844, 58);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(69, 20);
-            this.maskedTextBox2.TabIndex = 126;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.data_supervisao.Location = new System.Drawing.Point(844, 58);
+            this.data_supervisao.Mask = "00/00/0000";
+            this.data_supervisao.Name = "data_supervisao";
+            this.data_supervisao.Size = new System.Drawing.Size(69, 20);
+            this.data_supervisao.TabIndex = 126;
+            this.data_supervisao.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
@@ -133,37 +131,39 @@
             this.label4.TabIndex = 124;
             this.label4.Text = "Supervisor:";
             // 
-            // label5
+            // entrevistador
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 26);
-            this.label5.TabIndex = 128;
-            this.label5.Text = "Codições da\r\n Entrevista:";
+            this.entrevistador.Location = new System.Drawing.Point(86, 17);
+            this.entrevistador.Name = "entrevistador";
+            this.entrevistador.Size = new System.Drawing.Size(648, 20);
+            this.entrevistador.TabIndex = 123;
             // 
-            // textBox3
+            // data_entrevista
             // 
-            this.textBox3.Location = new System.Drawing.Point(86, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 20);
-            this.textBox3.TabIndex = 129;
+            this.data_entrevista.Location = new System.Drawing.Point(844, 17);
+            this.data_entrevista.Mask = "00/00/0000";
+            this.data_entrevista.Name = "data_entrevista";
+            this.data_entrevista.Size = new System.Drawing.Size(69, 20);
+            this.data_entrevista.TabIndex = 122;
+            this.data_entrevista.ValidatingType = typeof(System.DateTime);
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(294, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 130;
-            this.label6.Text = "Qual? (p/ outra)";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(740, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Data da Entrevista:";
             // 
-            // textBox4
+            // label1
             // 
-            this.textBox4.Location = new System.Drawing.Point(383, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(530, 20);
-            this.textBox4.TabIndex = 131;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Entrevistador:";
             // 
             // Form9
             // 
@@ -184,15 +184,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox outra_condicao;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox condicao_entrevista;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox supervisor;
+        private System.Windows.Forms.MaskedTextBox data_supervisao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox entrevistador;
+        private System.Windows.Forms.MaskedTextBox data_entrevista;
     }
 }

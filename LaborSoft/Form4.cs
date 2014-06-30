@@ -29,9 +29,13 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
 
-        public bool insertDadosConjuge()
+        public bool insertDadosConjuge(int? Cod)
         {
             int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_conjuge");
+
+            if (Cod == null) {
+                Cod = this.util.getNextCode();
+            }
             
             if (check_cpf == 0)
             {
@@ -40,7 +44,7 @@ namespace LaborSoft
                     myConn.Open();
 
                     string myInsertQuery = "INSERT INTO dados_conjuge" +
-                             " (nome, sexo, relacao_resp_fam, nascimento, naturalidade," +
+                             " (id, nome, sexo, relacao_resp_fam, nascimento, naturalidade," +
                              " uf, cpf, rg_rne, org_exp_cpf, data_exp_cpf, estado_civil, " +
                              "regime_casamento, uniao_consensual, frequentou_escola, " +
                              "escolaridade, alfabetizado_rg, assina_nome, profissao, renda," +
@@ -48,6 +52,7 @@ namespace LaborSoft
                              "particularidade_deficiencia, possui_laudo_medico, possui_cid, " +
                              "nome_mae, nome_pai)" +
                              "VALUES(" +
+                             "'" + Cod + "', " +
                              "'" + this.nome.Text + "', " +
                              "'" + this.relacao_resp_fam.Text + "', " +
                              "'" + this.sexo.Text + "', " +
@@ -98,7 +103,7 @@ namespace LaborSoft
             int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
             if (check_cpf == 0)
             {
-                insertDadosConjuge();
+                insertDadosConjuge(code);
             }
             else
             {

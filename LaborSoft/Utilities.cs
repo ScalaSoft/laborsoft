@@ -52,25 +52,64 @@ namespace LaborSoft
 
         public int checkIfCpfExist(string cpf, string table)
         {
-            conn();
-            this.myConn.Open();
+            int? id = null;
 
-            string mySelectQuery = "SELECT id FROM " + table + " WHERE cpf = '" + cpf + "';";
+            if (myConn.State.ToString() == "Closed")
+            {
+                conn();
+                this.myConn.Open();
+            }
+
+            string mySelectQuery = "select id from dados_responsavel_familiar where cpf = '"+cpf.Normalize()+"';";
+            
 
             SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+            cmd.CommandText = mySelectQuery;
+            int RowCount = Convert.ToInt32(cmd.ExecuteScalar());
 
-            int rows = cmd.ExecuteNonQuery();
-            if (rows > 0)
+            cmd.CommandText = mySelectQuery;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+
+            if (RowCount > 0)
             {
-                SQLiteDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    return (int)dr["id"];
+                    id = Convert.ToInt32(dr["id"]);
                 }
 
                 dr.Close();
+                dr.Dispose();
                 cmd.Dispose();
             }
+
+            if (id > 0) return (int)id;
+            return 0;
+        }
+
+        public int getNextCode() 
+        {
+            conn();
+            int? id = null;
+
+            this.myConn.Open();
+
+            string mySelectQuery = "select (id+1) as code from identificacao order by id desc limit 1;";
+
+
+            SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+            cmd.CommandText = mySelectQuery;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                id = Convert.ToInt32(dr["code"]);
+            }
+
+            dr.Close();
+            dr.Dispose();
+            cmd.Dispose();
+
+            if (id > 0) return (int)id;
             return 0;
         }
 

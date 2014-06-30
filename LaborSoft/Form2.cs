@@ -29,19 +29,19 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
         
-        public bool insertIdentificacao()
+        public bool insertIdentificacao(int? Cod)
         {
             string cpf = this.util.getCpfToNomeEntrevistadoFromIdentificacao(this.nome_entrevistado.Text);
             int check_entrevistado = this.util.checkIfCpfExist(cpf, "dados_responsavel_familiar");
             
-            if (check_entrevistado == 0)
+            if (check_entrevistado == 0 && Cod != null)
             {
                 try
                 {
                     myConn.Open();
 
                     string myInsertQuery = "INSERT INTO identificacao" +
-                        "(cod_area, area, nome_subarea, renda_familiar, cadunico, numero_nis, deficiencia_mobilidade, possui_cadeirante, num_port_def, deficiente_fam, mulher_resp_fam, num_pess_fam, num_fam_dom, " +
+                        "(id, cod_area, area, nome_subarea, renda_familiar, cadunico, numero_nis, deficiencia_mobilidade, possui_cadeirante, num_port_def, deficiente_fam, mulher_resp_fam, num_pess_fam, num_fam_dom, " +
                         "primeiro_no_domicilio, domicilio, selo_lote, setor_quadra, cep, bairro, compl_logradouro, numero_logradouro, nome_logradouro, tipo_logradouro, complemento, nome_entrevistado)" +
                         "VALUES (@cod_area, @area, @nome_subarea, @renda_familiar, @cadunico," +
                         "@numero_nis, @deficiencia_mobilidade, @possui_cadeirante, @num_port_def," +
@@ -52,6 +52,7 @@ namespace LaborSoft
 
                     SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
 
+                    cmd.Parameters.AddWithValue("id", Cod);
                     cmd.Parameters.Add(new SQLiteParameter("cod_area", this.cod_area.Text));
                     cmd.Parameters.AddWithValue("area", this.Area.Text);
                     cmd.Parameters.AddWithValue("nome_subarea", this.NomeSubarea.Text);
@@ -163,7 +164,7 @@ namespace LaborSoft
                 this.Area.Text = dr["area"].ToString();
                 this.NomeSubarea.Text = dr["nome_subarea"].ToString(); 
                 this.RendaFamiliar.Text = dr["renda_familiar"].ToString();
-                this.Cadunico.Checked = Convert.ToBoolean(dr["cadunico"]);
+                this.Cadunico.Text = dr["cadunico"].ToString();
                 this.NumeroNIS.Text = dr["numero_nis"].ToString();
                 this.DeficienteMobilidade.Checked = Convert.ToBoolean(dr["deficiencia_mobilidade"]);
                 this.PossuiCadeirante.Checked = Convert.ToBoolean(dr["possui_cadeirante"]);

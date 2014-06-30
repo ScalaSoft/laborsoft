@@ -171,10 +171,16 @@
             // 
             // nome_rg_cpf
             // 
+            this.nome_rg_cpf.AcceptsReturn = true;
+            this.nome_rg_cpf.AcceptsTab = true;
+            this.nome_rg_cpf.AllowDrop = true;
+            this.nome_rg_cpf.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.nome_rg_cpf.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.nome_rg_cpf.Location = new System.Drawing.Point(106, 8);
             this.nome_rg_cpf.Name = "nome_rg_cpf";
             this.nome_rg_cpf.Size = new System.Drawing.Size(137, 20);
             this.nome_rg_cpf.TabIndex = 6;
+            this.nome_rg_cpf.TextChanged += new System.EventHandler(this.nome_rg_cpf_TextChanged);
             // 
             // label1
             // 

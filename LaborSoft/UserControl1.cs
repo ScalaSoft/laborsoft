@@ -18,15 +18,7 @@ namespace LaborSoft
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            Form2 frm2 = new Form2();
-            if (frm2.insertIdentificacao())
-            {
-                MessageBox.Show("Inserido com sucesso");
-            }
-            else
-            {
-                MessageBox.Show("Erro!!!");
-            }
+            
         }
     }
 }
