@@ -13,7 +13,7 @@ namespace LaborSoft
     public partial class Form2 : Form
     {
         SQLiteConnection myConn;
-        Utilities util;
+        Utilities util = new Utilities();
         
         public Form2()
         {
@@ -28,7 +28,14 @@ namespace LaborSoft
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
-        
+
+        private void openConn() {
+            if (myConn.State.ToString() == "Closed")
+            {
+                this.myConn.Open();
+            }
+        }
+
         public bool insertIdentificacao(int? Cod)
         {
             string cpf = this.util.getCpfToNomeEntrevistadoFromIdentificacao(this.nome_entrevistado.Text);
@@ -36,14 +43,15 @@ namespace LaborSoft
             
             if (check_entrevistado == 0 && Cod != null)
             {
+                
                 try
                 {
-                    myConn.Open();
+                    openConn();
 
                     string myInsertQuery = "INSERT INTO identificacao" +
                         "(id, cod_area, area, nome_subarea, renda_familiar, cadunico, numero_nis, deficiencia_mobilidade, possui_cadeirante, num_port_def, deficiente_fam, mulher_resp_fam, num_pess_fam, num_fam_dom, " +
                         "primeiro_no_domicilio, domicilio, selo_lote, setor_quadra, cep, bairro, compl_logradouro, numero_logradouro, nome_logradouro, tipo_logradouro, complemento, nome_entrevistado)" +
-                        "VALUES (@cod_area, @area, @nome_subarea, @renda_familiar, @cadunico," +
+                        "VALUES ("+(int)Cod+", @cod_area, @area, @nome_subarea, @renda_familiar, @cadunico," +
                         "@numero_nis, @deficiencia_mobilidade, @possui_cadeirante, @num_port_def," +
                         "@deficiente_fam, @mulher_resp_fam, @num_pess_fam, @num_fam_dom," +
                         " @primeiro_no_domicilio, @domicilio, @selo_lote, @setor_quadra," +
@@ -99,23 +107,20 @@ namespace LaborSoft
         {
             try
             {
-                if (myConn.State.ToString() == "Closed")
-                {
-                    myConn.Open();
-                }
+                openConn();
 
                 string myUpdateQuery = "UPDATE identificacao SET " +
                     "cod_area = '"+this.cod_area.Text+"', " +
                     "area  = '"+this.area.Text+"', " +
                     "nome_subarea= '"+this.nome_subarea.Text+"', " +
                     "renda_familiar= '"+this.renda_familiar.Text+"', " +
-                    "cadunico= '"+this.cadunico.Text+"', " +
+                    "cadunico= '"+this.util.SQLiteConvertToBool(this.cadunico.Checked)+"', " +
                     "numero_nis= '"+this.numero_nis.Text+"', " +
-                    "deficiencia_mobilidade= '"+this.deficiencia_mobilidade.Text+"', " +
-                    "possui_cadeirante= '"+this.possui_cadeirante.Text+"', " +
+                    "deficiencia_mobilidade= '"+this.util.SQLiteConvertToBool(this.deficiencia_mobilidade.Checked)+"', " +
+                    "possui_cadeirante= '"+this.util.SQLiteConvertToBool(this.possui_cadeirante.Checked)+"', " +
                     "num_port_def= '"+this.num_port_def.Text+"', " +
-                    "deficiente_fam= '"+this.deficiente_fam.Text+"', " +
-                    "mulher_resp_fam= '"+this.mulher_resp_fam.Text+"', " +
+                    "deficiente_fam= '"+this.util.SQLiteConvertToBool(this.deficiente_fam.Checked)+"', " +
+                    "mulher_resp_fam= '"+this.mulher_resp_fam.SelectedIndex+"', " +
                     "num_pess_fam= '"+this.num_pess_fam.Text+"', " +
                     "num_fam_dom= '"+this.num_fam_dom.Text+"', " +
                     "primeiro_no_domicilio= '"+this.primeiro_no_domicilio.Text+"', " +
@@ -148,8 +153,8 @@ namespace LaborSoft
         }
 
         public void populateForm(int? Cod) {
-            
-            myConn.Open();
+
+            openConn();
 
             string mySelectQuery = "SELECT * FROM identificacao WHERE id = '"+Cod+"';";
 
@@ -164,13 +169,14 @@ namespace LaborSoft
                 this.Area.Text = dr["area"].ToString();
                 this.NomeSubarea.Text = dr["nome_subarea"].ToString(); 
                 this.RendaFamiliar.Text = dr["renda_familiar"].ToString();
-                this.Cadunico.Text = dr["cadunico"].ToString();
+                this.Cadunico.Checked = Convert.ToBoolean(dr["cadunico"].ToString());
                 this.NumeroNIS.Text = dr["numero_nis"].ToString();
-                this.DeficienteMobilidade.Checked = Convert.ToBoolean(dr["deficiencia_mobilidade"]);
-                this.PossuiCadeirante.Checked = Convert.ToBoolean(dr["possui_cadeirante"]);
-                this.NumeroDePortadoresDeDeficiencia.Text = dr["num_port_def"].ToString(); 
-                this.DeficienteNaFamilia.Checked = Convert.ToBoolean(dr["deficiente_fam"]);
-                this.MulherResponsavel.Text = selectCheckBoxValue(Convert.ToBoolean(dr["mulher_resp_fam"]));
+                MessageBox.Show(dr["deficiencia_mobilidade"].ToString());
+                this.DeficienteMobilidade.Checked = Convert.ToBoolean(dr["deficiencia_mobilidade"].ToString());
+                this.PossuiCadeirante.Checked = Convert.ToBoolean(dr["possui_cadeirante"].ToString());
+                this.NumeroDePortadoresDeDeficiencia.Text = dr["num_port_def"].ToString();
+                this.DeficienteNaFamilia.Checked = Convert.ToBoolean(dr["deficiente_fam"].ToString());
+                this.MulherResponsavel.Text = selectCheckBoxValue(Convert.ToBoolean(dr["mulher_resp_fam"].ToString()));
                 this.NumeroDePessoasNaFamilia.Text = dr["num_pess_fam"].ToString();
                 this.NumeroDeFamiliasNoDomicilio.Text = dr["num_fam_dom"].ToString();
                 this.PrimeiroNoDomicilio.Text = dr["primeiro_no_domicilio"].ToString();
@@ -188,6 +194,8 @@ namespace LaborSoft
             }
 
             dr.Close();
+            dr.Dispose();
+            cmd.Dispose();
             myConn.Close();
             
         }

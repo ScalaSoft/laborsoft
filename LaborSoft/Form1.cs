@@ -114,41 +114,163 @@ namespace LaborSoft
             int next_id = 0;
             Utilities util = new Utilities();
 
-            if (this.code != 0)
+            progressBar1.Value = 1;
+            progressBar1.Maximum = 10;
+
+            labelSaving.BackColor = Color.Transparent;
+            labelSaving.Text = "Salvando...";
+            labelSaving.Visible = true;
+            
+
+            if (this.code != 0 && this.code != null)
             {
-                if (this.frm2.updateIdentificacao(this.code) &&
-                    this.frm3.updateDadosResponsavelFamiliar(this.code) &&
-                    this.frm4.updateDadosConjuge(this.code) &&
-                    this.frm5.updateComposicaoFamiliar(this.code) &&
-                    this.frm6.updateUsoOcupacaoDomicilio(this.code) &&
-                    this.frm7.updateParticipacaoOrganizacaoSocial(this.code) &&
-                    this.frm8.updateDadosDeContato(this.code) &&
-                    this.frm9.updateDadosDaEntrevista(this.code))
-                {
-                    MessageBox.Show("Atualizado com sucesso");
+                progressBar1.Visible = true;
+                progressBar1.Increment(1);
+
+                try{
+                    this.frm2.updateIdentificacao(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm2 error: " + ex.Message);
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao tentar atualizar.");
+                 
+                try{
+                    this.frm3.updateDadosResponsavelFamiliar(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm3 error: " + ex.Message);
                 }
+                
+                try{
+                    this.frm4.updateDadosConjuge(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm4 error: " + ex.Message);
+                }
+                
+                try{
+                    this.frm5.updateComposicaoFamiliar(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm5 error: " + ex.Message);
+                }
+
+                try{
+                    this.frm6.updateUsoOcupacaoDomicilio(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm6 error: " + ex.Message);
+                }
+
+                try{
+                    this.frm7.updateParticipacaoOrganizacaoSocial(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm7 error: " + ex.Message);
+                }
+
+                try{
+                    this.frm8.updateDadosDeContato(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm8 error: " + ex.Message);
+                }
+
+                try{
+                    this.frm9.updateDadosDaEntrevista(this.code);
+                    progressBar1.Increment(1);
+                }catch(Exception ex){
+                    throw new Exception("Frm9 error: " + ex.Message);
+                }
+                labelSaving.Text = "Salvo!";
             }
             else {
                 next_id = util.getNextCode();
-                if (this.frm2.insertIdentificacao(next_id) &&
-                    this.frm3.insertDadosResponsavelFamiliar(next_id) &&
-                    this.frm4.insertDadosConjuge(next_id) &&
-                    this.frm5.insertComposicaoFamiliar(next_id) &&
-                    this.frm6.insertUsoOcupacaoDomicilio(next_id) &&
-                    this.frm7.insertParticipacaoOrganizacaoSocial(next_id) &&
-                    this.frm8.insertDadosDeContato(next_id) &&
-                    this.frm9.insertDadosDaEntrevista(next_id))
+
+                progressBar1.Visible = true;
+                progressBar1.Increment(1);
+
+                try
                 {
-                    MessageBox.Show("Inserido com sucesso");
+                    this.frm2.insertIdentificacao(next_id);
+                    progressBar1.Increment(1);
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Erro!!!");
+                    throw new Exception("Frm2 error: " + ex.Message);
                 }
+
+                try
+                {
+                    this.frm3.insertDadosResponsavelFamiliar(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm3 error: " + ex.Message);
+                }
+
+                try
+                {
+                    this.frm4.insertDadosConjuge(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm4 error: " + ex.Message);
+                }
+
+                try
+                {
+                    this.frm5.insertComposicaoFamiliar(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm5 error: " + ex.Message);
+                }
+
+                try
+                {
+                   this.frm6.insertUsoOcupacaoDomicilio(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm6 error: " + ex.Message);
+                }
+
+                try
+                {
+                    this.frm7.insertParticipacaoOrganizacaoSocial(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm7 error: " + ex.Message);
+                }
+
+                try
+                {
+                    this.frm8.insertDadosDeContato(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm8 error: " + ex.Message);
+                }
+
+                try
+                {
+                    this.frm9.insertDadosDaEntrevista(next_id);
+                    progressBar1.Increment(1);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Frm9 error: " + ex.Message);
+                }
+
+                labelSaving.Text = "Salvo!";
             }
         }
 
@@ -211,6 +333,8 @@ namespace LaborSoft
         private void btn_clear_Click(object sender, EventArgs e)
         {
             this.code = null;
+            progressBar1.Visible = false;
+            labelSaving.Visible = false;
             Utilities.ResetAllControls(this);
             Utilities.ResetAllControls(this.frm2);
             Utilities.ResetAllControls(this.frm3);
@@ -274,12 +398,17 @@ namespace LaborSoft
                     throw new Exception(e.Message);
                 }
 
-                this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
-                this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                stack.AddRange(dadosLista.ToArray());
-                dadosLista.Clear();
-                this.nome_rg_cpf.AutoCompleteCustomSource = stack;
-                System.Threading.Thread.Sleep(900);
+                try
+                {
+                    this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    stack.AddRange(dadosLista.ToArray());
+                    dadosLista.Clear();
+                    this.nome_rg_cpf.AutoCompleteCustomSource = stack;
+                }
+                catch (Exception ex) { 
+                }
+
             }
         }
     }

@@ -34,7 +34,7 @@ namespace LaborSoft
 
             string myInsertQuery = "INSERT INTO composicao_familiar";
 
-            if (id == null && id == 0)
+            if (id != null && id != 0)
             {
                 myInsertQuery = myInsertQuery + " (id, ";
             }
@@ -63,7 +63,7 @@ namespace LaborSoft
                             "profissao_3 ,renda_3,beneficiario_prog_soc_3,prog_soc_qual_3," +
                             "valor_beneficio_3,particularidade_deficiencia_3,possui_laudo_medico_3,possui_cid_3)";
                 
-                if (id == null && id == 0)
+                if (id != null && id != 0)
                 {
                     myInsertQuery = myInsertQuery + " VALUES("+id+", ";
                 }
@@ -141,7 +141,7 @@ namespace LaborSoft
         public bool updateComposicaoFamiliar(int? code)
         {
             bool check_id = idNumRows(code);
-            if (check_id != false)
+            if (check_id == false)
             {
                 return insertComposicaoFamiliar(code);
             }

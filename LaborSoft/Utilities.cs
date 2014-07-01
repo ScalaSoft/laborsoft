@@ -25,6 +25,15 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
 
+        private void openConn()
+        {
+            if (myConn.State.ToString() == "Closed")
+            {
+                conn();
+                this.myConn.Open();
+            }
+        }
+
         public static void ResetAllControls(Control form)
         {
             foreach (Control control in form.Controls)
@@ -59,15 +68,16 @@ namespace LaborSoft
         {
             int? id = null;
 
-            if (myConn.State.ToString() == "Closed")
-            {
-                conn();
-                this.myConn.Open();
-            }
+            openConn();
 
-            if (!cpfList.ContainsKey(cpf.ToString()))
+            if (cpf != null)
             {
-                string mySelectQuery = "select id from dados_responsavel_familiar where cpf = '" + cpf.Normalize() + "';";
+
+                if (this.cpfList.ContainsKey(cpf)) {
+                    return cpfList[cpf];
+                }
+                
+                string mySelectQuery = "select id from dados_responsavel_familiar where cpf = '" + cpf + "';";
 
 
                 SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
@@ -92,19 +102,20 @@ namespace LaborSoft
                 cmd.Dispose();
             }
             else {
-                id = cpfList[cpf.ToString()];
+                id = 0;
             }
-            
+
+            this.myConn.Close();
+
             if (id > 0) return (int)id;
             return 0;
         }
 
         public int getNextCode() 
         {
-            conn();
-            int? id = null;
+            openConn();
 
-            this.myConn.Open();
+            int? id = null;
 
             string mySelectQuery = "select (id+1) as code from identificacao order by id desc limit 1;";
 
@@ -122,13 +133,15 @@ namespace LaborSoft
             dr.Dispose();
             cmd.Dispose();
 
+            this.myConn.Close();
+
             if (id > 0) return (int)id;
             return 0;
         }
 
         public string getCpfToNomeEntrevistadoFromIdentificacao(string str)
         {
-            myConn.Open();
+            openConn();
 
             string mySelectQuery = "SELECT drf.cpf as cpf FROM identificacao i "+
                 "LEFT JOIN dados_responsavel_familiar drf WHERE i.nome_entrevistado = '" + str + "';";
@@ -147,7 +160,14 @@ namespace LaborSoft
                 cmd.Dispose();
                 dr.Close();
             }
+
+            myConn.Close();
+
             return null;
+        }
+
+        public int SQLiteConvertToBool(bool value) {
+            if(value == true){ return (int)1; }else{ return (int)0; }
         }
     }
 }

@@ -29,6 +29,15 @@ namespace LaborSoft
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
 
+        private void openConn()
+        {
+            if (myConn.State.ToString() == "Closed")
+            {
+                conn();
+                this.myConn.Open();
+            }
+        }
+
         public bool insertDadosConjuge(int? Cod)
         {
             int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_conjuge");
@@ -37,11 +46,12 @@ namespace LaborSoft
                 Cod = this.util.getNextCode();
             }
             
-            if (check_cpf == 0)
+            if (check_cpf == 0 && Cod != null)
             {
                 try
                 {
-                    myConn.Open();
+                    openConn();
+
                     string myInsertQuery = "INSERT INTO dados_conjuge" +
                              " (id, nome, sexo, relacao_resp_fam, nascimento, naturalidade," +
                              " uf, cpf, rg_rne, org_exp_cpf, data_exp_cpf, estado_civil, " +
@@ -104,14 +114,14 @@ namespace LaborSoft
                 int check_cpf = this.util.checkIfCpfExist(this.cpf.Text, "dados_conjuge");
                 if (check_cpf == 0)
                 {
-                    return insertDadosConjuge(code);
+                    return insertDadosConjuge(null);
                 }
             }
             else
             {
                 try
                 {
-                    myConn.Open();
+                    openConn();
 
                     string myInsertQuery = "UPDATE dados_conjuge SET " +
                                             "nome = '" + this.nome.Text + "', " +

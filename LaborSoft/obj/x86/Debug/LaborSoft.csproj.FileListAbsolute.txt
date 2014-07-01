@@ -16,3 +16,7 @@ C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Fo
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.Form9.resources
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.exe.config
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.UserControl1.resources
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.exe.manifest
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.application
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.exe.manifest
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.application

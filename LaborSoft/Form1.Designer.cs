@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.quadra_selo = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.labelSaving = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,12 +219,33 @@
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(757, 5);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(239, 23);
+            this.progressBar1.TabIndex = 13;
+            this.progressBar1.Visible = false;
+            // 
+            // labelSaving
+            // 
+            this.labelSaving.AutoSize = true;
+            this.labelSaving.BackColor = System.Drawing.Color.Transparent;
+            this.labelSaving.Location = new System.Drawing.Point(859, 11);
+            this.labelSaving.Name = "labelSaving";
+            this.labelSaving.Size = new System.Drawing.Size(35, 13);
+            this.labelSaving.TabIndex = 14;
+            this.labelSaving.Text = "label3";
+            this.labelSaving.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.labelSaving);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.quadra_selo);
             this.Controls.Add(this.label2);
@@ -260,6 +283,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox quadra_selo;
         private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label labelSaving;
     }
 }
 

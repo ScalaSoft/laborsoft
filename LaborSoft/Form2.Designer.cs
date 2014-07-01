@@ -430,9 +430,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(527, 234);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(129, 26);
+            this.label22.Size = new System.Drawing.Size(132, 26);
             this.label22.TabIndex = 40;
-            this.label22.Text = "Há alguém com \r\ndificuldade demobilidade?";
+            this.label22.Text = "Há alguém com \r\ndificuldade de mobilidade?";
             // 
             // label23
             // 
