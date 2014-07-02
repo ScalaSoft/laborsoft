@@ -24,7 +24,7 @@ namespace LaborSoft
         private void conn()
         {
             // If the connection string is empty, use default. 
-            const string filename = @"C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\db.s3db";
+            const string filename = @"C:\laborsoft\producao.s3db";
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }

@@ -20,7 +20,7 @@ namespace LaborSoft
         public void conn()
         {
             // If the connection string is empty, use default. 
-            const string filename = @"C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\db.s3db";
+            const string filename = @"C:\laborsoft\producao.s3db";
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
@@ -164,6 +164,33 @@ namespace LaborSoft
             myConn.Close();
 
             return null;
+        }
+
+        public bool checkNomeEntrevistado(string nome) {
+
+            openConn();
+
+            if (nome != null)
+            {
+
+                string mySelectQuery = "select count(*) as total from identificacao where nome_entrevistado = '" + nome + "';";
+
+                SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+
+                cmd.CommandText = mySelectQuery;
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                bool res = Convert.ToBoolean(cmd.ExecuteScalar());
+
+                cmd.Dispose();
+                this.myConn.Close();
+
+                return res;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int SQLiteConvertToBool(bool value) {

@@ -34,7 +34,7 @@ namespace LaborSoft
         private void conn()
         {
             // If the connection string is empty, use default. 
-            const string filename = @"C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\db.s3db";
+            const string filename = @"C:\laborsoft\producao.s3db";
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
@@ -106,7 +106,7 @@ namespace LaborSoft
         public bool updateDadosResponsavelFamiliar(int? code)
         {
             int check_cpf = util.checkIfCpfExist(this.cpf.Text, "dados_responsavel_familiar");
-            if (check_cpf == 0)
+            if (check_cpf == 0 && code == null)
             {
                 return insertDadosResponsavelFamiliar(code);
             }
@@ -205,8 +205,21 @@ namespace LaborSoft
             myConn.Close();
         }
 
-        public void clear() {
-            Utilities.ResetAllControls(this);
+        public MaskedTextBox Cpf
+        {
+            get { return cpf; }
+            set { cpf = value; }
         }
+
+        public bool validate()
+        {
+            if (this.cpf.MaskFull == false)
+            {
+                MessageBox.Show("Você não pode salvar sem preencher o campo (CPF): Dados do Entrevistado");
+                return false;
+            }
+            return true;
+        }
+
     }
 }

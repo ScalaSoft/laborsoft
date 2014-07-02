@@ -47,24 +47,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaborSoft.exe" size="312832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaborSoft.exe" size="313856">
       <assemblyIdentity name="LaborSoft" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>kTY9dmY3ExNewAiD9OAeflQ2Fyw=</dsig:DigestValue>
+        <dsig:DigestValue>4t61UU0AWqFK88FAIUhdr70gxXQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="LaborSoft.exe.config" size="1172">
+  <file name="LaborSoft.exe.config" size="1067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>VeMDv9PJI91fycuS7MS5BLrOf2s=</dsig:DigestValue>
+      <dsig:DigestValue>xqAZxlER3pxX8y+82ruFB/p9c4I=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

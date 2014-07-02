@@ -29,7 +29,6 @@ namespace LaborSoft
         {
             InitializeComponent();
             setFormsIntoTabs();
-            changeButtonsState();
             conn();
 
         }
@@ -41,7 +40,7 @@ namespace LaborSoft
 
         private void conn() {
             // If the connection string is empty, use default. 
-            const string filename = @"C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\db.s3db";
+            const string filename = @"C:\laborsoft\producao.s3db";
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
@@ -116,163 +115,189 @@ namespace LaborSoft
             int next_id = 0;
             Utilities util = new Utilities();
 
-            progressBar1.Value = 1;
-            progressBar1.Maximum = 10;
-
-            labelSaving.BackColor = Color.Transparent;
-            labelSaving.Text = "Salvando...";
-            labelSaving.Visible = true;
-            
-
-            if (this.code != 0 && this.code != null)
+            if (validateFields())
             {
-                progressBar1.Visible = true;
-                progressBar1.Increment(1);
+                progressBar1.Value = 1;
+                progressBar1.Maximum = 10;
 
-                try{
-                    this.frm2.updateIdentificacao(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm2 error: " + ex.Message);
-                }
-                 
-                try{
-                    this.frm3.updateDadosResponsavelFamiliar(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm3 error: " + ex.Message);
-                }
+                labelSaving.BackColor = Color.Transparent;
+                labelSaving.Text = "Salvando...";
+                labelSaving.Visible = true;
                 
-                try{
-                    this.frm4.updateDadosConjuge(this.code);
+                if (this.code != 0 && this.code != null)
+                {
+                    progressBar1.Visible = true;
                     progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm4 error: " + ex.Message);
+
+                    try
+                    {
+                        this.frm2.updateIdentificacao(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm2 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm3.updateDadosResponsavelFamiliar(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm3 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm4.updateDadosConjuge(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm4 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm5.updateComposicaoFamiliar(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm5 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm6.updateUsoOcupacaoDomicilio(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm6 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm7.updateParticipacaoOrganizacaoSocial(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm7 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm8.updateDadosDeContato(this.code);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm8 error: " + ex.Message);
+                    }
+
+                    try
+                    {
+                        this.frm9.updateDadosDaEntrevista(this.code);
+                        progressBar1.Increment(1);
+                        labelSaving.Text = "Salvo!";
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm9 error: " + ex.Message);
+                    }
                 }
-                
-                try{
-                    this.frm5.updateComposicaoFamiliar(this.code);
+                else
+                {
+                    next_id = util.getNextCode();
+
+                    progressBar1.Visible = true;
                     progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm5 error: " + ex.Message);
-                }
 
-                try{
-                    this.frm6.updateUsoOcupacaoDomicilio(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm6 error: " + ex.Message);
-                }
+                    try
+                    {
+                        this.frm2.insertIdentificacao(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm2 error: " + ex.Message);
+                    }
 
-                try{
-                    this.frm7.updateParticipacaoOrganizacaoSocial(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm7 error: " + ex.Message);
-                }
+                    try
+                    {
+                        this.frm3.insertDadosResponsavelFamiliar(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm3 error: " + ex.Message);
+                    }
 
-                try{
-                    this.frm8.updateDadosDeContato(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm8 error: " + ex.Message);
-                }
+                    try
+                    {
+                        this.frm4.insertDadosConjuge(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm4 error: " + ex.Message);
+                    }
 
-                try{
-                    this.frm9.updateDadosDaEntrevista(this.code);
-                    progressBar1.Increment(1);
-                }catch(Exception ex){
-                    throw new Exception("Frm9 error: " + ex.Message);
-                }
-                labelSaving.Text = "Salvo!";
-            }
-            else {
-                next_id = util.getNextCode();
+                    try
+                    {
+                        this.frm5.insertComposicaoFamiliar(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm5 error: " + ex.Message);
+                    }
 
-                progressBar1.Visible = true;
-                progressBar1.Increment(1);
+                    try
+                    {
+                        this.frm6.insertUsoOcupacaoDomicilio(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm6 error: " + ex.Message);
+                    }
 
-                try
-                {
-                    this.frm2.insertIdentificacao(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm2 error: " + ex.Message);
-                }
+                    try
+                    {
+                        this.frm7.insertParticipacaoOrganizacaoSocial(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm7 error: " + ex.Message);
+                    }
 
-                try
-                {
-                    this.frm3.insertDadosResponsavelFamiliar(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm3 error: " + ex.Message);
-                }
+                    try
+                    {
+                        this.frm8.insertDadosDeContato(next_id);
+                        progressBar1.Increment(1);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm8 error: " + ex.Message);
+                    }
 
-                try
-                {
-                    this.frm4.insertDadosConjuge(next_id);
-                    progressBar1.Increment(1);
+                    try
+                    {
+                        this.frm9.insertDadosDaEntrevista(next_id);
+                        progressBar1.Increment(1);
+                        labelSaving.Text = "Salvo!";
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Frm9 error: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm4 error: " + ex.Message);
-                }
-
-                try
-                {
-                    this.frm5.insertComposicaoFamiliar(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm5 error: " + ex.Message);
-                }
-
-                try
-                {
-                   this.frm6.insertUsoOcupacaoDomicilio(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm6 error: " + ex.Message);
-                }
-
-                try
-                {
-                    this.frm7.insertParticipacaoOrganizacaoSocial(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm7 error: " + ex.Message);
-                }
-
-                try
-                {
-                    this.frm8.insertDadosDeContato(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm8 error: " + ex.Message);
-                }
-
-                try
-                {
-                    this.frm9.insertDadosDaEntrevista(next_id);
-                    progressBar1.Increment(1);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Frm9 error: " + ex.Message);
-                }
-
-                labelSaving.Text = "Salvo!";
             }
         }
 
@@ -315,7 +340,6 @@ namespace LaborSoft
             dr.Close();
             dr.Dispose();
 
-            changeButtonsState();
             myConn.Close();
         }
 
@@ -339,7 +363,6 @@ namespace LaborSoft
         private void btn_clear_Click(object sender, EventArgs e)
         {
             this.code = null;
-            changeButtonsState();
             progressBar1.Visible = false;
             labelSaving.Visible = false;
             Utilities.ResetAllControls(this);
@@ -425,16 +448,16 @@ namespace LaborSoft
             }
         }
 
-        public void changeButtonsState() {
-            if (this.code != null)
+        public bool validateFields(){
+            if (!this.frm2.validate()) {
+                return false;
+            }
+
+            if (!this.frm3.validate())
             {
-                this.btn_save.Enabled = true;
-                this.btn_clear.Enabled = true;
+                return false;
             }
-            else {
-                this.btn_save.Enabled = false;
-                this.btn_clear.Enabled = false;
-            }
+            return true;
         }
     }
 }

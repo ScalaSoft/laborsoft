@@ -37,7 +37,7 @@ namespace LaborSoft.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Users\\Álvaro\\Documents\\GitHub\\laborsoft\\LaborSoft\\db.s3db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\laborsoft\\producao.s3db")]
         public string dbConnectionString1 {
             get {
                 return ((string)(this["dbConnectionString1"]));

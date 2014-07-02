@@ -12,6 +12,7 @@ namespace LaborSoft
 {
     public partial class Form2 : Form
     {
+        string nome_entrevistado_ativo = null;
         SQLiteConnection myConn;
         Utilities util = new Utilities();
         
@@ -24,7 +25,7 @@ namespace LaborSoft
         private void conn()
         {
             // If the connection string is empty, use default. 
-            const string filename = @"C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\db.s3db";
+            const string filename = @"C:\laborsoft\producao.s3db";
             string sqConnectionString = "Data Source=" + filename + ";Version=3;FailIfMissing=True";
             this.myConn = new SQLiteConnection(sqConnectionString);
         }
@@ -190,6 +191,7 @@ namespace LaborSoft
                 this.TipoLogradouro.Text = dr["tipo_logradouro"].ToString();
                 this.Complemento.Text = dr["complemento"].ToString();
                 this.NomeDoEntrevistado.Text = dr["nome_entrevistado"].ToString();
+                this.nome_entrevistado_ativo = this.NomeDoEntrevistado.Text;
             }
 
             dr.Close();
@@ -237,6 +239,22 @@ namespace LaborSoft
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public bool validate() {
+            if (this.util.checkNomeEntrevistado(this.nome_entrevistado.Text) && 
+                this.nome_entrevistado_ativo != this.nome_entrevistado.Text)
+            {
+                MessageBox.Show("Esse \"Nome do Entrevistado\" já existe!");
+                return false;
+            }
+
+            if (this.nome_entrevistado.TextLength == 0)
+            {
+                MessageBox.Show("Você não pode salvar sem preencher o campo (Idêntificação): Nome do Entrevistado");
+                return false;
+            }
+            return true;
         }
         
         public TextBox Cod_area
@@ -387,6 +405,10 @@ namespace LaborSoft
         {
             get { return nome_entrevistado; }
             set { nome_entrevistado = value; }
+        }
+
+        private void nome_entrevistado_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

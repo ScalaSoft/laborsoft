@@ -275,6 +275,7 @@
             this.nome_entrevistado.Name = "nome_entrevistado";
             this.nome_entrevistado.Size = new System.Drawing.Size(852, 20);
             this.nome_entrevistado.TabIndex = 22;
+            this.nome_entrevistado.TextChanged += new System.EventHandler(this.nome_entrevistado_TextChanged);
             // 
             // label12
             // 
