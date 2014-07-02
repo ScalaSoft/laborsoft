@@ -29,7 +29,9 @@ namespace LaborSoft
         {
             InitializeComponent();
             setFormsIntoTabs();
+            changeButtonsState();
             conn();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -309,7 +311,11 @@ namespace LaborSoft
                 this.frm8.populateForm(this.code);
                 this.frm9.populateForm(this.code);
             }
+            cmd.Dispose();
             dr.Close();
+            dr.Dispose();
+
+            changeButtonsState();
             myConn.Close();
         }
 
@@ -333,6 +339,7 @@ namespace LaborSoft
         private void btn_clear_Click(object sender, EventArgs e)
         {
             this.code = null;
+            changeButtonsState();
             progressBar1.Visible = false;
             labelSaving.Visible = false;
             Utilities.ResetAllControls(this);
@@ -348,8 +355,9 @@ namespace LaborSoft
 
         private void nome_rg_cpf_TextChanged(object sender, EventArgs e)
         {
-            if (this.nome_rg_cpf.TextLength > 3)
+            if (this.nome_rg_cpf.TextLength > 3 && this.nome_rg_cpf.TextLength < 5)
             {
+                System.Threading.Thread.Sleep(800);
                 Source();
             }
         }
@@ -369,7 +377,12 @@ namespace LaborSoft
                         this.myConn.Open();
                     }
 
-                    string mySelectQuery = "SELECT nome_entrevistado FROM identificacao WHERE nome_entrevistado LIKE '" + search + "%' order by id desc;";
+                    string mySelectQuery = "SELECT i.nome_entrevistado as nome FROM identificacao i "+
+                        "left join dados_responsavel_familiar drf on(drf.id = i.id)"+
+                        " WHERE i.nome_entrevistado LIKE '" + search + "%' "+
+                        " OR drf.nome LIKE '"+ search +"%' "+
+                        " OR drf.cpf = '"+ search +"' "+
+                        " OR drf.rg_rne = '"+ search +"' order by i.id desc;";
 
                     SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
                     cmd.CommandText = mySelectQuery;
@@ -409,6 +422,18 @@ namespace LaborSoft
                 catch (Exception ex) { 
                 }
 
+            }
+        }
+
+        public void changeButtonsState() {
+            if (this.code != null)
+            {
+                this.btn_save.Enabled = true;
+                this.btn_clear.Enabled = true;
+            }
+            else {
+                this.btn_save.Enabled = false;
+                this.btn_clear.Enabled = false;
             }
         }
     }

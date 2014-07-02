@@ -65,12 +65,12 @@ namespace LaborSoft
                     cmd.Parameters.AddWithValue("area", this.Area.Text);
                     cmd.Parameters.AddWithValue("nome_subarea", this.NomeSubarea.Text);
                     cmd.Parameters.AddWithValue("renda_familiar", this.RendaFamiliar.Text);
-                    cmd.Parameters.AddWithValue("cadunico", this.Cadunico.Checked);
+                    cmd.Parameters.AddWithValue("cadunico", this.util.SQLiteConvertToBool(this.Cadunico.Checked));
                     cmd.Parameters.AddWithValue("numero_nis", this.NumeroNIS.Text);
-                    cmd.Parameters.AddWithValue("deficiencia_mobilidade", this.DeficienteMobilidade.Checked);
-                    cmd.Parameters.AddWithValue("possui_cadeirante", this.PossuiCadeirante.Checked);
+                    cmd.Parameters.AddWithValue("deficiencia_mobilidade", this.util.SQLiteConvertToBool(this.DeficienteMobilidade.Checked));
+                    cmd.Parameters.AddWithValue("possui_cadeirante", this.util.SQLiteConvertToBool(this.PossuiCadeirante.Checked));
                     cmd.Parameters.AddWithValue("num_port_def", this.NumeroDePortadoresDeDeficiencia.Text);
-                    cmd.Parameters.AddWithValue("deficiente_fam", this.DeficienteNaFamilia.Checked);
+                    cmd.Parameters.AddWithValue("deficiente_fam", this.util.SQLiteConvertToBool(this.DeficienteNaFamilia.Checked));
                     cmd.Parameters.AddWithValue("mulher_resp_fam", this.MulherResponsavel.Text);
                     cmd.Parameters.AddWithValue("num_pess_fam", this.NumeroDePessoasNaFamilia.Text);
                     cmd.Parameters.AddWithValue("num_fam_dom", this.NumeroDeFamiliasNoDomicilio.Text);
@@ -120,7 +120,7 @@ namespace LaborSoft
                     "possui_cadeirante= '"+this.util.SQLiteConvertToBool(this.possui_cadeirante.Checked)+"', " +
                     "num_port_def= '"+this.num_port_def.Text+"', " +
                     "deficiente_fam= '"+this.util.SQLiteConvertToBool(this.deficiente_fam.Checked)+"', " +
-                    "mulher_resp_fam= '"+this.mulher_resp_fam.SelectedIndex+"', " +
+                    "mulher_resp_fam= '"+this.mulher_resp_fam.Text+"', " +
                     "num_pess_fam= '"+this.num_pess_fam.Text+"', " +
                     "num_fam_dom= '"+this.num_fam_dom.Text+"', " +
                     "primeiro_no_domicilio= '"+this.primeiro_no_domicilio.Text+"', " +
@@ -171,12 +171,11 @@ namespace LaborSoft
                 this.RendaFamiliar.Text = dr["renda_familiar"].ToString();
                 this.Cadunico.Checked = Convert.ToBoolean(dr["cadunico"].ToString());
                 this.NumeroNIS.Text = dr["numero_nis"].ToString();
-                MessageBox.Show(dr["deficiencia_mobilidade"].ToString());
                 this.DeficienteMobilidade.Checked = Convert.ToBoolean(dr["deficiencia_mobilidade"].ToString());
                 this.PossuiCadeirante.Checked = Convert.ToBoolean(dr["possui_cadeirante"].ToString());
                 this.NumeroDePortadoresDeDeficiencia.Text = dr["num_port_def"].ToString();
                 this.DeficienteNaFamilia.Checked = Convert.ToBoolean(dr["deficiente_fam"].ToString());
-                this.MulherResponsavel.Text = selectCheckBoxValue(Convert.ToBoolean(dr["mulher_resp_fam"].ToString()));
+                this.MulherResponsavel.Text = dr["mulher_resp_fam"].ToString();
                 this.NumeroDePessoasNaFamilia.Text = dr["num_pess_fam"].ToString();
                 this.NumeroDeFamiliasNoDomicilio.Text = dr["num_fam_dom"].ToString();
                 this.PrimeiroNoDomicilio.Text = dr["primeiro_no_domicilio"].ToString();

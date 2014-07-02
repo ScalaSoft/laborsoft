@@ -66,27 +66,27 @@ namespace LaborSoft
 
                 myInsertQuery = myInsertQuery +
                             "'" + this.situacao.Text + "', " +
-                            "'" + this.situacao_de_risco.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.situacao_de_risco.Checked) + "', " +
                             "'" + this.padrao_edificao.Text + "', " +
                             "'" + this.tipo_ocupacao.Text + "', " +
                             "'" + this.valor_do_aluguel.Text + "', " +
                             "'" + this.tipo_uso_imovel.Text + "', " +
                             "'" + this.qual_atividade.Text + "', " +
-                            "'" + this.banheiro.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.banheiro.Checked) + "', " +
                             "'" + this.area_terreno.Text + "', " +
-                            "'" + this.possui_outro_imovel.Checked + "', " +
-                            "'" + this.outro_imovel_onde.Text + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_outro_imovel.Checked) + "', " +
+                            "'" + this.onde.Text + "', " +
                             "'" + this.tempo_no_domicilio.Text + "', " +
-                            "'" + this.doc_prefeitura.Checked + "', " +
-                            "'" + this.doc_temp_moradia.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.doc_prefeitura.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.doc_temp_moradia.Checked) + "', " +
                             "'" + this.quais_docs.Text + "', " +
                             "'" + this.tempo_mora_area.Text + "', " +
                             "'" + this.morava_onde_antes.Text + "', " +
                             "'" + this.municipio_anterior.Text + "', " +
                             "'" + this.tempo_mora_municipio.Text + "', " +
-                            "'" + this.psh.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.psh.Checked) + "', " +
                             "'" + this.ano_psh.Text + "', " +
-                            "'" + this.possui_iptu.Checked + "'" +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_iptu.Checked) + "'" +
                             ")";
                 SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
                 int result = cmd.ExecuteNonQuery();
@@ -119,27 +119,27 @@ namespace LaborSoft
 
                     string myUpdateQuery = "UPDATE uso_ocupacao_domicilio SET " +
                                             "situacao = '" + this.situacao.Text + "', " +
-                                            "situacao_de_risco = '" + this.situacao_de_risco.Checked + "', " +
+                                            "situacao_de_risco = '" + this.util.SQLiteConvertToBool(this.situacao_de_risco.Checked) + "', " +
                                             "padrao_edificao = '" + this.padrao_edificao.Text + "', " +
                                             "tipo_ocupacao = '" + this.tipo_ocupacao.Text + "', " +
                                             "valor_do_aluguel = '" + this.valor_do_aluguel.Text + "', " +
                                             "tipo_uso_imovel = '" + this.tipo_uso_imovel.Text + "', " +
                                             "qual_atividade = '" + this.qual_atividade.Text + "', " +
-                                            "banheiro = '" + this.banheiro.Checked + "', " +
+                                            "banheiro = '" + this.util.SQLiteConvertToBool(this.banheiro.Checked) + "', " +
                                             "area_terreno = '" + this.area_terreno.Text + "', " +
-                                            "possui_outro_imovel = '" + this.possui_outro_imovel.Checked + "', " +
-                                            "outro_imovel_onde = '" + this.outro_imovel_onde.Text + "', " +
+                                            "possui_outro_imovel = '" + this.util.SQLiteConvertToBool(this.possui_outro_imovel.Checked) + "', " +
+                                            "outro_imovel_onde = '" + this.onde.Text + "', " +
                                             "tempo_no_domicilio = '" + this.tempo_no_domicilio.Text + "', " +
-                                            "doc_prefeitura = '" + this.doc_prefeitura.Checked + "', " +
-                                            "doc_temp_moradia = '" + this.doc_temp_moradia.Checked + "', " +
+                                            "doc_prefeitura = '" + this.util.SQLiteConvertToBool(this.doc_prefeitura.Checked) + "', " +
+                                            "doc_temp_moradia = '" + this.util.SQLiteConvertToBool(this.doc_temp_moradia.Checked) + "', " +
                                             "quais_docs = '" + this.quais_docs.Text + "', " +
                                             "tempo_mora_area = '" + this.tempo_mora_area.Text + "', " +
                                             "morava_onde_antes = '" + this.morava_onde_antes.Text + "', " +
                                             "municipio_anterior = '" + this.municipio_anterior.Text + "', " +
                                             "tempo_mora_municipio = '" + this.tempo_mora_municipio.Text + "', " +
-                                            "psh = '" + this.psh.Checked + "', " +
+                                            "psh = '" + this.util.SQLiteConvertToBool(this.psh.Checked) + "', " +
                                             "ano_psh = '" + this.ano_psh.Text + "', " +
-                                            "possui_iptu = '" + this.possui_iptu.Checked + "'" +
+                                            "possui_iptu = '" + this.util.SQLiteConvertToBool(this.possui_iptu.Checked) + "'" +
                                             "WHERE id = '" + code + "'";
                     System.Diagnostics.Trace.WriteLine(myUpdateQuery);
 
@@ -184,7 +184,7 @@ namespace LaborSoft
                     this.banheiro.Checked = Convert.ToBoolean(dr["banheiro"]);
                     this.area_terreno.Text = dr["area_terreno"].ToString();
                     this.possui_outro_imovel.Checked = Convert.ToBoolean(dr["possui_outro_imovel"]);
-                    this.outro_imovel_onde.Text = dr["outro_imovel_onde"].ToString();
+                    this.onde.Text = dr["outro_imovel_onde"].ToString();
                     this.tempo_no_domicilio.Text = dr["tempo_no_domicilio"].ToString();
                     this.doc_prefeitura.Checked = Convert.ToBoolean(dr["doc_prefeitura"]);
                     this.doc_temp_moradia.Checked = Convert.ToBoolean(dr["doc_temp_moradia"]);

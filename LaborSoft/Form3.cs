@@ -48,32 +48,36 @@ namespace LaborSoft
                     myConn.Open();
 
                     string myInsertQuery = "INSERT INTO dados_responsavel_familiar" +
-                             "(nome, sexo, nascimento, estado_civil, regime_casamento," +
-                             "uniao_consencual, frequenta_escola, escolaridade, beneficiario," +
-                             "programa_social, valor_beneficio, profissao, renda_cidadao, " +
+                             "(id, nome, sexo, nascimento, estado_civil, regime_casamento," +
+                             "uniao_consencual, frequenta_escola, escolaridade, alfabetizado_rg,"+
+                             " assina_nome, beneficiario, programa_social, valor_beneficio, profissao, renda_cidadao, " +
                              "particularidade_deficiencia, possui_laudo_med, possui_numero_cid, " +
-                             "cpf, rg_rne, naturalidade, org_expedidor_cpf, data_expedicao_cpf," +
+                             "cpf, rg_rne, naturalidade, uf, org_expedidor_cpf, data_expedicao_cpf," +
                              "nome_mae, nome_pai) " +
                              "VALUES(" +
+                             "'"+ Cod +"', "+
                             "'" + this.nome.Text + "', " +
                             "'" + this.sexo.Text + "', " +
                             "'" + this.nascimento.Text + "', " +
                             "'" + this.estado_civil.Text + "', " +
                             "'" + this.regime_casamento.Text + "', " +
-                            "'" + this.uniao_consensual.Checked + "', " +
-                            "'" + this.frequentou_escola.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.uniao_consensual.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.frequentou_escola.Checked) + "', " +
                             "'" + this.escolaridade.Text + "', " +
-                            "'" + this.beneficiario_prog_soc.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.alfabetizado_rg.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.assina_nome.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc.Checked) + "', " +
                             "'" + this.prog_soc_qual.Text + "', " +
                             "'" + this.valor_beneficio.Text + "', " +
                             "'" + this.profissão.Text + "', " +
                             "'" + this.renda.Text + "', " +
                             "'" + this.particularidade_deficiencia.Text + "', " +
-                            "'" + this.possui_laudo_medico.Checked + "', " +
-                            "'" + this.possui_cid.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_laudo_medico.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_cid.Checked) + "', " +
                             "'" + this.cpf.Text + "', " +
                             "'" + this.rg_rne.Text + "', " +
                             "'" + this.naturalidade.Text + "', " +
+                            "'" + this.uf.Text + "', " +
                             "'" + this.org_exp_cpf.Text + "', " +
                             "'" + this.data_exp_cpf.Text + "', " +
                             "'" + this.nome_mae.Text + "', " +
@@ -112,33 +116,36 @@ namespace LaborSoft
                 {
                     myConn.Open();
 
-                    string myInsertQuery = "UPDATE dados_responsavel_familiar SET " +
+                    string myUpdateQuery = "UPDATE dados_responsavel_familiar SET " +
                                             "nome = '" + this.nome.Text + "', " +
                                             "sexo = '" + this.sexo.Text + "', " +
                                             "nascimento = '" + this.nascimento.Text + "', " +
                                             "estado_civil = '" + this.estado_civil.Text + "', " +
                                             "regime_casamento = '" + this.regime_casamento.Text + "'," +
-                                            "uniao_consencual = '" + this.uniao_consensual.Checked + "', " +
-                                            "frequenta_escola = '" + this.frequentou_escola.Checked + "', " +
+                                            "uniao_consencual = '" + this.util.SQLiteConvertToBool(this.uniao_consensual.Checked) + "', " +
+                                            "frequenta_escola = '" + this.util.SQLiteConvertToBool(this.frequentou_escola.Checked) + "', " +
                                             "escolaridade = '" + this.escolaridade.Text + "', " +
-                                            "beneficiario = '" + this.beneficiario_prog_soc.Checked + "', " +
+                                            "assina_nome = '" + this.util.SQLiteConvertToBool(this.assina_nome.Checked) + "', " +
+                                            "alfabetizado_rg = '" + this.util.SQLiteConvertToBool(this.alfabetizado_rg.Checked) + "', " +
+                                            "beneficiario = '" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc.Checked) + "', " +
                                             "programa_social  = '" + this.prog_soc_qual.Text + "', " +
                                             "valor_beneficio = '" + this.valor_beneficio.Text + "', " +
                                             "profissao = '" + this.profissão.Text + "', " +
                                             "renda_cidadao = '" + this.renda.Text + "', " +
                                             "particularidade_deficiencia = '" + this.particularidade_deficiencia.Text + "', " +
-                                            "possui_laudo_med = '" + this.possui_laudo_medico.Checked + "', " +
-                                            "possui_numero_cid = '" + this.possui_cid.Checked + "', " +
+                                            "possui_laudo_med = '" + this.util.SQLiteConvertToBool(this.possui_laudo_medico.Checked) + "', " +
+                                            "possui_numero_cid = '" + this.util.SQLiteConvertToBool(this.possui_cid.Checked) + "', " +
                                             "cpf = '" + this.cpf.Text + "', " +
                                             "rg_rne = '" + this.rg_rne.Text + "', " +
                                             "naturalidade = '" + this.naturalidade.Text + "', " +
+                                            "uf = '" + this.uf.Text + "', " +
                                             "org_expedidor_cpf = '" + this.org_exp_cpf.Text + "', " +
                                             "data_expedicao_cpf = '" + this.data_exp_cpf.Text + "'," +
                                             "nome_mae = '" + this.nome_mae.Text + "', " +
                                             "nome_pai = '" + this.nome_pai.Text + "' " +
                                             "WHERE id = '" + code + "'";
 
-                    SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
+                    SQLiteCommand cmd = new SQLiteCommand(myUpdateQuery, myConn);
 
                     cmd.ExecuteNonQuery();
                     cmd.Dispose();
@@ -173,6 +180,8 @@ namespace LaborSoft
                 this.uniao_consensual.Checked = Convert.ToBoolean(dr["uniao_consencual"]);
                 this.frequentou_escola.Checked = Convert.ToBoolean(dr["frequenta_escola"]); 
                 this.escolaridade.Text = dr["escolaridade"].ToString();
+                this.assina_nome.Checked = Convert.ToBoolean(dr["assina_nome"]);
+                this.alfabetizado_rg.Checked = Convert.ToBoolean(dr["alfabetizado_rg"]);
                 this.beneficiario_prog_soc.Checked = Convert.ToBoolean(dr["beneficiario"]);
                 this.prog_soc_qual.Text = dr["programa_social"].ToString(); 
                 this.valor_beneficio.Text = dr["valor_beneficio"].ToString();
@@ -184,6 +193,7 @@ namespace LaborSoft
                 this.cpf.Text = dr["cpf"].ToString();
                 this.rg_rne.Text = dr["rg_rne"].ToString();
                 this.naturalidade.Text = dr["naturalidade"].ToString();
+                this.uf.Text = dr["uf"].ToString();
                 this.org_exp_cpf.Text = dr["org_expedidor_cpf"].ToString();
                 this.data_exp_cpf.Text =dr["data_expedicao_cpf"].ToString();
                 this.nome_mae.Text = dr["nome_mae"].ToString();

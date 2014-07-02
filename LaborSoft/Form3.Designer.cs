@@ -67,7 +67,7 @@
             this.sexo = new System.Windows.Forms.TextBox();
             this.nascimento = new System.Windows.Forms.MaskedTextBox();
             this.naturalidade = new System.Windows.Forms.TextBox();
-            this.UF = new System.Windows.Forms.TextBox();
+            this.uf = new System.Windows.Forms.TextBox();
             this.cpf = new System.Windows.Forms.MaskedTextBox();
             this.rg_rne = new System.Windows.Forms.TextBox();
             this.org_exp_cpf = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@
             this.uniao_consensual = new System.Windows.Forms.CheckBox();
             this.frequentou_escola = new System.Windows.Forms.CheckBox();
             this.escolaridade = new System.Windows.Forms.ComboBox();
-            this.alfabetizado_no_rg = new System.Windows.Forms.CheckBox();
+            this.alfabetizado_rg = new System.Windows.Forms.CheckBox();
             this.assina_nome = new System.Windows.Forms.CheckBox();
             this.profissão = new System.Windows.Forms.TextBox();
             this.renda = new System.Windows.Forms.TextBox();
@@ -414,12 +414,12 @@
             this.naturalidade.Size = new System.Drawing.Size(100, 20);
             this.naturalidade.TabIndex = 39;
             // 
-            // UF
+            // uf
             // 
-            this.UF.Location = new System.Drawing.Point(603, 49);
-            this.UF.Name = "UF";
-            this.UF.Size = new System.Drawing.Size(32, 20);
-            this.UF.TabIndex = 40;
+            this.uf.Location = new System.Drawing.Point(603, 49);
+            this.uf.Name = "uf";
+            this.uf.Size = new System.Drawing.Size(32, 20);
+            this.uf.TabIndex = 40;
             // 
             // cpf
             // 
@@ -506,14 +506,14 @@
             this.escolaridade.Size = new System.Drawing.Size(121, 21);
             this.escolaridade.TabIndex = 49;
             // 
-            // alfabetizado_no_rg
+            // alfabetizado_rg
             // 
-            this.alfabetizado_no_rg.AutoSize = true;
-            this.alfabetizado_no_rg.Location = new System.Drawing.Point(772, 123);
-            this.alfabetizado_no_rg.Name = "alfabetizado_no_rg";
-            this.alfabetizado_no_rg.Size = new System.Drawing.Size(15, 14);
-            this.alfabetizado_no_rg.TabIndex = 50;
-            this.alfabetizado_no_rg.UseVisualStyleBackColor = true;
+            this.alfabetizado_rg.AutoSize = true;
+            this.alfabetizado_rg.Location = new System.Drawing.Point(772, 123);
+            this.alfabetizado_rg.Name = "alfabetizado_rg";
+            this.alfabetizado_rg.Size = new System.Drawing.Size(15, 14);
+            this.alfabetizado_rg.TabIndex = 50;
+            this.alfabetizado_rg.UseVisualStyleBackColor = true;
             // 
             // assina_nome
             // 
@@ -557,7 +557,7 @@
             this.groupBox1.Controls.Add(this.profissão);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.assina_nome);
-            this.groupBox1.Controls.Add(this.alfabetizado_no_rg);
+            this.groupBox1.Controls.Add(this.alfabetizado_rg);
             this.groupBox1.Controls.Add(this.escolaridade);
             this.groupBox1.Controls.Add(this.frequentou_escola);
             this.groupBox1.Controls.Add(this.uniao_consensual);
@@ -567,7 +567,7 @@
             this.groupBox1.Controls.Add(this.org_exp_cpf);
             this.groupBox1.Controls.Add(this.rg_rne);
             this.groupBox1.Controls.Add(this.cpf);
-            this.groupBox1.Controls.Add(this.UF);
+            this.groupBox1.Controls.Add(this.uf);
             this.groupBox1.Controls.Add(this.naturalidade);
             this.groupBox1.Controls.Add(this.nascimento);
             this.groupBox1.Controls.Add(this.sexo);
@@ -680,7 +680,7 @@
         private System.Windows.Forms.TextBox sexo;
         private System.Windows.Forms.MaskedTextBox nascimento;
         private System.Windows.Forms.TextBox naturalidade;
-        private System.Windows.Forms.TextBox UF;
+        private System.Windows.Forms.TextBox uf;
         private System.Windows.Forms.MaskedTextBox cpf;
         private System.Windows.Forms.TextBox rg_rne;
         private System.Windows.Forms.TextBox org_exp_cpf;
@@ -690,7 +690,7 @@
         private System.Windows.Forms.CheckBox uniao_consensual;
         private System.Windows.Forms.CheckBox frequentou_escola;
         private System.Windows.Forms.ComboBox escolaridade;
-        private System.Windows.Forms.CheckBox alfabetizado_no_rg;
+        private System.Windows.Forms.CheckBox alfabetizado_rg;
         private System.Windows.Forms.CheckBox assina_nome;
         private System.Windows.Forms.TextBox profissão;
         private System.Windows.Forms.TextBox renda;

@@ -63,10 +63,10 @@ namespace LaborSoft
                 }
 
                 myInsertQuery = myInsertQuery +
-                            "'" + this.assoc_conhece.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.assoc_conhece.Checked) + "', " +
                             "'" + this.qual_assoc.Text + "', " +
                             "'" + this.em_qual_participa.Text + "', " +
-                            "'" + this.participa_assoc.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.participa_assoc.Checked) + "', " +
                             "'" + this.razao_de_nao_participar.Text + "', " +
                             "'" + this.liderancas_area.Text + "'" +
                             ")";
@@ -101,10 +101,10 @@ namespace LaborSoft
                     }
 
                     string myUpdateQuery = "UPDATE participacao_organizacao SET " +
-                                            "assoc_conhece = '" + this.assoc_conhece.Checked + "', " +
+                                            "assoc_conhece = '" + this.util.SQLiteConvertToBool(this.assoc_conhece.Checked) + "', " +
                                             "qual_assoc = '" + this.qual_assoc.Text + "', " +
                                             "em_qual_participa = '" + this.em_qual_participa.Text + "', " +
-                                            "participa_assoc = '" + this.participa_assoc.Checked + "', " +
+                                            "participa_assoc = '" + this.util.SQLiteConvertToBool(this.participa_assoc.Checked) + "', " +
                                             "razao_de_nao_participar = '" + this.razao_de_nao_participar.Text + "', " +
                                             "liderancas_area = '" + this.liderancas_area.Text + "' " +
                                             "WHERE id = '" + code + "'";
@@ -141,10 +141,10 @@ namespace LaborSoft
                 SQLiteDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    this.assoc_conhece.Text = dr["assoc_conhece"].ToString();
+                    this.assoc_conhece.Checked = Convert.ToBoolean(dr["assoc_conhece"].ToString());
                     this.qual_assoc.Text = dr["qual_assoc"].ToString();
                     this.em_qual_participa.Text = dr["em_qual_participa"].ToString();
-                    this.participa_assoc.Text = dr["participa_assoc"].ToString();
+                    this.participa_assoc.Checked = Convert.ToBoolean(dr["participa_assoc"].ToString());
                     this.razao_de_nao_participar.Text = dr["razao_de_nao_participar"].ToString();
                     this.liderancas_area.Text = dr["liderancas_area"].ToString();
                 }

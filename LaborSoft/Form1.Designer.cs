@@ -111,7 +111,7 @@
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(986, 667);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "5 - uso e Ocupação do Domicílio";
+            this.tabPage5.Text = "5 - Uso e Ocupação do Domicílio";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6

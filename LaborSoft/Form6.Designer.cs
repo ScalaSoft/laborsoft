@@ -71,10 +71,10 @@
             this.valor_do_aluguel = new System.Windows.Forms.TextBox();
             this.situacao = new System.Windows.Forms.TextBox();
             this.tipo_uso_imovel = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.outro_imovel_onde = new System.Windows.Forms.GroupBox();
+            this.onde = new System.Windows.Forms.RichTextBox();
+            this.boxGroup7 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.outro_imovel_onde.SuspendLayout();
+            this.boxGroup7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -442,66 +442,66 @@
             this.tipo_uso_imovel.Size = new System.Drawing.Size(100, 20);
             this.tipo_uso_imovel.TabIndex = 42;
             // 
-            // richTextBox2
+            // onde
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(87, 159);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(236, 36);
-            this.richTextBox2.TabIndex = 43;
-            this.richTextBox2.Text = "";
+            this.onde.Location = new System.Drawing.Point(87, 159);
+            this.onde.Name = "onde";
+            this.onde.Size = new System.Drawing.Size(236, 36);
+            this.onde.TabIndex = 43;
+            this.onde.Text = "";
             // 
-            // outro_imovel_onde
+            // boxGroup7
             // 
-            this.outro_imovel_onde.Controls.Add(this.richTextBox2);
-            this.outro_imovel_onde.Controls.Add(this.tipo_uso_imovel);
-            this.outro_imovel_onde.Controls.Add(this.situacao);
-            this.outro_imovel_onde.Controls.Add(this.valor_do_aluguel);
-            this.outro_imovel_onde.Controls.Add(this.tipo_ocupacao);
-            this.outro_imovel_onde.Controls.Add(this.padrao_edificao);
-            this.outro_imovel_onde.Controls.Add(this.area_terreno);
-            this.outro_imovel_onde.Controls.Add(this.qual_atividade);
-            this.outro_imovel_onde.Controls.Add(this.psh);
-            this.outro_imovel_onde.Controls.Add(this.possui_iptu);
-            this.outro_imovel_onde.Controls.Add(this.doc_temp_moradia);
-            this.outro_imovel_onde.Controls.Add(this.doc_prefeitura);
-            this.outro_imovel_onde.Controls.Add(this.possui_outro_imovel);
-            this.outro_imovel_onde.Controls.Add(this.banheiro);
-            this.outro_imovel_onde.Controls.Add(this.situacao_de_risco);
-            this.outro_imovel_onde.Controls.Add(this.label22);
-            this.outro_imovel_onde.Controls.Add(this.ano_psh);
-            this.outro_imovel_onde.Controls.Add(this.label21);
-            this.outro_imovel_onde.Controls.Add(this.municipio_anterior);
-            this.outro_imovel_onde.Controls.Add(this.tempo_mora_municipio);
-            this.outro_imovel_onde.Controls.Add(this.label20);
-            this.outro_imovel_onde.Controls.Add(this.label19);
-            this.outro_imovel_onde.Controls.Add(this.morava_onde_antes);
-            this.outro_imovel_onde.Controls.Add(this.label18);
-            this.outro_imovel_onde.Controls.Add(this.tempo_mora_area);
-            this.outro_imovel_onde.Controls.Add(this.label17);
-            this.outro_imovel_onde.Controls.Add(this.label16);
-            this.outro_imovel_onde.Controls.Add(this.quais_docs);
-            this.outro_imovel_onde.Controls.Add(this.label15);
-            this.outro_imovel_onde.Controls.Add(this.label14);
-            this.outro_imovel_onde.Controls.Add(this.label13);
-            this.outro_imovel_onde.Controls.Add(this.tempo_no_domicilio);
-            this.outro_imovel_onde.Controls.Add(this.label12);
-            this.outro_imovel_onde.Controls.Add(this.label11);
-            this.outro_imovel_onde.Controls.Add(this.label10);
-            this.outro_imovel_onde.Controls.Add(this.label9);
-            this.outro_imovel_onde.Controls.Add(this.label8);
-            this.outro_imovel_onde.Controls.Add(this.label7);
-            this.outro_imovel_onde.Controls.Add(this.label6);
-            this.outro_imovel_onde.Controls.Add(this.label5);
-            this.outro_imovel_onde.Controls.Add(this.label4);
-            this.outro_imovel_onde.Controls.Add(this.label3);
-            this.outro_imovel_onde.Controls.Add(this.label2);
-            this.outro_imovel_onde.Controls.Add(this.label1);
-            this.outro_imovel_onde.Location = new System.Drawing.Point(4, 7);
-            this.outro_imovel_onde.Name = "outro_imovel_onde";
-            this.outro_imovel_onde.Size = new System.Drawing.Size(975, 347);
-            this.outro_imovel_onde.TabIndex = 44;
-            this.outro_imovel_onde.TabStop = false;
-            this.outro_imovel_onde.Text = "5";
+            this.boxGroup7.Controls.Add(this.onde);
+            this.boxGroup7.Controls.Add(this.tipo_uso_imovel);
+            this.boxGroup7.Controls.Add(this.situacao);
+            this.boxGroup7.Controls.Add(this.valor_do_aluguel);
+            this.boxGroup7.Controls.Add(this.tipo_ocupacao);
+            this.boxGroup7.Controls.Add(this.padrao_edificao);
+            this.boxGroup7.Controls.Add(this.area_terreno);
+            this.boxGroup7.Controls.Add(this.qual_atividade);
+            this.boxGroup7.Controls.Add(this.psh);
+            this.boxGroup7.Controls.Add(this.possui_iptu);
+            this.boxGroup7.Controls.Add(this.doc_temp_moradia);
+            this.boxGroup7.Controls.Add(this.doc_prefeitura);
+            this.boxGroup7.Controls.Add(this.possui_outro_imovel);
+            this.boxGroup7.Controls.Add(this.banheiro);
+            this.boxGroup7.Controls.Add(this.situacao_de_risco);
+            this.boxGroup7.Controls.Add(this.label22);
+            this.boxGroup7.Controls.Add(this.ano_psh);
+            this.boxGroup7.Controls.Add(this.label21);
+            this.boxGroup7.Controls.Add(this.municipio_anterior);
+            this.boxGroup7.Controls.Add(this.tempo_mora_municipio);
+            this.boxGroup7.Controls.Add(this.label20);
+            this.boxGroup7.Controls.Add(this.label19);
+            this.boxGroup7.Controls.Add(this.morava_onde_antes);
+            this.boxGroup7.Controls.Add(this.label18);
+            this.boxGroup7.Controls.Add(this.tempo_mora_area);
+            this.boxGroup7.Controls.Add(this.label17);
+            this.boxGroup7.Controls.Add(this.label16);
+            this.boxGroup7.Controls.Add(this.quais_docs);
+            this.boxGroup7.Controls.Add(this.label15);
+            this.boxGroup7.Controls.Add(this.label14);
+            this.boxGroup7.Controls.Add(this.label13);
+            this.boxGroup7.Controls.Add(this.tempo_no_domicilio);
+            this.boxGroup7.Controls.Add(this.label12);
+            this.boxGroup7.Controls.Add(this.label11);
+            this.boxGroup7.Controls.Add(this.label10);
+            this.boxGroup7.Controls.Add(this.label9);
+            this.boxGroup7.Controls.Add(this.label8);
+            this.boxGroup7.Controls.Add(this.label7);
+            this.boxGroup7.Controls.Add(this.label6);
+            this.boxGroup7.Controls.Add(this.label5);
+            this.boxGroup7.Controls.Add(this.label4);
+            this.boxGroup7.Controls.Add(this.label3);
+            this.boxGroup7.Controls.Add(this.label2);
+            this.boxGroup7.Controls.Add(this.label1);
+            this.boxGroup7.Location = new System.Drawing.Point(4, 7);
+            this.boxGroup7.Name = "boxGroup7";
+            this.boxGroup7.Size = new System.Drawing.Size(975, 347);
+            this.boxGroup7.TabIndex = 44;
+            this.boxGroup7.TabStop = false;
+            this.boxGroup7.Text = "5";
             // 
             // pictureBox1
             // 
@@ -519,11 +519,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 741);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.outro_imovel_onde);
+            this.Controls.Add(this.boxGroup7);
             this.Name = "Form6";
             this.Text = "5 - Uso e ocupação do domicílio";
-            this.outro_imovel_onde.ResumeLayout(false);
-            this.outro_imovel_onde.PerformLayout();
+            this.boxGroup7.ResumeLayout(false);
+            this.boxGroup7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -575,8 +575,8 @@
         private System.Windows.Forms.TextBox valor_do_aluguel;
         private System.Windows.Forms.TextBox situacao;
         private System.Windows.Forms.TextBox tipo_uso_imovel;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.GroupBox outro_imovel_onde;
+        private System.Windows.Forms.RichTextBox onde;
+        private System.Windows.Forms.GroupBox boxGroup7;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

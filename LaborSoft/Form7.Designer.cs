@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.liderancas_area = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.razao_de_nao_participar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.em_qual_participa = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.assoc_conhece = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.liderancas_area = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "6";
+            // 
+            // liderancas_area
+            // 
+            this.liderancas_area.Location = new System.Drawing.Point(314, 193);
+            this.liderancas_area.Name = "liderancas_area";
+            this.liderancas_area.Size = new System.Drawing.Size(638, 20);
+            this.liderancas_area.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(249, 184);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 39);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Principais \r\nLideranças\r\nna área:\r\n";
             // 
             // razao_de_nao_participar
             // 
@@ -152,22 +168,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Você ou algém de sua família conhece\r\nalguma associação, entidade, instituição\r\nr" +
                 "eligiosa ou organização social na área?";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 184);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 39);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Principais \r\nLideranças\r\nna área:\r\n";
-            // 
-            // liderancas_area
-            // 
-            this.liderancas_area.Location = new System.Drawing.Point(314, 193);
-            this.liderancas_area.Name = "liderancas_area";
-            this.liderancas_area.Size = new System.Drawing.Size(638, 20);
-            this.liderancas_area.TabIndex = 11;
             // 
             // Form7
             // 

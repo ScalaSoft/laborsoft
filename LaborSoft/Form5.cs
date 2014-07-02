@@ -78,51 +78,51 @@ namespace LaborSoft
                             "'" + this.nascimento_1.Text + "', " +
                             "'" + this.estado_civil_1.Text + "', " +
                             "'" + this.regime_casamento_1.Text + "', " +
-                            "'" + this.uniao_consensual_1.Checked + "', " +
-                            "'" + this.frequentou_escola_1.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.uniao_consensual_1.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.frequentou_escola_1.Checked) + "', " +
                             "'" + this.escolaridade_1.Text + "', " +
                             "'" + this.profissao_1.Text + "', " +
                             "'" + this.renda_1.Text + "', " +
-                            "'" + this.beneficiario_prog_soc_1.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_1.Checked) + "', " +
                             "'" + this.prog_soc_qual_1.Text + "', " +
                             "'" + this.valor_beneficio_1.Text + "', " +
                             "'" + this.particularidade_deficiencia_1.Text + "', " +
-                            "'" + this.possui_laudo_medico_1.Checked + "', " +
-                            "'" + this.possui_cid_1.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_1.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_cid_1.Checked) + "', " +
                             "'" + this.nome_2.Text + "', " +
                             "'" + this.relacao_resp_fam_2.Text + "', " +
                             "'" + this.sexo_2.Text + "', " +
                             "'" + this.nascimento_2.Text + "', " +
                             "'" + this.estado_civil_2.Text + "', " +
                             "'" + this.regime_casamento_2.Text + "', " +
-                            "'" + this.uniao_consensual_2.Checked + "', " +
-                            "'" + this.frequentou_escola_2.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.uniao_consensual_2.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.frequentou_escola_2.Checked) + "', " +
                             "'" + this.escolaridade_2.Text + "', " +
                             "'" + this.profissao_2.Text + "', " +
                             "'" + this.renda_2.Text + "', " +
-                            "'" + this.beneficiario_prog_soc_2.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_2.Checked) + "', " +
                             "'" + this.prog_soc_qual_2.Text + "', " +
                             "'" + this.valor_beneficio_2.Text + "', " +
                             "'" + this.particularidade_deficiencia_2.Text + "', " +
-                            "'" + this.possui_laudo_medico_2.Checked + "', " +
-                            "'" + this.possui_cid_2.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_2.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_cid_2.Checked) + "', " +
                             "'" + this.nome_3.Text + "', " +
                             "'" + this.relacao_resp_fam_3.Text + "', " +
                             "'" + this.sexo_3.Text + "', " +
                             "'" + this.nascimento_3.Text + "', " +
                             "'" + this.estado_civil_3.Text + "', " +
                             "'" + this.regime_casamento_3.Text + "', " +
-                            "'" + this.uniao_consensual_3.Checked + "', " +
-                            "'" + this.frequentou_escola_3.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.uniao_consensual_3.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.frequentou_escola_3.Checked) + "', " +
                             "'" + this.escolaridade_3.Text + "', " +
                             "'" + this.profissao_3.Text + "', " +
                             "'" + this.renda_3.Text + "', " +
-                            "'" + this.beneficiario_prog_soc_3.Checked + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_3.Checked) + "', " +
                             "'" + this.prog_soc_qual_3.Text + "', " +
                             "'" + this.valor_beneficio_3.Text + "', " +
                             "'" + this.particularidade_deficiencia_3.Text + "', " +
-                            "'" + this.possui_laudo_medico_3.Checked + "', " +
-                            "'" + this.possui_cid_3.Checked + "'" +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_3.Checked) + "', " +
+                            "'" + this.util.SQLiteConvertToBool(this.possui_cid_3.Checked) + "'" +
                             ")";
                 SQLiteCommand cmd = new SQLiteCommand(myInsertQuery, myConn);
                 cmd.ExecuteNonQuery();
@@ -161,51 +161,51 @@ namespace LaborSoft
                                             "nascimento_1 = '" + this.nascimento_1.Text + "', " +
                                             "estado_civil_1 = '" + this.estado_civil_1.Text + "', " +
                                             "regime_casamento_1 = '" + this.regime_casamento_1.Text + "'," +
-                                            "uniao_consensual_1 = '" + this.uniao_consensual_1.Checked + "', " +
-                                            "frequentou_escola_1 = '" + this.frequentou_escola_1.Checked + "', " +
+                                            "uniao_consensual_1 = '" + this.util.SQLiteConvertToBool(this.uniao_consensual_1.Checked) + "', " +
+                                            "frequentou_escola_1 = '" + this.util.SQLiteConvertToBool(this.frequentou_escola_1.Checked) + "', " +
                                             "escolaridade_1 = '" + this.escolaridade_1.Text + "', " +
-                                            "beneficiario_prog_soc_1 = '" + this.beneficiario_prog_soc_1.Checked + "', " +
+                                            "beneficiario_prog_soc_1 = '" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_1.Checked) + "', " +
                                             "prog_soc_qual_1 = '" + this.prog_soc_qual_1.Text + "', " +
                                             "valor_beneficio_1 = '" + this.valor_beneficio_1.Text + "', " +
                                             "profissao_1 = '" + this.profissao_1.Text + "', " +
                                             "renda_1 = '" + this.renda_1.Text + "', " +
                                             "particularidade_deficiencia_1 = '" + this.particularidade_deficiencia_1.Text + "', " +
-                                            "possui_laudo_medico_1 = '" + this.possui_laudo_medico_1.Checked + "', " +
-                                            "possui_cid_1 = '" + this.possui_cid_1.Checked + "', " +
+                                            "possui_laudo_medico_1 = '" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_1.Checked) + "', " +
+                                            "possui_cid_1 = '" + this.util.SQLiteConvertToBool(this.possui_cid_1.Checked) + "', " +
                                             "nome_2 = '" + this.nome_2.Text + "', " +
                                             "relacao_resp_fam_2 = '" + this.relacao_resp_fam_2.Text + "', " +
                                             "sexo_2 = '" + this.sexo_2.Text + "', " +
                                             "nascimento_2 = '" + this.nascimento_2.Text + "', " +
                                             "estado_civil_2 = '" + this.estado_civil_2.Text + "', " +
                                             "regime_casamento_2 = '" + this.regime_casamento_2.Text + "'," +
-                                            "uniao_consensual_2 = '" + this.uniao_consensual_2.Checked + "', " +
-                                            "frequentou_escola_2 = '" + this.frequentou_escola_2.Checked + "', " +
+                                            "uniao_consensual_2 = '" + this.util.SQLiteConvertToBool(this.uniao_consensual_2.Checked) + "', " +
+                                            "frequentou_escola_2 = '" + this.util.SQLiteConvertToBool(this.frequentou_escola_2.Checked) + "', " +
                                             "escolaridade_2 = '" + this.escolaridade_2.Text + "', " +
-                                            "beneficiario_prog_soc_2 = '" + this.beneficiario_prog_soc_2.Checked + "', " +
+                                            "beneficiario_prog_soc_2 = '" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_2.Checked) + "', " +
                                             "prog_soc_qual_2 = '" + this.prog_soc_qual_2.Text + "', " +
                                             "valor_beneficio_2 = '" + this.valor_beneficio_2.Text + "', " +
                                             "profissao_2 = '" + this.profissao_2.Text + "', " +
                                             "renda_2 = '" + this.renda_2.Text + "', " +
                                             "particularidade_deficiencia_2 = '" + this.particularidade_deficiencia_2.Text + "', " +
-                                            "possui_laudo_medico_2 = '" + this.possui_laudo_medico_2.Checked + "', " +
-                                            "possui_cid_2 = '" + this.possui_cid_2.Checked + "', " +
+                                            "possui_laudo_medico_2 = '" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_2.Checked) + "', " +
+                                            "possui_cid_2 = '" + this.util.SQLiteConvertToBool(this.possui_cid_2.Checked) + "', " +
                                             "nome_3 = '" + this.nome_3.Text + "', " +
                                             "relacao_resp_fam_3 = '" + this.relacao_resp_fam_3.Text + "', " +
                                             "sexo_3 = '" + this.sexo_3.Text + "', " +
                                             "nascimento_3 = '" + this.nascimento_3.Text + "', " +
                                             "estado_civil_3 = '" + this.estado_civil_3.Text + "', " +
                                             "regime_casamento_3 = '" + this.regime_casamento_3.Text + "'," +
-                                            "uniao_consensual_3 = '" + this.uniao_consensual_3.Checked + "', " +
-                                            "frequentou_escola_3 = '" + this.frequentou_escola_3.Checked + "', " +
+                                            "uniao_consensual_3 = '" + this.util.SQLiteConvertToBool(this.uniao_consensual_3.Checked) + "', " +
+                                            "frequentou_escola_3 = '" + this.util.SQLiteConvertToBool(this.frequentou_escola_3.Checked) + "', " +
                                             "escolaridade_3 = '" + this.escolaridade_3.Text + "', " +
-                                            "beneficiario_prog_soc_3 = '" + this.beneficiario_prog_soc_3.Checked + "', " +
+                                            "beneficiario_prog_soc_3 = '" + this.util.SQLiteConvertToBool(this.beneficiario_prog_soc_3.Checked) + "', " +
                                             "prog_soc_qual_3 = '" + this.prog_soc_qual_3.Text + "', " +
                                             "valor_beneficio_3 = '" + this.valor_beneficio_3.Text + "', " +
                                             "profissao_3 = '" + this.profissao_3.Text + "', " +
                                             "renda_3 = '" + this.renda_3.Text + "', " +
                                             "particularidade_deficiencia_3 = '" + this.particularidade_deficiencia_3.Text + "', " +
-                                            "possui_laudo_medico_3 = '" + this.possui_laudo_medico_3.Checked + "', " +
-                                            "possui_cid_3 = '" + this.possui_cid_3.Checked + "' " +
+                                            "possui_laudo_medico_3 = '" + this.util.SQLiteConvertToBool(this.possui_laudo_medico_3.Checked) + "', " +
+                                            "possui_cid_3 = '" + this.util.SQLiteConvertToBool(this.possui_cid_3.Checked) + "' " +
                                             "WHERE id = '" + code + "'";
                     System.Diagnostics.Trace.WriteLine(myUpdateQuery);
 
