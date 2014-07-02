@@ -141,7 +141,7 @@ namespace LaborSoft
         public bool updateComposicaoFamiliar(int? code)
         {
             bool check_id = idNumRows(code);
-            if (check_id == false)
+            if (check_id == false && code == null)
             {
                 return insertComposicaoFamiliar(code);
             }
