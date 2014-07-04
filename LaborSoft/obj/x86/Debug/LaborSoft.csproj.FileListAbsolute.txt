@@ -20,3 +20,6 @@ C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.exe.ma
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\LaborSoft.application
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.exe.manifest
 C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\obj\x86\Debug\LaborSoft.application
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.dll
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.pdb
+C:\Users\Álvaro\Documents\GitHub\laborsoft\LaborSoft\bin\Debug\System.Data.SQLite.xml

@@ -22,7 +22,7 @@ namespace LaborSoft
         Form8 frm8;
         Form9 frm9;
         SQLiteConnection myConn;
-        AutoCompleteStringCollection source_arr = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection stack = new AutoCompleteStringCollection();
 
 
         public Form1()
@@ -35,7 +35,9 @@ namespace LaborSoft
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.nome_rg_cpf.AutoCompleteCustomSource = this.source_arr;
+
+            Source();
+            this.nome_rg_cpf.AutoCompleteCustomSource = this.stack;
         }
 
         private void conn() {
@@ -380,8 +382,7 @@ namespace LaborSoft
         {
             if (this.nome_rg_cpf.TextLength > 3 && this.nome_rg_cpf.TextLength < 5)
             {
-                System.Threading.Thread.Sleep(800);
-                Source();
+                this.nome_rg_cpf.AutoCompleteCustomSource = this.stack;
             }
         }
 
@@ -391,61 +392,55 @@ namespace LaborSoft
             List<String> dadosLista = new List<String>();
             AutoCompleteStringCollection stack = new AutoCompleteStringCollection();
 
-            if ((search.Length%2) == 0)
+            try
             {
-                try
+                if (this.myConn.State.ToString() == "Closed")
                 {
-                    if (this.myConn.State.ToString() == "Closed")
-                    {
-                        this.myConn.Open();
-                    }
+                    this.myConn.Open();
+                }
 
-                    string mySelectQuery = "SELECT i.nome_entrevistado as nome FROM identificacao i "+
-                        "left join dados_responsavel_familiar drf on(drf.id = i.id)"+
-                        " WHERE i.nome_entrevistado LIKE '" + search + "%' "+
-                        " OR drf.nome LIKE '"+ search +"%' "+
-                        " OR drf.cpf = '"+ search +"' "+
-                        " OR drf.rg_rne = '"+ search +"' order by i.id desc;";
+                string mySelectQuery = "SELECT i.nome_entrevistado as nome, drf.cpf as cpf, drf.rg_rne as rg FROM identificacao i "+
+                    "left join dados_responsavel_familiar drf on(drf.id = i.id)"+
+                    " order by i.nome_entrevistado asc;";
 
-                    SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
-                    cmd.CommandText = mySelectQuery;
+                SQLiteCommand cmd = new SQLiteCommand(mySelectQuery, myConn);
+                cmd.CommandText = mySelectQuery;
                     
-                    var RowCount = cmd.ExecuteScalar();
-                    if (RowCount != null)
+                var RowCount = cmd.ExecuteScalar();
+                if (RowCount != null)
+                {
+                    SQLiteCommand cmd2 = new SQLiteCommand(mySelectQuery, myConn);
+                    SQLiteDataReader dr = cmd2.ExecuteReader();
+                    while (dr.Read())
                     {
-                        SQLiteCommand cmd2 = new SQLiteCommand(mySelectQuery, myConn);
-                        SQLiteDataReader dr = cmd2.ExecuteReader();
-                        while (dr.Read())
-                        {
-                            dadosLista.Add(dr.GetString(0));
-                        }
-
-                        dr.Close();
-                        dr.Dispose();
-
-                        cmd2.Dispose();
+                        dadosLista.Add(dr.GetString(0));
                     }
+
+                    dr.Close();
+                    dr.Dispose();
+
+                    cmd2.Dispose();
+                }
                         
-                    cmd.Dispose();
-                    this.myConn.Close();
-                }
-                catch (Exception e)
-                {
-                    throw new Exception(e.Message);
-                }
-
-                try
-                {
-                    this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    stack.AddRange(dadosLista.ToArray());
-                    dadosLista.Clear();
-                    this.nome_rg_cpf.AutoCompleteCustomSource = stack;
-                }
-                catch (Exception ex) { 
-                }
-
+                cmd.Dispose();
+                this.myConn.Close();
             }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            try
+            {
+                this.nome_rg_cpf.AutoCompleteMode = AutoCompleteMode.Suggest;
+                this.nome_rg_cpf.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                this.stack.AddRange(dadosLista.ToArray());
+                dadosLista.Clear();
+                this.nome_rg_cpf.AutoCompleteCustomSource = this.stack;
+            }
+            catch (Exception ex) { 
+            }
+
         }
 
         public bool validateFields(){
